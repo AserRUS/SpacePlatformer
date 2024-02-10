@@ -3,24 +3,31 @@ using UnityEngine;
 
 public class GrappleHook : MonoBehaviour
 {
+    [SerializeField] private Transform player;
     [SerializeField] private LayerMask grapplebleMask;
     [SerializeField] private float maxDistance = 10f;
     [SerializeField] private float grappleSpeed = 10f;
     [SerializeField] private float grappleShootSpeed = 20f;
+    [SerializeField] private float jumpForceAfterHook = 10f;
 
     [HideInInspector] public bool retracting = false;
 
-    private bool isGrappling = false;
     private LineRenderer line;
+    private Rigidbody2D rigidbody;
+    private bool isGrappling = false;
     private Vector2 target;
+    private Vector2 direction;
+    private float distance;
 
     private void Start()
     {
         line = GetComponent<LineRenderer>();
+        rigidbody = GetComponentInParent<Rigidbody2D>();
     }
 
     private void Update()
     {
+        //Вынести в inputControll, если будем использовать
         if (Input.GetMouseButtonDown(0) && !isGrappling)
         {
             StartGrapple();
@@ -28,27 +35,29 @@ public class GrappleHook : MonoBehaviour
 
         if (retracting)
         {
-            Vector2 grapplePos = Vector2.Lerp(transform.position, target,
+            Vector2 grapplePos = Vector2.Lerp(player.position, target,
                 grappleSpeed * Time.deltaTime);
 
-            transform.position = grapplePos;
-            line.SetPosition(0, transform.position);
+            player.position = grapplePos;
+            line.SetPosition(0, player.position);
 
-            if (Vector2.Distance(transform.position, target) < 0.5f)
+            if (Vector2.Distance(player.position, target) < 0.5f)
             {
                 retracting = false;
                 isGrappling = false;
                 line.enabled = false;
+
+                rigidbody.AddForce(Vector2.up * distance * jumpForceAfterHook, ForceMode2D.Impulse);
             }
         }
     }
 
     private void StartGrapple()
     {
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition)
-            - transform.position;
+        direction = Camera.main.ScreenToWorldPoint(Input.mousePosition)
+            - player.position;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxDistance,
+        RaycastHit2D hit = Physics2D.Raycast(player.position, direction, maxDistance, 
             grapplebleMask);
 
         if (hit.collider != null)
@@ -57,6 +66,7 @@ public class GrappleHook : MonoBehaviour
             target = hit.point;
             line.enabled = true;
             line.positionCount = 2;
+            distance = hit.distance;
 
             StartCoroutine(Grapple());
         }
@@ -67,15 +77,15 @@ public class GrappleHook : MonoBehaviour
         float t = 0;
         float time = 10;
 
-        line.SetPosition(0, transform.position);
-        line.SetPosition(1, transform.position);
+        line.SetPosition(0, player.position);
+        line.SetPosition(1, player.position);
 
         Vector2 newPos;
 
         for (; t < time; t += grappleShootSpeed * Time.deltaTime)
         {
-            newPos = Vector2.Lerp(transform.position, target, t / time);
-            line.SetPosition(0, transform.position);
+            newPos = Vector2.Lerp(player.position, target, t / time);
+            line.SetPosition(0, player.position);
             line.SetPosition(1, newPos);
             yield return null;
         }
