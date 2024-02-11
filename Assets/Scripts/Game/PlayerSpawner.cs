@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerSpawner : EntitySpawner
 {
-
+    [SerializeField] InputControl m_InputControl;
     [SerializeField] private CameraController m_CameraController;
     [SerializeField] private float RespawnTime;
     [SerializeField] private UIState m_UIHealth;
@@ -21,16 +21,27 @@ public class PlayerSpawner : EntitySpawner
         GameObject entity = Instantiate(m_EntityPrefabs[Random.Range(0, m_EntityPrefabs.Length)], m_SpawnPosition.position, Quaternion.identity);
 
         player = entity.GetComponent<Player>();
-        if (player == null) return;
-        m_CameraController.SetTarget(player.transform);
-        player.DeathEvent += Respawn;
-        m_UIHealth.SetMaxValue(player.MaxHitPoints);
-        player.HitPointChangeEvent += m_UIHealth.ValueChange;
+        if (player != null) 
+        {            
+            m_CameraController.SetTarget(player.transform);
+            player.DeathEvent += Respawn;
+            m_UIHealth.SetMaxValue(player.MaxHitPoints);
+            player.HitPointChangeEvent += m_UIHealth.ValueChange;
+        }        
 
         EnergyStorage energyStorage = entity.GetComponent<EnergyStorage>();
-        if (energyStorage == null) return;
-        m_UIEnergy.SetMaxValue(energyStorage.MaxEnergy);
-        energyStorage.EnergyChangeEvent += m_UIEnergy.ValueChange;
+        if (energyStorage != null) 
+        {
+            m_UIEnergy.SetMaxValue(energyStorage.MaxEnergy);
+            energyStorage.EnergyChangeEvent += m_UIEnergy.ValueChange;
+        }        
+
+        PlayerInputControl playerInputControl = entity.GetComponent<PlayerInputControl>();
+        if (playerInputControl != null)
+        {
+            m_InputControl.SetPlayerInputControl(playerInputControl);
+        }
+
     }
 
     private void Respawn()
