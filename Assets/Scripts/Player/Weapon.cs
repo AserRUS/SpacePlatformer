@@ -9,7 +9,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float m_RateOfFire;    
     [SerializeField] private Transform m_Gunpoint;   
     [SerializeField] private ParticleSystem m_Flash;
-    [SerializeField] private Collider2D[] m_IgnoreColliders;
     [SerializeField] private AudioClip m_ShotSound;
 
     private int direction = 1;
@@ -34,11 +33,8 @@ public class Weapon : MonoBehaviour
         Projectile projectile = Instantiate(m_ProjectilePrefab).GetComponent<Projectile>();
         projectile.transform.position = m_Gunpoint.position;
         projectile.transform.up = new Vector2(direction, 0);
+        projectile.SetOwner(transform.root.gameObject);
         
-        for (int i = 0;  i < m_IgnoreColliders.Length; i++)
-        {
-            Physics2D.IgnoreCollision(projectile.GetComponent<Collider2D>(), m_IgnoreColliders[i]);           
-        }
         //m_Flash.Play();
         //m_Audio.PlayOneShot(m_ShotSound);
         m_RefireTimer = m_RateOfFire;

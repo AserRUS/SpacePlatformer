@@ -1,14 +1,20 @@
+using System;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private GameObject m_Target;
+    
     [SerializeField] private float m_CameraSpeedX;
     [SerializeField] private float m_CameraSpeedY;
     [SerializeField] private Vector2 m_CameraBorderX;
     [SerializeField] private Vector2 m_CameraBorderY;
-    [SerializeField] private Parallax m_Parallax;    
+    [SerializeField] private Parallax m_Parallax;
 
+    private Transform m_Target;
+    internal void SetTarget(Transform target)
+    {
+        m_Target = target;
+    }
 
     private void LateUpdate()
     {        
@@ -17,8 +23,8 @@ public class CameraController : MonoBehaviour
         float height = Camera.main.orthographicSize * 2;
         float width = height * Screen.width / Screen.height;        
 
-        float camPosX = Mathf.Lerp(transform.position.x, m_Target.transform.position.x, m_CameraSpeedX * Time.deltaTime);
-        float camPosY = Mathf.Lerp(transform.position.y, m_Target.transform.position.y, m_CameraSpeedY * Time.deltaTime);
+        float camPosX = Mathf.Lerp(transform.position.x, m_Target.position.x, m_CameraSpeedX * Time.deltaTime);
+        float camPosY = Mathf.Lerp(transform.position.y, m_Target.position.y, m_CameraSpeedY * Time.deltaTime);
         Vector3 newCamPos = new Vector3(Mathf.Clamp(camPosX, m_CameraBorderX.x + width / 2, m_CameraBorderX.y - width / 2), Mathf.Clamp(camPosY, m_CameraBorderY.x + height / 2, m_CameraBorderY.y - height / 2), transform.position.z);
         transform.position = newCamPos;
         if (m_Parallax != null)

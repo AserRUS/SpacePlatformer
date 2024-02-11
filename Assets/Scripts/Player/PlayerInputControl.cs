@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerInputControl : MonoBehaviour
 {
-    [SerializeField] private Weapon m_Turret;
+    [SerializeField] private Weapon m_Weapon;
     [SerializeField] private Movement m_Movement;
 
     
@@ -19,7 +19,7 @@ public class PlayerInputControl : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            m_Turret?.Fire();
+            m_Weapon?.Fire();
         }
          
     }
@@ -30,13 +30,13 @@ public class PlayerInputControl : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             m_Movement?.SetDirection(-1);
-            m_Turret?.SetDirection(-1);
+            m_Weapon?.SetDirection(-1);
         }
             
         else if (Input.GetKey(KeyCode.D))
         {
             m_Movement?.SetDirection(1);
-            m_Turret?.SetDirection(1);
+            m_Weapon?.SetDirection(1);
         }
             
         else
