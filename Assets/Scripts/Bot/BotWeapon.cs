@@ -4,14 +4,13 @@ using UnityEngine;
 public class BotWeapon : MonoBehaviour
 {
     [Header("Ranged attack")]
-    // prefab projectile
-    [SerializeField] private float cartridgeDamage;
+    [SerializeField] private Projectile projectilePrefab;
     [SerializeField] private int maxNumberCartridges;
     [SerializeField] private float timeBetweenShots;
     [SerializeField] private float timeRecharge;
 
     [Header("Melee attack")]
-    [SerializeField] private float meleeDamage;
+    [SerializeField] private int meleeDamage;
 
     private int numberCartridges;
     private bool shootAvailable;
@@ -23,12 +22,12 @@ public class BotWeapon : MonoBehaviour
         numberCartridges = maxNumberCartridges;
     }
 
-    public void Attack()
+    public void Attack(bool dirRight)
     {
         if (numberCartridges <= 0) return;
         if (!shootAvailable)  return;
 
-        CreateProjectile();
+        CreateProjectile(dirRight);
         numberCartridges -= 1;
         shootAvailable = false;
 
@@ -46,22 +45,31 @@ public class BotWeapon : MonoBehaviour
             numberCartridges = maxNumberCartridges;
     }
 
-    private void CreateProjectile()
+    private void CreateProjectile(bool dirRight)
     {
-        Debug.Log("PiuPiu");
+        Projectile projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
+        projectile.transform.position = gameObject.transform.position;
+
+        if (dirRight)
+            projectile.transform.up = new Vector2(1, 0);
+        else
+            projectile.transform.up = new Vector2(-1, 0);
+
+        projectile.SetOwner(transform.root.gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            //Нанести урон милишкой по игроку
-            Death();
-        }
-    }
+            Destructible dest = other.GetComponent<Destructible>();
 
-    private void Death()
-    {
-        Destroy(gameObject.transform.root.gameObject);
+            if (dest)
+            {
+                dest.RemoveHitpoints(meleeDamage, gameObject);
+            }
+
+            Destroy(gameObject.transform.root.gameObject);
+        }
     }
 }

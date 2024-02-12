@@ -99,7 +99,7 @@ public class BotController : MonoBehaviour
     private void Attack()
     {
         CheckRotation(detectedPlayer);
-        botWeapon.Attack();
+        botWeapon.Attack(facingRight);
     }
 
 
@@ -133,6 +133,12 @@ public class BotController : MonoBehaviour
         {
             detectedPlayer = other.transform;
             detected = true;
+
+            Destructible dest = other.GetComponent<Destructible>();
+            if (dest)
+            {
+                dest.DeathEvent += PlayerDeath;
+            }
         }
     }
 
@@ -140,6 +146,24 @@ public class BotController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            detectedPlayer = null;
+            detected = false;
+
+            Destructible dest = other.GetComponent<Destructible>();
+            if (dest)
+            {
+                dest.DeathEvent -= PlayerDeath;
+            }
+        }
+    }
+
+    private void PlayerDeath()
+    {
+        Destructible dest = detectedPlayer.GetComponent<Destructible>();
+
+        if (dest)
+        {
+            dest.DeathEvent -= PlayerDeath;
             detectedPlayer = null;
             detected = false;
         }
