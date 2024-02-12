@@ -15,6 +15,7 @@ public class BotController : MonoBehaviour
     [SerializeField] private float infelicity = 0.1f;
 
     private Rigidbody rb;
+    private BotWeapon botWeapon;
     private Transform targetPoint;
     private Transform detectedPlayer;
     private BotBehavior behavior;
@@ -24,6 +25,7 @@ public class BotController : MonoBehaviour
     private void Start()
     {
         rb = GetComponentInParent<Rigidbody>();
+        botWeapon = GetComponentInChildren<BotWeapon>();
 
         if (botType == BotType.patrolling)
         {
@@ -97,9 +99,7 @@ public class BotController : MonoBehaviour
     private void Attack()
     {
         CheckRotation(detectedPlayer);
-
-
-        Debug.Log("PiuPiu");
+        botWeapon.Attack();
     }
 
 
@@ -142,7 +142,6 @@ public class BotController : MonoBehaviour
         {
             detectedPlayer = null;
             detected = false;
-
         }
     }
 }
