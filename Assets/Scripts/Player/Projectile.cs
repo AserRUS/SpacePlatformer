@@ -1,30 +1,53 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private int m_Damage;
     [SerializeField] private float m_Velosity;
     [SerializeField] private GameObject m_ImpactEffect;
     [SerializeField] private float m_LifeTime;
 
-       
-    protected Rigidbody2D m_Rigidbody;
+    private GameObject owner;
+    private const float RayAdvance = 1.1f;
+    private Vector3 step;
+    private bool isHit;
+    private RaycastHit raycastHit;
+
     protected virtual void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody2D>();
-        StartCoroutine(LifeTime());
+       StartCoroutine(LifeTime());
     }
     
-    private void FixedUpdate()
+    private void Update()
     {
-        if (m_Rigidbody != null)
-            m_Rigidbody.velocity = transform.up * m_Velosity;        
+        Move();
+        Chek();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {          
-        Destruction();
+    
+    private void Move()
+    {
+        step = transform.up * m_Velosity * Time.deltaTime;
+
+        transform.position += step;
+    }
+    private void Chek()
+    {
+        if (isHit == true) return;
+
+        if (Physics.Raycast(transform.position, transform.up, out raycastHit, m_Velosity * Time.deltaTime * RayAdvance))
+        {
+            Destructible dest = raycastHit.transform.GetComponent<Destructible>();
+            if (dest != null)
+            {
+                dest.RemoveHitpoints(m_Damage, owner);
+            }
+            Destruction();
+
+            isHit = true;
+        }
+
     }
 
     IEnumerator LifeTime()
@@ -33,10 +56,15 @@ public class Projectile : MonoBehaviour
         Destruction();        
     }
 
-    public virtual void Destruction()
+    private void Destruction()
     {
         Instantiate(m_ImpactEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    public void SetOwner(GameObject owner)
+    {
+        this.owner = owner;
     }
     
 }

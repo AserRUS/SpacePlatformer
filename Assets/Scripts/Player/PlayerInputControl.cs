@@ -2,46 +2,27 @@ using UnityEngine;
 
 public class PlayerInputControl : MonoBehaviour
 {
-    [SerializeField] private Weapon m_Turret;
-    [SerializeField] private Movement m_Movement;
+    [SerializeField] private Weapon m_Weapon;
+    [SerializeField] private Movement m_Movement;    
 
-    
+       
 
-    private void Update()
+    public void Jump()
     {
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            m_Movement?.Jump();
-        }
-        
-        
-        
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            m_Turret?.Fire();
-        }
-         
+        m_Movement?.Jump();
     }
 
-    private void FixedUpdate()
+    public void Fire()
     {
-        
-        if (Input.GetKey(KeyCode.A))
-        {
-            m_Movement?.SetDirection(-1);
-            m_Turret?.SetDirection(-1);
-        }
-            
-        else if (Input.GetKey(KeyCode.D))
-        {
-            m_Movement?.SetDirection(1);
-            m_Turret?.SetDirection(1);
-        }
-            
-        else
-            m_Movement?.SetDirection(0);
-        
-    }    
+        m_Weapon?.Fire();
+    }
 
+    public void SetMovementDirection(int direction)
+    {
+        m_Movement?.SetDirection(direction);
+    }
+    public void SetWeaponDirection(int direction)
+    {
+        m_Weapon?.SetDirection(direction);
+    }
 }
