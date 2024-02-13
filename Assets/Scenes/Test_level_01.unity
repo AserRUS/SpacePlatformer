@@ -4406,7 +4406,7 @@ MonoBehaviour:
   m_CameraSpeedX: 10
   m_CameraSpeedY: 7
   m_CameraBorderX: {x: -12.6, y: 84.33}
-  m_CameraBorderY: {x: -3.61, y: 35.38}
+  m_CameraBorderY: {x: -3.61, y: 15}
   m_Parallax: {fileID: 0}
 --- !u!1 &1972191896
 GameObject:
@@ -5040,6 +5040,10 @@ PrefabInstance:
     - target: {fileID: 1755331295311814219, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622425440277376832, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
+      propertyPath: timeDelayAfterLossPlayer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4622425440277376832, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
       propertyPath: patrolPoints.Array.data[0]

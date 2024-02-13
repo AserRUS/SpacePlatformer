@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BotController : MonoBehaviour
@@ -5,6 +6,7 @@ public class BotController : MonoBehaviour
     [SerializeField] private GameObject flipModel;
 
     [SerializeField] private float speed;
+    [SerializeField] private float timeDelayAfterLossPlayer;
 
     [Header("BotType")]
     [SerializeField] private BotType botType;
@@ -18,9 +20,11 @@ public class BotController : MonoBehaviour
     private BotWeapon botWeapon;
     private Transform targetPoint;
     private Transform detectedPlayer;
+    private bool detected = false;
     private BotBehavior behavior;
     private bool facingRight = true;
-    private bool detected = false;
+
+    private bool waitingPlayer = false;
 
     private void Start()
     {
@@ -61,16 +65,23 @@ public class BotController : MonoBehaviour
         }
         else
         {
-            if (botType == BotType.standing)
+            if (!waitingPlayer)
+            {
+                if (botType == BotType.standing)
+                {
+                    behavior = BotBehavior.stand;
+                    if (isFacingRight != facingRight)
+                        Flip();
+                }
+                if (botType == BotType.patrolling)
+                {
+                    behavior = BotBehavior.patrol;
+                    CheckRotation(targetPoint);
+                }
+            }
+            else
             {
                 behavior = BotBehavior.stand;
-                if (isFacingRight != facingRight)
-                    Flip();
-            }
-            if (botType == BotType.patrolling)
-            {
-                behavior = BotBehavior.patrol;
-                CheckRotation(targetPoint);
             }
         }
     }
@@ -133,6 +144,7 @@ public class BotController : MonoBehaviour
         {
             detectedPlayer = other.transform;
             detected = true;
+            waitingPlayer = true;
 
             Destructible dest = other.GetComponent<Destructible>();
             if (dest)
@@ -148,6 +160,7 @@ public class BotController : MonoBehaviour
         {
             detectedPlayer = null;
             detected = false;
+            StartCoroutine(WaitPlayerAfterLoss());
 
             Destructible dest = other.GetComponent<Destructible>();
             if (dest)
@@ -167,5 +180,11 @@ public class BotController : MonoBehaviour
             detectedPlayer = null;
             detected = false;
         }
+    }
+
+    IEnumerator WaitPlayerAfterLoss()
+    {
+        yield return new WaitForSeconds(timeDelayAfterLossPlayer);
+        waitingPlayer = false;
     }
 }
