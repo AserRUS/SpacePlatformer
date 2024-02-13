@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BotAnimatorController : MonoBehaviour
 {
+    [HideInInspector] public event UnityAction OnEndAttackAnim;
+
     private Animator animator;
     private Rigidbody rb;
 
@@ -27,5 +30,10 @@ public class BotAnimatorController : MonoBehaviour
     public void TurnOnAnimAttack()
     {
         animator.SetTrigger(attackParameter);
+    }
+
+    private void TurnOffAnimAttack()
+    {
+        OnEndAttackAnim?.Invoke();
     }
 }

@@ -110,7 +110,7 @@ public class BotController : MonoBehaviour
     private void Attack()
     {
         CheckRotation(detectedPlayer);
-        botWeapon.Attack(facingRight);
+        botWeapon.TryAttack(facingRight);
     }
 
 

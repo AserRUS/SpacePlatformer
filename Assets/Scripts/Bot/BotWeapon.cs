@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BotWeapon : MonoBehaviour
 {
+    [SerializeField] private BotAnimatorController animController;
+
     [Header("Ranged attack")]
     [SerializeField] private Projectile projectilePrefab;
     [SerializeField] private int maxNumberCartridges;
@@ -14,29 +16,33 @@ public class BotWeapon : MonoBehaviour
 
     private int numberCartridges;
     private bool shootAvailable;
-
+    private bool dirRight;
 
     private void Start()
     {
         shootAvailable = true;
         numberCartridges = maxNumberCartridges;
+
+        animController.OnEndAttackAnim += Shoot;
     }
 
-    public void Attack(bool dirRight)
+    private void OnDestroy()
+    {
+        animController.OnEndAttackAnim -= Shoot;
+    }
+
+    public void TryAttack(bool dirRight)
     {
         if (numberCartridges <= 0) return;
         if (!shootAvailable)  return;
 
-        CreateProjectile(dirRight);
+        this.dirRight = dirRight;
         numberCartridges -= 1;
         shootAvailable = false;
 
-        if (numberCartridges <= 0)
-            StartCoroutine(Shoot(timeRecharge));
-        else
-            StartCoroutine(Shoot(timeBetweenShots));
+        animController.TurnOnAnimAttack();
     }
-    IEnumerator Shoot(float time)
+    IEnumerator Reload(float time)
     {
         yield return new WaitForSeconds(time);
         shootAvailable = true;
@@ -45,7 +51,7 @@ public class BotWeapon : MonoBehaviour
             numberCartridges = maxNumberCartridges;
     }
 
-    private void CreateProjectile(bool dirRight)
+    private void Shoot()
     {
         Projectile projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
         projectile.transform.position = gameObject.transform.position;
@@ -56,6 +62,12 @@ public class BotWeapon : MonoBehaviour
             projectile.transform.up = new Vector2(-1, 0);
 
         projectile.SetOwner(transform.root.gameObject);
+
+
+        if (numberCartridges <= 0)
+            StartCoroutine(Reload(timeRecharge));
+        else
+            StartCoroutine(Reload(timeBetweenShots));
     }
 
     private void OnTriggerEnter(Collider other)
