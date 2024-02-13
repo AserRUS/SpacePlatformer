@@ -119,12 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff404080a6d120548a0f615256727108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animController: {fileID: 7895209244891511977}
   projectilePrefab: {fileID: 4807826845022091945, guid: 26e27eee04c58514aa8335e42f3c0f41, type: 3}
   maxNumberCartridges: 2
   timeBetweenShots: 1
   timeRecharge: 5
   meleeDamage: 100
-  animController: {fileID: 7895209244891511977}
 --- !u!1 &6162144884350269581
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +245,7 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
+  timeDelayAfterReachPoint: 3
   infelicity: 0.1
 --- !u!1 &8848066812530824249
 GameObject:

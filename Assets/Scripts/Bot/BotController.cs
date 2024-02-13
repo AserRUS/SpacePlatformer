@@ -14,6 +14,7 @@ public class BotController : MonoBehaviour
     [SerializeField] private bool isFacingRight = true;
     [Header("If type partol")]
     [SerializeField] private Transform[] patrolPoints;
+    [SerializeField] private float timeDelayAfterReachPoint;
     [SerializeField] private float infelicity = 0.1f;
 
     private Rigidbody rb;
@@ -94,7 +95,9 @@ public class BotController : MonoBehaviour
         if (distance <= infelicity)
         {
             SetNextTargetPoint();
-            CheckRotation(targetPoint);
+            waitingPlayer = true;
+            StartCoroutine(WaitPlayer(timeDelayAfterReachPoint));
+            //CheckRotation(targetPoint);
         }
 
         if (!facingRight)
@@ -160,7 +163,7 @@ public class BotController : MonoBehaviour
         {
             detectedPlayer = null;
             detected = false;
-            StartCoroutine(WaitPlayerAfterLoss());
+            StartCoroutine(WaitPlayer(timeDelayAfterLossPlayer));
 
             Destructible dest = other.GetComponent<Destructible>();
             if (dest)
@@ -182,9 +185,10 @@ public class BotController : MonoBehaviour
         }
     }
 
-    IEnumerator WaitPlayerAfterLoss()
+    IEnumerator WaitPlayer(float time)
     {
-        yield return new WaitForSeconds(timeDelayAfterLossPlayer);
+        yield return new WaitForSeconds(time);
         waitingPlayer = false;
+        CheckRotation(targetPoint);
     }
 }
