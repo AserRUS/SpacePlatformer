@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 2271126811815795548}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0344, y: 0.2424, z: 0}
-  m_LocalScale: {x: 1.7698302, y: 0.35, z: 0.35}
+  m_LocalPosition: {x: 0.406, y: 0.2424, z: 0}
+  m_LocalScale: {x: 1.272862, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7194600820550681784}
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Gunpoint: {fileID: 7194600820550681784}
   m_Flash: {fileID: 0}
   m_ShotSound: {fileID: 0}
+  m_PlayerMovement: {fileID: 6635528274249280128}
 --- !u!1 &6418860500129791720
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,15 +313,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2abbf8f3edd5ba41a40e00779cac327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RotationSpeed: 1000
   m_GroundSpeed: 10000
   m_AirSpeed: 3000
   m_MaxSpeed: 10
-  m_RayDistance: 1.5
+  m_RayDistance: 1.3
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 64
-  m_JumpForce: 45
+  m_JumpForce: {x: 30, y: 50}
   m_MaxJumpCount: 2
+  m_StunTime: 0.1
 --- !u!114 &4424252087285713366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,7 +489,7 @@ Transform:
   m_GameObject: {fileID: 7833588509169593310}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.615, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

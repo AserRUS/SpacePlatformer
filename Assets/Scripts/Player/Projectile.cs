@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float m_Velosity;
     [SerializeField] private GameObject m_ImpactEffect;
     [SerializeField] private float m_LifeTime;
+    [SerializeField] private LayerMask m_LayerMask;
 
     private GameObject owner;
     private const float RayAdvance = 1.1f;
@@ -36,8 +37,9 @@ public class Projectile : MonoBehaviour
     {
         if (isHit == true) return;
 
-        if (Physics.Raycast(transform.position, transform.up, out raycastHit, m_Velosity * Time.deltaTime * RayAdvance))
+        if (Physics.Raycast(transform.position, transform.up, out raycastHit, m_Velosity * Time.deltaTime * RayAdvance, m_LayerMask))
         {
+            transform.position = raycastHit.point;
             Destructible dest = raycastHit.transform.GetComponent<Destructible>();
             if (dest != null)
             {

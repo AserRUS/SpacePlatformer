@@ -3,8 +3,9 @@ using UnityEngine;
 public class PlayerInputControl : MonoBehaviour
 {
     [SerializeField] private Weapon m_Weapon;
-    [SerializeField] private Movement m_Movement;
     [SerializeField] private ShieldController m_Shield;
+    [SerializeField] private PlayerMovement m_Movement;    
+
 
     public void Jump()
     {
@@ -21,12 +22,17 @@ public class PlayerInputControl : MonoBehaviour
         m_Shield?.UseShield(timeClamp);
     }
 
-    public void SetMovementDirection(int direction)
+    public void RotateLeft()
     {
-        m_Movement?.SetDirection(direction);
+        m_Movement?.RotateLeft();
     }
-    public void SetWeaponDirection(int direction)
+    public void RotateRight()
     {
-        m_Weapon?.SetDirection(direction);
+        m_Movement?.RotateRight();
+    }
+
+    public void Move(bool isMove)
+    {
+        m_Movement?.Move(isMove);
     }
 }
