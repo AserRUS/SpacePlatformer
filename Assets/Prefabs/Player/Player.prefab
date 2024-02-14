@@ -216,9 +216,10 @@ GameObject:
   - component: {fileID: 4424252087285713366}
   - component: {fileID: 1222894124470886122}
   - component: {fileID: -1280477931828914312}
+  - component: {fileID: 7116685210739030965}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -337,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Weapon: {fileID: 1882104981520944154}
   m_Movement: {fileID: 6635528274249280128}
+  m_Shield: {fileID: 7116685210739030965}
 --- !u!114 &1222894124470886122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +366,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxEnergy: 100
+--- !u!114 &7116685210739030965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6418860500129791720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97cb2f9232f04441911f7aab0dd87cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weakShieldPrefab: {fileID: 651195320888216347, guid: 5108bd61454037b47a9a3391f7f6dd19, type: 3}
+  strongShieldPrefab: {fileID: 8204943117908484730, guid: b431540d55fbf5c478e4a2b94084c0c7, type: 3}
+  player: {fileID: 1222894124470886122}
 --- !u!1 &6617697353733330619
 GameObject:
   m_ObjectHideFlags: 0

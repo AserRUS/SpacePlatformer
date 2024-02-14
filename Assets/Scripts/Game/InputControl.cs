@@ -5,6 +5,10 @@ using UnityEngine;
 public class InputControl : MonoBehaviour
 {
     private PlayerInputControl playerInputControl;
+
+    private float mouse1ButtonClamp = 0;
+    private float timeLimitForMouse1Clamp = 1f;
+
     private void Update()
     {
         if (Application.isEditor)
@@ -19,6 +23,23 @@ public class InputControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Fire();
+            }
+
+            if (Input.GetKey(KeyCode.Mouse1))
+            {
+                mouse1ButtonClamp += Time.deltaTime;
+
+                if (mouse1ButtonClamp > timeLimitForMouse1Clamp)
+                {
+                    UseShield(mouse1ButtonClamp);
+                    mouse1ButtonClamp = 0;
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.Mouse1))
+            {
+                UseShield(mouse1ButtonClamp);
+                mouse1ButtonClamp = 0;
             }
         }
            
@@ -57,6 +78,11 @@ public class InputControl : MonoBehaviour
     public void Fire()
     {
         playerInputControl?.Fire();
+    }
+
+    public void UseShield(float timeClamp)
+    {
+        playerInputControl.UseShield(timeClamp);
     }
 
     public void RotateLeft()

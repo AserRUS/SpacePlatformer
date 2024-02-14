@@ -3,9 +3,9 @@ using UnityEngine;
 public class PlayerInputControl : MonoBehaviour
 {
     [SerializeField] private Weapon m_Weapon;
+    [SerializeField] private ShieldController m_Shield;
     [SerializeField] private PlayerMovement m_Movement;    
 
-       
 
     public void Jump()
     {
@@ -15,6 +15,11 @@ public class PlayerInputControl : MonoBehaviour
     public void Fire()
     {
         m_Weapon?.Fire();
+    }
+
+    public void UseShield(float timeClamp)
+    {
+        m_Shield?.UseShield(timeClamp);
     }
 
     public void RotateLeft()
