@@ -7,15 +7,22 @@ public class Thorns : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destructible dest = collision.transform.GetComponent<Destructible>();
-        if (dest != null)
+        Player player = collision.transform.GetComponent<Player>();
+        if (player != null)
         {
-            dest.RemoveHitpoints(m_Damage, gameObject);
+            player.RemoveHitpoints(m_Damage, gameObject);
 
             Rigidbody rb = collision.transform.GetComponent<Rigidbody>();
             if (rb != null)
             {
+                rb.velocity = Vector3.zero;
                 rb.AddForce((Vector2)(collision.transform.position - transform.position).normalized * m_ImactForce, ForceMode.Impulse);
+            }
+
+            PlayerMovement playerMovement = collision.transform.GetComponent<PlayerMovement>();
+            if(playerMovement != null)
+            {
+                playerMovement.Stun();
             }
         }
 

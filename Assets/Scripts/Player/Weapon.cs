@@ -10,8 +10,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform m_Gunpoint;   
     [SerializeField] private ParticleSystem m_Flash;
     [SerializeField] private AudioClip m_ShotSound;
-
-    private int direction = 1;
+    [SerializeField] private PlayerMovement m_PlayerMovement;
+    
     private AudioSource m_Audio; 
     private float m_RefireTimer;
     
@@ -29,19 +29,16 @@ public class Weapon : MonoBehaviour
 
     public void Fire()
     {
+        if (m_PlayerMovement.IsRotation == true) return;
         if (m_RefireTimer > 0) return;     
         Projectile projectile = Instantiate(m_ProjectilePrefab).GetComponent<Projectile>();
         projectile.transform.position = m_Gunpoint.position;
-        projectile.transform.up = new Vector2(direction, 0);
+        projectile.transform.up = transform.right;
         projectile.SetOwner(transform.root.gameObject);
         
         //m_Flash.Play();
         //m_Audio.PlayOneShot(m_ShotSound);
         m_RefireTimer = m_RateOfFire;
-    }
-    public void SetDirection(int dir)
-    {
-        direction = dir;
-    }
+    }    
 }
 

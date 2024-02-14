@@ -28,46 +28,50 @@ public class InputControl : MonoBehaviour
     {
         if (Application.isEditor)
         {
-            if (playerInputControl == null) return;
-
             if (Input.GetKey(KeyCode.A))
             {
-                SetMovementDirection(-1);
-                SetWeaponDirection(-1);
+                RotateLeft();
+                Move(true);
             }
 
             else if (Input.GetKey(KeyCode.D))
             {
-                SetMovementDirection(1);
-                SetWeaponDirection(1);
+                RotateRight();
+                Move(true);
             }
 
             else
-                SetMovementDirection(0);
-        }
-        
+            {
+                Move(false);
+            }
+            
+        }     
 
     }
 
     public void Jump()
     {
-        playerInputControl.Jump();
+        playerInputControl?.Jump();
     }
 
     public void Fire()
     {
-        playerInputControl.Fire();
+        playerInputControl?.Fire();
     }
 
-    public void SetMovementDirection(int direction)
+    public void RotateLeft()
     {
-        playerInputControl.SetMovementDirection(direction);
+        playerInputControl?.RotateLeft();
     }
-    public void SetWeaponDirection(int direction)
+    public void RotateRight()
     {
-        playerInputControl.SetWeaponDirection(direction);
+        playerInputControl?.RotateRight();
     }
 
+    public void Move(bool isMove)
+    {
+        playerInputControl?.Move(isMove);
+    }
 
     public void SetPlayerInputControl(PlayerInputControl playerInputControl)
     {
