@@ -4152,6 +4152,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831695430}
   m_CullTransparentMesh: 1
+--- !u!1 &1894297095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5382330812186840719, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
+  m_PrefabInstance: {fileID: 4405219811195059733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1911905006
 GameObject:
   m_ObjectHideFlags: 0
@@ -5085,6 +5090,10 @@ PrefabInstance:
       value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 4622425440277376832, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
+      propertyPath: flipCollider
+      value: 
+      objectReference: {fileID: 1894297095}
+    - target: {fileID: 4622425440277376832, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
       propertyPath: timeDelayAfterLossPlayer
       value: 5
       objectReference: {fileID: 0}
@@ -5107,6 +5116,34 @@ PrefabInstance:
     - target: {fileID: 6162144884350269581, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704487545133089975, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704487545133089975, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884329430062044611, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0725315
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884329430062044611, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
+      propertyPath: m_Size.z
+      value: 6.42504
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884329430062044611, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
+      propertyPath: m_Center.x
+      value: 4.085362e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884329430062044611, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884329430062044611, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
+      propertyPath: m_Center.z
+      value: 2.2874813
       objectReference: {fileID: 0}
     - target: {fileID: 7895209244891511977, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
       propertyPath: m_Enabled

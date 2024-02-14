@@ -4,6 +4,7 @@ using UnityEngine;
 public class BotController : MonoBehaviour
 {
     [SerializeField] private GameObject flipModel;
+    [SerializeField] private GameObject flipCollider;
 
     [SerializeField] private float speed;
     [SerializeField] private float timeDelayAfterLossPlayer;
@@ -123,6 +124,7 @@ public class BotController : MonoBehaviour
         Vector3 scale = flipModel.transform.localScale;
         scale.z *= -1;
         flipModel.transform.localScale = scale;
+        flipCollider.transform.localScale = scale;
     }
 
     private void SetNextTargetPoint()

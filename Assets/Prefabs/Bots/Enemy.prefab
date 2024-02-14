@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5382330812186840719}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.98, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51,8 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.6, z: 11}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.4191751, z: 6.322076}
+  m_Center: {x: 4.816951e-15, y: -1.4874511, z: 2.3389623}
 --- !u!1 &5722618545235363737
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipModel: {fileID: 8848066812530824249}
+  flipCollider: {fileID: 5382330812186840719}
   speed: 2
   timeDelayAfterLossPlayer: 3
   botType: 1
