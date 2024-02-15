@@ -4,6 +4,7 @@ using UnityEngine;
 public class Pauser : MonoBehaviour
 {
     [SerializeField] private GameObject m_PausePanel;
+    [SerializeField] private GameObject[] m_ClosingPanels;
 
     private bool isPause;
 
@@ -26,6 +27,10 @@ public class Pauser : MonoBehaviour
     {
         isPause = false;
         m_PausePanel.SetActive(false);
+        for (int i = 0; i < m_ClosingPanels.Length; i++)
+        {
+            m_ClosingPanels[i].SetActive(false);
+        }
         Time.timeScale = 1.0f;
     }
 
