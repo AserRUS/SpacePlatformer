@@ -4,8 +4,11 @@ using UnityEngine;
 public class Shield : Destructible
 {
     [SerializeField] private float lifeTime;
+    [SerializeField] private int requiredEnergy;
 
     private Shield shield;
+
+    public int RequiredEnergy => requiredEnergy;
 
     protected override void Start()
     {

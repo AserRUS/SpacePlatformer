@@ -121,3 +121,4 @@ MonoBehaviour:
   m_MaxHitPoints: 50
   m_DeathEffect: {fileID: 7401727948457227951, guid: 093474ce8bd662345bb1b691aa1728b7, type: 3}
   lifeTime: 5
+  requiredEnergy: 50

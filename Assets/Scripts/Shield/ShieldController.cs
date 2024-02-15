@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
-    [SerializeField] private Destructible weakShieldPrefab;
-    [SerializeField] private Destructible strongShieldPrefab;
+    [SerializeField] private Shield weakShieldPrefab;
+    [SerializeField] private Shield strongShieldPrefab;
 
     private Player player;
+    private EnergyStorage energyStorage;
     private Destructible shield;
     private float timeLimitForStrongShield = 1f;
     private bool shieldActive;
@@ -13,6 +14,7 @@ public class ShieldController : MonoBehaviour
     private void Start()
     {
         player = GetComponent<Player>();
+        energyStorage = GetComponent<EnergyStorage>();
         shieldActive = false;
         player.DeathEvent += OnPlayerDeath;
     }
@@ -36,11 +38,21 @@ public class ShieldController : MonoBehaviour
 
         if (timeClamp > timeLimitForStrongShield)
         {
+            if (energyStorage.CurrentEnergy <= strongShieldPrefab.RequiredEnergy)
+                return;
+
+            energyStorage.RemoveEnergy(strongShieldPrefab.RequiredEnergy);
+
             shield = Instantiate(strongShieldPrefab, player.transform.position, 
                 Quaternion.identity).GetComponent<Destructible>();
         }
         else
         {
+            if (energyStorage.CurrentEnergy <= weakShieldPrefab.RequiredEnergy)
+                return;
+
+            energyStorage.RemoveEnergy(weakShieldPrefab.RequiredEnergy);
+
             shield = Instantiate(weakShieldPrefab, player.transform.position, 
                 Quaternion.identity).GetComponent<Destructible>();
         }

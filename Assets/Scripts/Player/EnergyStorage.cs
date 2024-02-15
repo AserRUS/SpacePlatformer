@@ -5,6 +5,7 @@ public class EnergyStorage : MonoBehaviour
 {
     public event UnityAction<int> EnergyChangeEvent;
     public int MaxEnergy => m_MaxEnergy;
+    public int CurrentEnergy => currentEnergy;
 
 
     [SerializeField] private int m_MaxEnergy;
