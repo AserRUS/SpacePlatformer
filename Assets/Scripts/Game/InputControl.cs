@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InputControl : MonoBehaviour
 {
+    [SerializeField] private ImageChangingTransparency shieldButton;
+
     private PlayerInputControl playerInputControl;
 
     private float mouse1ButtonClamp = 0;
@@ -25,6 +27,14 @@ public class InputControl : MonoBehaviour
                 Fire();
             }
 
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                mouse1ButtonClamp += Time.deltaTime;
+                
+                if (shieldButton)
+                    shieldButton.RemoveTransparency();
+            }
+
             if (Input.GetKey(KeyCode.Mouse1))
             {
                 mouse1ButtonClamp += Time.deltaTime;
@@ -40,6 +50,9 @@ public class InputControl : MonoBehaviour
             {
                 UseShield(mouse1ButtonClamp);
                 mouse1ButtonClamp = 0;
+
+                if (shieldButton)
+                    shieldButton.AddTransparency();
             }
         }
            

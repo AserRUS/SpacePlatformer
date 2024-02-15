@@ -191,6 +191,8 @@ public class BotController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         waitingPlayer = false;
-        CheckRotation(targetPoint);
+
+        if (botType == BotType.patrolling)
+            CheckRotation(targetPoint);
     }
 }
