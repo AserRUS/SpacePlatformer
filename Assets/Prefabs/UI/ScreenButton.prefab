@@ -335,7 +335,8 @@ GameObject:
   - component: {fileID: 1568145707875086325}
   - component: {fileID: 7223676777498016090}
   - component: {fileID: 3111937934278155399}
-  - component: {fileID: 2751405936102671273}
+  - component: {fileID: 1389923859993781361}
+  - component: {fileID: 5628407665811815128}
   m_Layer: 5
   m_Name: 'ButtonAttack '
   m_TagString: Untagged
@@ -401,7 +402,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2751405936102671273
+--- !u!114 &1389923859993781361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -410,16 +411,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 3038205966609823667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c12396bb9b0629b46b29c22eee815310, type: 3}
+  m_Script: {fileID: 11500000, guid: 566adb5a0e53ef44787242f12b087f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTransparency: 30
+  maxTransparency: 100
+--- !u!114 &5628407665811815128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038205966609823667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8789210e52a082742933866fed2ae515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interactable: 1
   OnPointerDownEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InputControl, Assembly-CSharp
-        m_MethodName: Fire
+      - m_Target: {fileID: 1389923859993781361}
+        m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
+        m_MethodName: RemoveTransparency
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -431,7 +446,21 @@ MonoBehaviour:
         m_CallState: 2
   OnPointerUpEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1389923859993781361}
+        m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
+        m_MethodName: AddTransparency
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  inputControl: {fileID: 0}
+  type: 1
 --- !u!1 &3359580095283685473
 GameObject:
   m_ObjectHideFlags: 0

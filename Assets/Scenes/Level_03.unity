@@ -343,6 +343,7 @@ MonoBehaviour:
   RespawnTime: 1
   m_UIHealth: {fileID: 80339034}
   m_UIEnergy: {fileID: 2110776930}
+  m_UICartridge: {fileID: 7660628405758903989}
 --- !u!4 &577071489
 Transform:
   m_ObjectHideFlags: 0
@@ -1171,6 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldButton: {fileID: 1416414980}
+  attackButton: {fileID: 5903241319434690924}
 --- !u!4 &1588184801
 Transform:
   m_ObjectHideFlags: 0
@@ -1885,6 +1887,10 @@ PrefabInstance:
       propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1588184800}
+    - target: {fileID: 5628407665811815128, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: inputControl
+      value: 
+      objectReference: {fileID: 1588184800}
     - target: {fileID: 6076612459150205654, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
       propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1906,6 +1912,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+--- !u!114 &5903241319434690924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1389923859993781361, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+  m_PrefabInstance: {fileID: 5903241319434690923}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566adb5a0e53ef44787242f12b087f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7660628405758903988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1917,6 +1934,10 @@ PrefabInstance:
     - target: {fileID: 1127554312968848303, guid: 3d0b03e80d0f14e49bfd8a1c94ff1708, type: 3}
       propertyPath: m_Name
       value: PlayerState
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145137339611025918, guid: 3d0b03e80d0f14e49bfd8a1c94ff1708, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1395668394797666191, guid: 3d0b03e80d0f14e49bfd8a1c94ff1708, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2015,6 +2036,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0b03e80d0f14e49bfd8a1c94ff1708, type: 3}
+--- !u!114 &7660628405758903989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5991388342806953146, guid: 3d0b03e80d0f14e49bfd8a1c94ff1708, type: 3}
+  m_PrefabInstance: {fileID: 7660628405758903988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22cb12eab065c4542a9c1a98f0398ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

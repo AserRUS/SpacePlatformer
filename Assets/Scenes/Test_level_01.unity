@@ -391,70 +391,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: f8cbfd0943a69204a8916bdac3edc93e, type: 3}
---- !u!1 &128441505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3038205966609823667, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+--- !u!114 &128441511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1389923859993781361, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
   m_PrefabInstance: {fileID: 2013004127}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &128441510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128441505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8789210e52a082742933866fed2ae515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Interactable: 1
-  OnPointerDownEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 128441511}
-        m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
-        m_MethodName: RemoveTransparency
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnPointerUpEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 128441511}
-        m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
-        m_MethodName: AddTransparency
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  inputControl: {fileID: 1588184800}
-  type: 1
---- !u!114 &128441511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128441505}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 566adb5a0e53ef44787242f12b087f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTransparency: 30
-  maxTransparency: 100
 --- !u!1 &272213488
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,10 +3332,10 @@ PrefabInstance:
       propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1588184800}
-    - target: {fileID: 5275673947730303913, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
-      propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RotateLeft
-      objectReference: {fileID: 0}
+    - target: {fileID: 5628407665811815128, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: inputControl
+      value: 
+      objectReference: {fileID: 1588184800}
     - target: {fileID: 6076612459150205654, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
       propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3405,21 +3352,10 @@ PrefabInstance:
       propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1588184800}
-    - target: {fileID: 7522520836096553050, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
-      propertyPath: OnPointerUpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2751405936102671273, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3038205966609823667, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 128441511}
-    - targetCorrespondingSourceObject: {fileID: 3038205966609823667, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 128441510}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
 --- !u!1 &2069783034
 GameObject:
