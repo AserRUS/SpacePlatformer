@@ -4,9 +4,9 @@ public class ShieldController : MonoBehaviour
 {
     [SerializeField] private Shield weakShieldPrefab;
     [SerializeField] private Shield strongShieldPrefab;
+    [SerializeField] private Storage energyStorage;
 
-    private Player player;
-    private Storage energyStorage;
+    private Player player;    
     private Destructible shield;
     private float timeLimitForStrongShield = 1f;
     private bool shieldActive;
@@ -14,7 +14,6 @@ public class ShieldController : MonoBehaviour
     private void Start()
     {
         player = GetComponent<Player>();
-        energyStorage = GetComponent<Storage>();
         shieldActive = false;
         player.DeathEvent += OnPlayerDeath;
     }
@@ -38,7 +37,7 @@ public class ShieldController : MonoBehaviour
 
         if (timeClamp > timeLimitForStrongShield)
         {
-            if (energyStorage.CurrentValue <= strongShieldPrefab.RequiredEnergy)
+            if (energyStorage.CurrentValue < strongShieldPrefab.RequiredEnergy)
                 return;
 
             energyStorage.RemoveValue(strongShieldPrefab.RequiredEnergy);
@@ -48,7 +47,7 @@ public class ShieldController : MonoBehaviour
         }
         else
         {
-            if (energyStorage.CurrentValue <= weakShieldPrefab.RequiredEnergy)
+            if (energyStorage.CurrentValue < weakShieldPrefab.RequiredEnergy)
                 return;
 
             energyStorage.RemoveValue(weakShieldPrefab.RequiredEnergy);

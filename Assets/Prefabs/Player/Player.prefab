@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Flash: {fileID: 0}
   m_ShotSound: {fileID: 0}
   m_PlayerMovement: {fileID: 6635528274249280128}
-  requiredEnergy: 0
+  requiredEnergy: 25
 --- !u!1 &6418860500129791720
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weakShieldPrefab: {fileID: 651195320888216347, guid: 5108bd61454037b47a9a3391f7f6dd19, type: 3}
   strongShieldPrefab: {fileID: 8204943117908484730, guid: b431540d55fbf5c478e4a2b94084c0c7, type: 3}
+  energyStorage: {fileID: -1280477931828914312}
 --- !u!114 &2245914384683383572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,6 +596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weakWeapon: {fileID: 1882104981520944154}
   strongWeapon: {fileID: 3835663843032869438}
+  cartridgeStorage: {fileID: 2854474053547608883}
 --- !u!1 &6617697353733330619
 GameObject:
   m_ObjectHideFlags: 0
