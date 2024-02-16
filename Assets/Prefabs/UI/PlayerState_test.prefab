@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 1755169524103654110}
   - component: {fileID: 1299010017537694078}
   m_Layer: 5
-  m_Name: PlayerState
+  m_Name: PlayerState_test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
