@@ -6,7 +6,8 @@ public class Barrel : Destructible
     private enum BarretType
     {
         EnergyBarrel,
-        HitPointBarrel
+        HitPointBarrel,
+        CartridgeBarrel
     }
 
     [SerializeField] private float m_LifeTime;
@@ -55,10 +56,32 @@ public class Barrel : Destructible
         }
         if (m_BarrelType == BarretType.EnergyBarrel)
         {
-            EnergyStorage energyStorage = owner.GetComponent<EnergyStorage>();
-            if (energyStorage != null)
+            Storage[] storages = owner.GetComponents<Storage>();
+
+            if (storages != null)
             {
-                energyStorage.AddEnergy(m_AddedValue);
+                foreach (Storage storage in storages)
+                {
+                    if (storage.StorageType == StorageType.Energy)
+                    {
+                        storage.AddValue(m_AddedValue);
+                    }
+                }
+            }
+        }
+        if (m_BarrelType == BarretType.CartridgeBarrel)
+        {
+            Storage[] storages = owner.GetComponents<Storage>();
+
+            if (storages != null)
+            {
+                foreach (Storage storage in storages)
+                {
+                    if (storage.StorageType == StorageType.Cartridge)
+                    {
+                        storage.AddValue(m_AddedValue);
+                    }
+                }
             }
         }
     }

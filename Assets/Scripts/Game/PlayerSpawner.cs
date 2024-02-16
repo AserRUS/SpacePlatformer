@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.UI.GridLayoutGroup;
 
 public class PlayerSpawner : EntitySpawner
 {
@@ -8,6 +9,7 @@ public class PlayerSpawner : EntitySpawner
     [SerializeField] private float RespawnTime;
     [SerializeField] private UIState m_UIHealth;
     [SerializeField] private UIState m_UIEnergy;
+    [SerializeField] private UIState m_UICartridge;
 
     private Player player;
 
@@ -29,12 +31,24 @@ public class PlayerSpawner : EntitySpawner
             player.HitPointChangeEvent += m_UIHealth.ValueChange;
         }        
 
-        EnergyStorage energyStorage = entity.GetComponent<EnergyStorage>();
-        if (energyStorage != null) 
+        Storage[] storages = entity.GetComponents<Storage>();
+        if (storages != null)
         {
-            m_UIEnergy.SetMaxValue(energyStorage.MaxEnergy);
-            energyStorage.EnergyChangeEvent += m_UIEnergy.ValueChange;
-        }        
+            foreach (Storage storage in storages)
+            {
+                if (storage.StorageType == StorageType.Energy)
+                {
+                    m_UIEnergy.SetMaxValue(storage.MaxValue);
+                    storage.StorageChangeEvent += m_UIEnergy.ValueChange;
+                }
+
+                if (storage.StorageType == StorageType.Cartridge)
+                {
+                    m_UICartridge.SetMaxValue(storage.MaxValue);
+                    storage.StorageChangeEvent += m_UICartridge.ValueChange;
+                }
+            }
+        }
 
         PlayerInputControl playerInputControl = entity.GetComponent<PlayerInputControl>();
         if (playerInputControl != null)

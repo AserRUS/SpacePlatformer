@@ -6,7 +6,7 @@ public class ShieldController : MonoBehaviour
     [SerializeField] private Shield strongShieldPrefab;
 
     private Player player;
-    private EnergyStorage energyStorage;
+    private Storage energyStorage;
     private Destructible shield;
     private float timeLimitForStrongShield = 1f;
     private bool shieldActive;
@@ -14,7 +14,7 @@ public class ShieldController : MonoBehaviour
     private void Start()
     {
         player = GetComponent<Player>();
-        energyStorage = GetComponent<EnergyStorage>();
+        energyStorage = GetComponent<Storage>();
         shieldActive = false;
         player.DeathEvent += OnPlayerDeath;
     }
@@ -38,20 +38,20 @@ public class ShieldController : MonoBehaviour
 
         if (timeClamp > timeLimitForStrongShield)
         {
-            if (energyStorage.CurrentEnergy <= strongShieldPrefab.RequiredEnergy)
+            if (energyStorage.CurrentValue <= strongShieldPrefab.RequiredEnergy)
                 return;
 
-            energyStorage.RemoveEnergy(strongShieldPrefab.RequiredEnergy);
+            energyStorage.RemoveValue(strongShieldPrefab.RequiredEnergy);
 
             shield = Instantiate(strongShieldPrefab, player.transform.position, 
                 Quaternion.identity).GetComponent<Destructible>();
         }
         else
         {
-            if (energyStorage.CurrentEnergy <= weakShieldPrefab.RequiredEnergy)
+            if (energyStorage.CurrentValue <= weakShieldPrefab.RequiredEnergy)
                 return;
 
-            energyStorage.RemoveEnergy(weakShieldPrefab.RequiredEnergy);
+            energyStorage.RemoveValue(weakShieldPrefab.RequiredEnergy);
 
             shield = Instantiate(weakShieldPrefab, player.transform.position, 
                 Quaternion.identity).GetComponent<Destructible>();
