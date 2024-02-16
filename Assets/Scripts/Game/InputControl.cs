@@ -1,13 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputControl : MonoBehaviour
 {
     [SerializeField] private ImageChangingTransparency shieldButton;
+    [SerializeField] private ImageChangingTransparency attackButton;
 
     private PlayerInputControl playerInputControl;
 
+
+    private float mouse0ButtonClamp = 0;
+    private float timeLimitForMouse0Clamp = 1f;
     private float mouse1ButtonClamp = 0;
     private float timeLimitForMouse1Clamp = 1f;
 
@@ -22,11 +24,37 @@ public class InputControl : MonoBehaviour
                 Jump();
             }
 
+            #region Mouse0
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Fire();
+                mouse0ButtonClamp += Time.deltaTime;
+
+                if (attackButton)
+                    attackButton.RemoveTransparency();
             }
 
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                mouse0ButtonClamp += Time.deltaTime;
+
+                if (mouse0ButtonClamp > timeLimitForMouse0Clamp)
+                {
+                    UseAttack(mouse0ButtonClamp);
+                    mouse0ButtonClamp = 0;
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                UseAttack(mouse0ButtonClamp);
+                mouse0ButtonClamp = 0;
+
+                if (attackButton)
+                    attackButton.AddTransparency();
+            }
+            #endregion
+
+            #region Mouse1
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 mouse1ButtonClamp += Time.deltaTime;
@@ -54,8 +82,9 @@ public class InputControl : MonoBehaviour
                 if (shieldButton)
                     shieldButton.AddTransparency();
             }
+            #endregion
         }
-           
+
     }
 
     private void FixedUpdate()
@@ -88,9 +117,9 @@ public class InputControl : MonoBehaviour
         playerInputControl?.Jump();
     }
 
-    public void Fire()
+    public void UseAttack(float timeClamp)
     {
-        playerInputControl?.Fire();
+        playerInputControl?.UseAttack(timeClamp);
     }
 
     public void UseShield(float timeClamp)

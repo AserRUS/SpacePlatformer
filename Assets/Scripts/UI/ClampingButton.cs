@@ -39,6 +39,6 @@ public class ClampingButton : UIButton
 
     public void UseAttack(float time)
     {
-
+        inputControl.UseAttack(time);
     }
 }
