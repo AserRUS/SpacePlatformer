@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -7,6 +8,7 @@ public class Pauser : MonoBehaviour
     [SerializeField] private GameObject[] m_ClosingPanels;
 
     private bool isPause;
+    private bool isFinish = false;
 
     
     private void Update()
@@ -35,7 +37,8 @@ public class Pauser : MonoBehaviour
     }
 
     public void ChangePauseState()
-    {       
+    {
+        if (isFinish == true) return;
 
         if (isPause == true)
         {            
@@ -47,5 +50,11 @@ public class Pauser : MonoBehaviour
         }
 
        
+    }
+
+    internal void SetFinish()
+    {
+        isFinish = true;
+        UnPause();
     }
 }
