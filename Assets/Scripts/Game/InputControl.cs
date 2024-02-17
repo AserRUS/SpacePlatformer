@@ -11,6 +11,8 @@ public class InputControl : MonoBehaviour
     private float mouse1ButtonClamp = 0;
     private float timeLimitForMouse1Clamp = 1f;
 
+    private bool isInputControlEnabled = true;
+
     private void Update()
     {
         if (Application.isEditor)
@@ -85,35 +87,46 @@ public class InputControl : MonoBehaviour
 
     public void Jump()
     {
+        if (isInputControlEnabled == false) return;
         playerInputControl?.Jump();
     }
 
     public void Fire()
     {
+        if (isInputControlEnabled == false) return;
         playerInputControl?.Fire();
     }
 
     public void UseShield(float timeClamp)
     {
+        if (isInputControlEnabled == false) return;
         playerInputControl.UseShield(timeClamp);
     }
 
     public void RotateLeft()
     {
+        if (isInputControlEnabled == false) return;
         playerInputControl?.RotateLeft();
     }
     public void RotateRight()
     {
+        if (isInputControlEnabled == false) return;
         playerInputControl?.RotateRight();
     }
 
     public void Move(bool isMove)
     {
+        if (isInputControlEnabled == false) return;
         playerInputControl?.Move(isMove);
     }
 
     public void SetPlayerInputControl(PlayerInputControl playerInputControl)
     {
         this.playerInputControl = playerInputControl;
+    }
+
+    public void InputControlEnabled(bool value)
+    {
+        isInputControlEnabled = value;
     }
 }

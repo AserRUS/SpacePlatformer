@@ -3690,11 +3690,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870e5cd4e559bc74098919ad4953b54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CameraSpeedX: 10
-  m_CameraSpeedY: 7
+  m_CameraMode: 0
   m_CameraBorderX: {x: -12.6, y: 84.33}
-  m_CameraBorderY: {x: -3.61, y: 15}
+  m_CameraBorderY: {x: -3.61, y: 35.38}
   m_Parallax: {fileID: 0}
+  m_SpeedFollow: {x: 10, y: 5}
+  m_FlightSpeed: {x: 15, y: 5}
+  m_SpeedCurve:
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.001
+        inSlope: -0.19566748
+        outSlope: -0.19566748
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.034165177
+      - serializedVersion: 3
+        time: 0.3
+        value: 1
+        inSlope: 0.009224274
+        outSlope: 0.009224274
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 1
+      - serializedVersion: 3
+        time: 0.95
+        value: 1
+        inSlope: -0.009191914
+        outSlope: -0.009191914
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.01
+        inSlope: -19.799995
+        outSlope: -19.799995
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    duration: 1
 --- !u!1 &1972191896
 GameObject:
   m_ObjectHideFlags: 0

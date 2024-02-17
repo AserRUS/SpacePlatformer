@@ -23,7 +23,7 @@ public class PlayerSpawner : EntitySpawner
         player = entity.GetComponent<Player>();
         if (player != null) 
         {            
-            m_CameraController.SetTarget(player.transform);
+            m_CameraController.SetCameraFollowTarget(player.transform);
             player.DeathEvent += Respawn;
             m_UIHealth.SetMaxValue(player.MaxHitPoints);
             player.HitPointChangeEvent += m_UIHealth.ValueChange;

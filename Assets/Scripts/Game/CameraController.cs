@@ -1,36 +1,91 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CameraController : MonoBehaviour
 {
-    
-    [SerializeField] private float m_CameraSpeedX;
-    [SerializeField] private float m_CameraSpeedY;
+    private enum CameraMode
+    {
+        FollowMode,
+        FlightMode
+    }
+
+    public event UnityAction FlightFinishEvent;
+
+    [SerializeField] private CameraMode m_CameraMode;
+
     [SerializeField] private Vector2 m_CameraBorderX;
     [SerializeField] private Vector2 m_CameraBorderY;
     [SerializeField] private Parallax m_Parallax;
 
-    private Transform m_Target;
-    internal void SetTarget(Transform target)
+    [Header("Follow mode")]
+    [SerializeField] private Vector2 m_SpeedFollow;
+    
+
+    [Header("Flight mode")]
+    [SerializeField] private Vector2 m_FlightSpeed;
+    [SerializeField] private ParameterCurve m_SpeedCurve;
+
+    private Transform cameraFollowTarget;
+    private Transform cameraFlightTarget;
+    private Transform cameraStartPosition;
+    public void SetCameraFollowTarget(Transform target)
     {
-        m_Target = target;
+        this.cameraFollowTarget = target;
+    }
+
+    public void SetFollowMode()
+    {
+        m_CameraMode = CameraMode.FollowMode;
+    }
+    public void SetFlightMode(Transform cameraStartPosition, Transform cameraFlightTarget)
+    {        
+        this.cameraStartPosition = cameraStartPosition;
+        transform.position = cameraStartPosition.position;
+
+        this.cameraFlightTarget = cameraFlightTarget;
+
+        m_CameraMode = CameraMode.FlightMode;
     }
 
     private void LateUpdate()
     {        
-        if (m_Target == null) return;
+        if (cameraFollowTarget == null) return;
 
         float height = Camera.main.orthographicSize * 2;
-        float width = height * Screen.width / Screen.height;        
+        float width = height * Screen.width / Screen.height;
 
-        float camPosX = Mathf.Lerp(transform.position.x, m_Target.position.x, m_CameraSpeedX * Time.deltaTime);
-        float camPosY = Mathf.Lerp(transform.position.y, m_Target.position.y, m_CameraSpeedY * Time.deltaTime);
+        float camPosX = 0;
+        float camPosY = 0;
+
+        if (m_CameraMode == CameraMode.FollowMode)
+        { 
+            float camSpeedX = m_SpeedFollow.x * Time.deltaTime;
+            float camSpeedY = m_SpeedFollow.y * Time.deltaTime;
+
+            camPosX = Mathf.Lerp(transform.position.x, cameraFollowTarget.position.x, camSpeedX);
+            camPosY = Mathf.Lerp(transform.position.y, cameraFollowTarget.position.y, camSpeedY);
+        }
+        else if (m_CameraMode == CameraMode.FlightMode)
+        {
+            if (transform.position == cameraFlightTarget.position)
+            {
+                FlightFinishEvent?.Invoke();
+            }
+
+            float camSpeedX = m_SpeedCurve.GetValueBetween(cameraStartPosition.position.x, cameraFlightTarget.position.x, transform.position.x) * m_FlightSpeed.x * Time.deltaTime;
+            float camSpeedy = m_SpeedCurve.GetValueBetween(cameraStartPosition.position.y, cameraFlightTarget.position.y, transform.position.y) * m_FlightSpeed.y * Time.deltaTime;
+            camPosX = Mathf.MoveTowards(transform.position.x, cameraFlightTarget.position.x, camSpeedX);
+            camPosY = Mathf.MoveTowards(transform.position.y, cameraFlightTarget.position.y, camSpeedy);
+        }
+        
+        
+
         Vector3 newCamPos = new Vector3(Mathf.Clamp(camPosX, m_CameraBorderX.x + width / 2, m_CameraBorderX.y - width / 2), Mathf.Clamp(camPosY, m_CameraBorderY.x + height / 2, m_CameraBorderY.y - height / 2), transform.position.z);
         transform.position = newCamPos;
         if (m_Parallax != null)
             m_Parallax.ParallaxUpdate();
-    }
-
+    }    
     
 
 #if UNITY_EDITOR
