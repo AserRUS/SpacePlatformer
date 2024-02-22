@@ -60,30 +60,7 @@ public class InputControl : MonoBehaviour
            
     }
 
-    private void FixedUpdate()
-    {
-        if (Application.isEditor)
-        {
-            if (Input.GetKey(KeyCode.A))
-            {
-                RotateLeft();
-                Move(true);
-            }
-
-            else if (Input.GetKey(KeyCode.D))
-            {
-                RotateRight();
-                Move(true);
-            }
-
-            else
-            {
-                Move(false);
-            }
-            
-        }     
-
-    }
+   
 
     public void Jump()
     {
@@ -97,28 +74,17 @@ public class InputControl : MonoBehaviour
         playerInputControl?.Fire();
     }
 
+    public void Stop(bool value)
+    {
+        playerInputControl?.Stop(value);
+    }
+
     public void UseShield(float timeClamp)
     {
         if (isInputControlEnabled == false) return;
         playerInputControl.UseShield(timeClamp);
     }
-
-    public void RotateLeft()
-    {
-        if (isInputControlEnabled == false) return;
-        playerInputControl?.RotateLeft();
-    }
-    public void RotateRight()
-    {
-        if (isInputControlEnabled == false) return;
-        playerInputControl?.RotateRight();
-    }
-
-    public void Move(bool isMove)
-    {
-        if (isInputControlEnabled == false) return;
-        playerInputControl?.Move(isMove);
-    }
+    
 
     public void SetPlayerInputControl(PlayerInputControl playerInputControl)
     {

@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Damage: 25
-  m_ImactForce: 40
+  m_ImactForce: 30
 --- !u!65 &7573106071010081192
 BoxCollider:
   m_ObjectHideFlags: 0

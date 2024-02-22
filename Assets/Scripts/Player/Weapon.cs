@@ -29,7 +29,6 @@ public class Weapon : MonoBehaviour
 
     public void Fire()
     {
-        if (m_PlayerMovement.IsRotation == true) return;
         if (m_RefireTimer > 0) return;     
         Projectile projectile = Instantiate(m_ProjectilePrefab).GetComponent<Projectile>();
         projectile.transform.position = m_Gunpoint.position;

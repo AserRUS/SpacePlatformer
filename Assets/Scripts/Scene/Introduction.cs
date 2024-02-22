@@ -15,7 +15,8 @@ public class Introduction : MonoBehaviour
         m_Camera.SetFlightMode(m_CameraStartPosition, m_CameraFlightTarget);
         m_Camera.FlightFinishEvent += IntroductionEnd;
 
-        m_InputControl.InputControlEnabled(false); 
+        m_InputControl.InputControlEnabled(false);
+        m_InputControl.Stop(true);
     }
 
     private void OnDestroy()
@@ -26,6 +27,7 @@ public class Introduction : MonoBehaviour
     {
         m_Camera.SetFollowMode();
         m_InputControl.InputControlEnabled(true);
+        m_InputControl.Stop(false);
     }
         
     
