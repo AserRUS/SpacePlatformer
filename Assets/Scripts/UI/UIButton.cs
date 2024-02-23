@@ -7,8 +7,8 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public bool Interactable;
 
-    public UnityEvent OnPointerDownEvent;
-    public UnityEvent OnPointerUpEvent;
+    public UnityEvent<UIButton> OnPointerDownEvent;
+    public UnityEvent<UIButton> OnPointerUpEvent;
 
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -24,7 +24,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         if (Interactable == false) return;
-        OnPointerDownEvent?.Invoke();
+        OnPointerDownEvent?.Invoke(this);
     }
 
     
@@ -32,6 +32,6 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public virtual void OnPointerUp(PointerEventData eventData)
     {
         if (Interactable == false) return;
-        OnPointerUpEvent?.Invoke();
+        OnPointerUpEvent?.Invoke(this);
     }
 }

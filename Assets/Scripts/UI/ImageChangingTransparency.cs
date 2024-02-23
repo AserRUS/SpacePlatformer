@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class ImageChangingTransparency : MonoBehaviour
 {
+    [SerializeField] private bool startWithoutTransparency;
     [Range(0, 100)]
     [SerializeField] private int minTransparency = 30;
     [Range(0, 100)]
@@ -13,7 +14,11 @@ public class ImageChangingTransparency : MonoBehaviour
     private void Start()
     {
         image = GetComponent<Image>();
-        AddTransparency();
+        
+        if (startWithoutTransparency)
+            RemoveTransparency();
+        else
+            AddTransparency();
     }
 
     private void SetAlpha(int percent)
