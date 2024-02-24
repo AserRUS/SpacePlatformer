@@ -314,8 +314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RotationSpeed: 1000
-  m_GroundSpeed: 10000
-  m_AirSpeed: 3000
+  m_GroundSpeed: 100
+  m_AirSpeed: 30
   m_MaxSpeed: 10
   m_RayDistance: 1.3
   m_LayerMask:
@@ -323,7 +323,7 @@ MonoBehaviour:
     m_Bits: 64
   m_JumpForce: {x: 30, y: 50}
   m_MaxJumpCount: 2
-  m_StunTime: 0.1
+  m_StunTime: 0.4
 --- !u!114 &4424252087285713366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,8 +337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Weapon: {fileID: 1882104981520944154}
-  m_Movement: {fileID: 6635528274249280128}
   m_Shield: {fileID: 7116685210739030965}
+  m_Movement: {fileID: 6635528274249280128}
 --- !u!114 &1222894124470886122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +380,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weakShieldPrefab: {fileID: 651195320888216347, guid: 5108bd61454037b47a9a3391f7f6dd19, type: 3}
   strongShieldPrefab: {fileID: 8204943117908484730, guid: b431540d55fbf5c478e4a2b94084c0c7, type: 3}
-  player: {fileID: 1222894124470886122}
 --- !u!1 &6617697353733330619
 GameObject:
   m_ObjectHideFlags: 0

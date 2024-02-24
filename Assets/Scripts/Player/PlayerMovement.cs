@@ -68,11 +68,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
+        if (isStun == true) return;
         if (isMove == false) return;
         if (isGround == false)
-            rb.AddForce(direction * Vector3.right * m_AirSpeed * Time.fixedDeltaTime);
+            rb.AddForce(direction * Vector3.right * m_AirSpeed );
         else 
-            rb.AddForce(direction * Vector3.right * m_GroundSpeed * Time.fixedDeltaTime);
+            rb.AddForce(direction * Vector3.right * m_GroundSpeed );
     }
 
     private void Rotation()
@@ -104,14 +105,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Resistance()
     {
+        if (isStun == true) return;
         if (isGround)
         {
-            rb.AddForce(-rb.velocity * (m_GroundSpeed / m_MaxSpeed) * Time.fixedDeltaTime);
+            rb.AddForce(-rb.velocity * (m_GroundSpeed / m_MaxSpeed) );
         }
             
         else
         {
-            rb.AddForce(new Vector2(1, 0) * -rb.velocity * (m_AirSpeed / m_MaxSpeed) * Time.fixedDeltaTime);
+            rb.AddForce(new Vector2(1, 0) * -rb.velocity * (m_AirSpeed / m_MaxSpeed) );
         }
 
     }
