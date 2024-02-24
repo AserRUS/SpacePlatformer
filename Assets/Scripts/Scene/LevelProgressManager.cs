@@ -54,7 +54,8 @@ public class LevelProgressManager : MonoBehaviour
             {
                 m_LevelStates[i].State = true;
 
-                m_LevelStates[i].StarCount = starCount; 
+                if (m_LevelStates[i].StarCount < starCount)
+                    m_LevelStates[i].StarCount = starCount; 
 
                 Save();
             }

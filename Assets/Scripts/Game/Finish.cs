@@ -13,7 +13,7 @@ public class Finish : MonoBehaviour
         if (player != null)
         {
             m_InputControl.Move(false);
-            m_InputControl.enabled = false;
+            m_InputControl.InputControlEnabled(false);
             LevelProgress.Instance.LevelFinished();
             m_Pauser.SetFinish();
         }
