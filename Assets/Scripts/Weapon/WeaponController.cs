@@ -3,28 +3,28 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     [SerializeField] private Weapon weakWeapon;
-    [SerializeField] private Weapon strongWeapon;
+    [SerializeField] private LaserGun laserGun;
     [SerializeField] private Storage cartridgeStorage;
 
-    private float timeLimitForStrongShield = 1f;
+    private float timeLimitForStronAttack = 1f;
 
     public void UseAttack(float timeClamp)
     {
-        if (timeClamp > timeLimitForStrongShield)
+        if (timeClamp > timeLimitForStronAttack)
         {
-            if (cartridgeStorage.CurrentValue < strongWeapon.RequiredEnergy)
+            if (cartridgeStorage.CurrentValue < laserGun.RequiredCartridge || laserGun.LaserActive == true)
                 return;
 
-            cartridgeStorage.RemoveValue(strongWeapon.RequiredEnergy);
+            cartridgeStorage.RemoveValue(laserGun.RequiredCartridge);
 
-            strongWeapon.Fire();
+            laserGun.Activate();
         }
         else
         {
-            if (cartridgeStorage.CurrentValue < weakWeapon.RequiredEnergy)
+            if (cartridgeStorage.CurrentValue < weakWeapon.RequiredCartridge)
                 return;
 
-            cartridgeStorage.RemoveValue(weakWeapon.RequiredEnergy);
+            cartridgeStorage.RemoveValue(weakWeapon.RequiredCartridge);
 
             weakWeapon.Fire();
         }

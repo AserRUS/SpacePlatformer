@@ -11,12 +11,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] private ParticleSystem m_Flash;
     [SerializeField] private AudioClip m_ShotSound;
     [SerializeField] private PlayerMovement m_PlayerMovement;
-    [SerializeField] private int requiredEnergy;
+    [SerializeField] private int requiredCartridge;
 
     private AudioSource m_Audio; 
     private float m_RefireTimer;
 
-    public int RequiredEnergy => requiredEnergy;
+    public int RequiredCartridge => requiredCartridge;
 
     private void Start()
     {        
