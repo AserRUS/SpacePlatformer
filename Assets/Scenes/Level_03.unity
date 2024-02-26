@@ -1283,6 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c71675bc40882b4d95dd41e97d2622c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   shieldButton: {fileID: 1416414980}
   attackButton: {fileID: 5903241319434690924}
 --- !u!4 &1588184801

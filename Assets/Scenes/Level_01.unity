@@ -227,17 +227,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5382330812186840719, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
   m_PrefabInstance: {fileID: 4897780968370986090}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &426449609 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1389923859993781361, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
-  m_PrefabInstance: {fileID: 5903241319434690923}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566adb5a0e53ef44787242f12b087f3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &481991107 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7895209244891511977, guid: e8bdb8f3cef635040abaa04ea9c2e9a2, type: 3}
@@ -525,15 +514,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 577071489}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1416414980 stripped
+--- !u!114 &1394131831 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7315356458827093687, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+  m_CorrespondingSourceObject: {fileID: 998653651821065156, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
   m_PrefabInstance: {fileID: 5903241319434690923}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566adb5a0e53ef44787242f12b087f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1416414985 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1184206782850616, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+  m_PrefabInstance: {fileID: 5903241319434690923}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1457481989 stripped
@@ -675,8 +675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c71675bc40882b4d95dd41e97d2622c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldButton: {fileID: 1416414980}
-  attackButton: {fileID: 426449609}
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
+  shieldButton: {fileID: 1416414985}
+  attackButton: {fileID: 1394131831}
 --- !u!4 &1588184801
 Transform:
   m_ObjectHideFlags: 0
@@ -3476,10 +3477,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2681154482574058192, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
       propertyPath: inputControl
-      value: 
-      objectReference: {fileID: 1588184800}
-    - target: {fileID: 2751405936102671273, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
-      propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1588184800}
     - target: {fileID: 5155785239227477432, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}

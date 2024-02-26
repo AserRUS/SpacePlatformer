@@ -7,7 +7,7 @@ public enum ClampingButtonType
     Attack
 }
 
-public class ClampingButton : UIButton
+public class UIClampingButton : UIButton
 {
     [SerializeField] private InputControl inputControl;
     [SerializeField] private ClampingButtonType type;

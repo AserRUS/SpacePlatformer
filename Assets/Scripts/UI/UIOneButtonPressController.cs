@@ -50,7 +50,7 @@ public class UIOneButtonPressController : MonoBehaviour
             if (button == selectButton) continue;
 
             button.Interactable = false;
-            ImageChangingTransparency changingTransparency = button.GetComponent<ImageChangingTransparency>();
+            UIImageChangingTransparency changingTransparency = button.GetComponent<UIImageChangingTransparency>();
 
             if (changingTransparency)
             {
@@ -68,7 +68,7 @@ public class UIOneButtonPressController : MonoBehaviour
             if (button == selectButton) continue;
 
             button.Interactable = true;
-            ImageChangingTransparency changingTransparency = button.GetComponent<ImageChangingTransparency>();
+            UIImageChangingTransparency changingTransparency = button.GetComponent<UIImageChangingTransparency>();
 
             if (changingTransparency)
             {

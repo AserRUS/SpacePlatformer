@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class InputControl : MonoBehaviour
 {
-    [SerializeField] private ImageChangingTransparency shieldButton;
-    [SerializeField] private ImageChangingTransparency attackButton;
+    [SerializeField] private ButtonPressDuration buttonPressDuration;
+    [SerializeField] private UIImageChangingTransparency shieldButton;
+    [SerializeField] private UIImageChangingTransparency attackButton;
 
     private PlayerInputControl playerInputControl;
 
 
     private float mouse0ButtonClamp = 0;
-    private float timeLimitForMouse0Clamp = 1f;
     private float mouse1ButtonClamp = 0;
-    private float timeLimitForMouse1Clamp = 1f;
 
     private bool isInputControlEnabled = true;
 
@@ -32,14 +31,14 @@ public class InputControl : MonoBehaviour
                 mouse0ButtonClamp += Time.deltaTime;
 
                 if (attackButton)
-                    attackButton.RemoveTransparency();
+                    attackButton.SmoothRemoveTransparency();//RemoveTransparency();
             }
 
             if (Input.GetKey(KeyCode.Mouse0))
             {
                 mouse0ButtonClamp += Time.deltaTime;
 
-                if (mouse0ButtonClamp > timeLimitForMouse0Clamp)
+                if (mouse0ButtonClamp > buttonPressDuration.TimeLimitForButtonClamp)
                 {
                     UseAttack(mouse0ButtonClamp);
                     mouse0ButtonClamp = 0;
@@ -60,16 +59,16 @@ public class InputControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 mouse1ButtonClamp += Time.deltaTime;
-                
+
                 if (shieldButton)
-                    shieldButton.RemoveTransparency();
+                    shieldButton.SmoothRemoveTransparency(); //RemoveTransparency();
             }
 
             if (Input.GetKey(KeyCode.Mouse1))
             {
                 mouse1ButtonClamp += Time.deltaTime;
 
-                if (mouse1ButtonClamp > timeLimitForMouse1Clamp)
+                if (mouse1ButtonClamp > buttonPressDuration.TimeLimitForButtonClamp)
                 {
                     UseShield(mouse1ButtonClamp);
                     mouse1ButtonClamp = 0;

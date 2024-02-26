@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 983992081034499025}
   - component: {fileID: 3720895395513765571}
   - component: {fileID: 6076612459150205654}
-  - component: {fileID: 8869225294810209996}
+  - component: {fileID: 4885793525686073579}
   m_Layer: 5
   m_Name: ButtonJump
   m_TagString: Untagged
@@ -188,7 +188,7 @@ MonoBehaviour:
   OnPointerUpEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8869225294810209996
+--- !u!114 &4885793525686073579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,12 +197,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1294923001503829895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566adb5a0e53ef44787242f12b087f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   startWithoutTransparency: 1
   minTransparency: 30
   maxTransparency: 100
+  timeBetweenTransparencyChange: 0.1
 --- !u!1 &2382688309783560361
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +216,7 @@ GameObject:
   - component: {fileID: 1721943995579546153}
   - component: {fileID: 8829729398717936299}
   - component: {fileID: 769715749116380395}
-  - component: {fileID: 7315356458827093687}
+  - component: {fileID: 1184206782850616}
   - component: {fileID: 2681154482574058192}
   m_Layer: 5
   m_Name: ButtonShield
@@ -281,7 +283,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7315356458827093687
+--- !u!114 &1184206782850616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,12 +292,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2382688309783560361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566adb5a0e53ef44787242f12b087f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   startWithoutTransparency: 0
   minTransparency: 30
   maxTransparency: 100
+  timeBetweenTransparencyChange: 0.1
 --- !u!114 &2681154482574058192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,9 +316,9 @@ MonoBehaviour:
   OnPointerDownEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7315356458827093687}
-        m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
-        m_MethodName: RemoveTransparency
+      - m_Target: {fileID: 1184206782850616}
+        m_TargetAssemblyTypeName: UIImageChangingTransparency, Assembly-CSharp
+        m_MethodName: SmoothRemoveTransparency
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -327,7 +331,7 @@ MonoBehaviour:
   OnPointerUpEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7315356458827093687}
+      - m_Target: {fileID: 1184206782850616}
         m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
         m_MethodName: AddTransparency
         m_Mode: 1
@@ -352,7 +356,7 @@ GameObject:
   - component: {fileID: 1568145707875086325}
   - component: {fileID: 7223676777498016090}
   - component: {fileID: 3111937934278155399}
-  - component: {fileID: 1389923859993781361}
+  - component: {fileID: 998653651821065156}
   - component: {fileID: 5628407665811815128}
   m_Layer: 5
   m_Name: 'ButtonAttack '
@@ -419,7 +423,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1389923859993781361
+--- !u!114 &998653651821065156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -428,12 +432,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3038205966609823667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566adb5a0e53ef44787242f12b087f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   startWithoutTransparency: 0
   minTransparency: 30
   maxTransparency: 100
+  timeBetweenTransparencyChange: 0.1
 --- !u!114 &5628407665811815128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,9 +456,9 @@ MonoBehaviour:
   OnPointerDownEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1389923859993781361}
+      - m_Target: {fileID: 998653651821065156}
         m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
-        m_MethodName: RemoveTransparency
+        m_MethodName: SmoothRemoveTransparency
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -465,7 +471,7 @@ MonoBehaviour:
   OnPointerUpEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1389923859993781361}
+      - m_Target: {fileID: 998653651821065156}
         m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
         m_MethodName: AddTransparency
         m_Mode: 1
@@ -491,7 +497,7 @@ GameObject:
   - component: {fileID: 536673775715634459}
   - component: {fileID: 5256459947757673324}
   - component: {fileID: 7522520836096553050}
-  - component: {fileID: 8566575297797023410}
+  - component: {fileID: 8589520176520586847}
   m_Layer: 5
   m_Name: ButtonMoveRight
   m_TagString: Untagged
@@ -612,7 +618,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8566575297797023410
+--- !u!114 &8589520176520586847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -621,12 +627,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3359580095283685473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566adb5a0e53ef44787242f12b087f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   startWithoutTransparency: 1
   minTransparency: 30
   maxTransparency: 100
+  timeBetweenTransparencyChange: 0.1
 --- !u!1 &3486798996808012783
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,7 +726,7 @@ GameObject:
   - component: {fileID: 8574553541880965773}
   - component: {fileID: 7529912477458474333}
   - component: {fileID: 5275673947730303913}
-  - component: {fileID: 6003905740939710672}
+  - component: {fileID: 521275785168195193}
   m_Layer: 5
   m_Name: 'ButtonMoveleft '
   m_TagString: Untagged
@@ -839,7 +847,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6003905740939710672
+--- !u!114 &521275785168195193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -848,12 +856,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4579926218422548759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566adb5a0e53ef44787242f12b087f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   startWithoutTransparency: 1
   minTransparency: 30
   maxTransparency: 100
+  timeBetweenTransparencyChange: 0.1
 --- !u!1 &5184106131842266757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af07430496b4e274bb13f18df676b372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonsContainter: {fileID: 7988048853171636938}
 --- !u!1 &8556388699953558256
 GameObject:
   m_ObjectHideFlags: 0
