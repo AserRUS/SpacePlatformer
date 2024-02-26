@@ -589,6 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97cb2f9232f04441911f7aab0dd87cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   weakShieldPrefab: {fileID: 651195320888216347, guid: 5108bd61454037b47a9a3391f7f6dd19, type: 3}
   strongShieldPrefab: {fileID: 8204943117908484730, guid: b431540d55fbf5c478e4a2b94084c0c7, type: 3}
   energyStorage: {fileID: -8802150682411759611}
@@ -604,6 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f69924439a9e54291f0f4646560301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   weakWeapon: {fileID: 925826475868327211}
   laserGun: {fileID: 8040918730892245971}
   cartridgeStorage: {fileID: -5263358381543673254}

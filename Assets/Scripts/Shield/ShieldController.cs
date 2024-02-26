@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
+    [SerializeField] private ButtonPressDuration buttonPressDuration;
     [SerializeField] private Shield weakShieldPrefab;
     [SerializeField] private Shield strongShieldPrefab;
     [SerializeField] private Storage energyStorage;
 
     private Player player;    
     private Destructible shield;
-    private float timeLimitForStrongShield = 1f;
     private bool shieldActive;
 
     private void Start()
@@ -35,7 +35,7 @@ public class ShieldController : MonoBehaviour
     {
         if (shieldActive) return;
 
-        if (timeClamp > timeLimitForStrongShield)
+        if (timeClamp > buttonPressDuration.TimeLimitForButtonClamp)
         {
             if (energyStorage.CurrentValue < strongShieldPrefab.RequiredEnergy)
                 return;

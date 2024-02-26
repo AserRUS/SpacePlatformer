@@ -2,17 +2,18 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+    [SerializeField] private ButtonPressDuration buttonPressDuration;
     [SerializeField] private Weapon weakWeapon;
     [SerializeField] private LaserGun laserGun;
     [SerializeField] private Storage cartridgeStorage;
 
-    private float timeLimitForStronAttack = 1f;
-
     public void UseAttack(float timeClamp)
     {
-        if (timeClamp > timeLimitForStronAttack)
+        if (laserGun.LaserActive) return;
+
+        if (timeClamp > buttonPressDuration.TimeLimitForButtonClamp)
         {
-            if (cartridgeStorage.CurrentValue < laserGun.RequiredCartridge || laserGun.LaserActive == true)
+            if (cartridgeStorage.CurrentValue < laserGun.RequiredCartridge)
                 return;
 
             cartridgeStorage.RemoveValue(laserGun.RequiredCartridge);
