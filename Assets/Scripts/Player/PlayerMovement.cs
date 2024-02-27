@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float m_AirSpeed;
     [SerializeField] private float m_MaxSpeed;
     [SerializeField] private float m_RayDistance;
+    [SerializeField] private Vector3 m_RayOffset;
     [SerializeField] private LayerMask m_LayerMask;
 
     [Header("Jump")]
@@ -54,14 +55,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckGround()
     {
-        bool isHit = Physics.Raycast(transform.position, -transform.up, m_RayDistance, m_LayerMask);
+        bool isHit = Physics.Raycast(transform.position + m_RayOffset, -transform.up, m_RayDistance, m_LayerMask) || Physics.Raycast(transform.position - m_RayOffset, -transform.up, m_RayDistance, m_LayerMask);   
+
         if (isGround == false && isHit != false)
         {
             jumpCount = m_MaxJumpCount;
         }
         isGround = isHit;
 
-        Debug.DrawRay(transform.position, -Vector2.up * m_RayDistance, Color.yellow);
+        Debug.DrawRay(transform.position + m_RayOffset, -Vector2.up * m_RayDistance, Color.yellow);
+        Debug.DrawRay(transform.position - m_RayOffset, -Vector2.up * m_RayDistance, Color.yellow);
     }
 
     private bool CheckJumpOpportunity()
@@ -74,10 +77,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isStun == true) return;
         if (isMove == false) return;
+
+
+        
         if (isGround == false)
             rb.AddForce(direction * Vector3.right * m_AirSpeed );
         else 
             rb.AddForce(direction * Vector3.right * m_GroundSpeed );
+        
+        /*
+        if (isGround == false) return;
+        rb.AddForce(direction * Vector3.right * m_GroundSpeed);
+        */
     }
 
     private void Rotation()

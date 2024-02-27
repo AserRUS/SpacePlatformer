@@ -17,7 +17,25 @@ public class Projectile : MonoBehaviour
 
     protected virtual void Start()
     {
-       StartCoroutine(LifeTime());
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.1f, m_LayerMask);
+        if (colliders.Length != 0)
+        {
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                Destructible dest = colliders[i].transform.root.GetComponent<Destructible>();
+                if (dest != null)
+                {
+                    dest.RemoveHitpoints(m_Damage, owner);
+                }
+            }
+            
+            Destruction();
+        }
+        else
+        {
+            StartCoroutine(LifeTime());
+        }
+       
     }
     
     private void Update()
