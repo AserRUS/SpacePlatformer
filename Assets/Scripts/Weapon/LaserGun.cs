@@ -16,18 +16,30 @@ public class LaserGun : MonoBehaviour
     [SerializeField] private int damageInPeroidOfTime;
     [SerializeField] private float timeBetweenDamage;
 
+    private PlayerMovement playerMovement;
     private bool damageAvailable;
+
     public int RequiredCartridge => requiredCartridge;
     public bool LaserActive => lineRenderer.enabled;
 
     private void Start()
     {
         Deactivate();
+
+        playerMovement = GetComponentInParent<PlayerMovement>();
+        playerMovement.OnJumpEvent += Deactivate;
+        playerMovement.OnRotationEvent += Deactivate;
     }
 
     private void FixedUpdate()
     {
         Laser();
+    }
+
+    private void OnDestroy()
+    {
+        playerMovement.OnJumpEvent -= Deactivate;
+        playerMovement.OnRotationEvent -= Deactivate;
     }
 
     private void Laser()

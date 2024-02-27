@@ -1,9 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    public event UnityAction OnJumpEvent;
+    public event UnityAction OnRotationEvent;
+
     public bool IsRotation => isRotation;
 
     [Header("Movement")]
@@ -101,6 +105,8 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce( new Vector2(m_JumpForce.x * direction, m_JumpForce.y), ForceMode.Impulse);
 
         jumpCount--;
+
+        OnJumpEvent?.Invoke();
     }
 
     private void Resistance()
@@ -124,6 +130,8 @@ public class PlayerMovement : MonoBehaviour
         targetRotation = new Vector3(0, 180, 0);
         isRotation = true;
         direction = -1;
+
+        OnRotationEvent?.Invoke();
     }
     public void RotateRight()
     {
@@ -131,6 +139,8 @@ public class PlayerMovement : MonoBehaviour
         targetRotation = new Vector3(0, 0, 0);
         isRotation = true;
         direction = 1;
+
+        OnRotationEvent?.Invoke();
     }
 
     public void Move(bool isMove)
