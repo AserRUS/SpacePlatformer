@@ -42,7 +42,7 @@ public class BotWeapon : MonoBehaviour
 
         animController.TurnOnAnimAttack();
     }
-    IEnumerator Reload(float time)
+    private IEnumerator Reload(float time)
     {
         yield return new WaitForSeconds(time);
         shootAvailable = true;
