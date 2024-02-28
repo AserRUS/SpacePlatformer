@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Destructible))]
-public class BossController : Boss
+public class EvilDoctor : Boss
 {
     [Header("Teleport")]
     [SerializeField] private GameObject teleportEffect;
@@ -10,6 +10,7 @@ public class BossController : Boss
     [SerializeField] private float timeBetweenTeleportation;
     [SerializeField] private int damageReceivedRequiredForTeleportation;
 
+    private Vector3 lastTeleportPoint;
     private bool readyForTeleport;
     private int hitPointsAfterTeleportation;
     private int currentHitPoints;
@@ -44,12 +45,13 @@ public class BossController : Boss
     {
         int randomPoint = Random.Range(0, teleportationPoints.Length - 1);
 
-        while (teleportationPoints[randomPoint].position == transform.position)
+        while (teleportationPoints[randomPoint].position == lastTeleportPoint)
         {
             randomPoint = Random.Range(0, teleportationPoints.Length - 1);
         }
 
-        return teleportationPoints[randomPoint].position;
+        lastTeleportPoint = teleportationPoints[randomPoint].position;
+        return lastTeleportPoint;
     }
 
     private void Teleport(Vector3 position)
