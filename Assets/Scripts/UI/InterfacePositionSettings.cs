@@ -12,8 +12,9 @@ public class InterfacePositionSettings : MonoBehaviour
 
     [SerializeField] RectTransform[] m_MainUIElements;
     [SerializeField] RectTransform[] m_SecondaryUIElements;
-    [SerializeField] Toggle m_LeftToggle;
-    [SerializeField] Toggle m_RightToggle;
+
+    [SerializeField] Image m_LeftLayoutInterfaceImage;
+    [SerializeField] Image m_RightLayoutInterfaceImage;
 
     private InterfaceLayout interfaceLayout = InterfaceLayout.Right;
 
@@ -21,12 +22,6 @@ public class InterfacePositionSettings : MonoBehaviour
     private void Start()
     {
         Load();
-
-        if (m_LeftToggle != null && m_RightToggle != null)
-        {
-           m_LeftToggle.isOn = interfaceLayout == InterfaceLayout.Left;
-            m_RightToggle.isOn = interfaceLayout == InterfaceLayout.Right;
-        }
 
         if (interfaceLayout == InterfaceLayout.Right)
         {  
@@ -38,7 +33,7 @@ public class InterfacePositionSettings : MonoBehaviour
         }
     }
 
-    public void Left()
+    private void Left()
     { 
         for (int i = 0; i < m_MainUIElements.Length; i++)
         {            
@@ -56,12 +51,14 @@ public class InterfacePositionSettings : MonoBehaviour
             m_SecondaryUIElements[i].anchoredPosition = new Vector2(-Mathf.Abs(m_SecondaryUIElements[i].anchoredPosition.x), m_SecondaryUIElements[i].anchoredPosition.y);
 
         }
+        m_LeftLayoutInterfaceImage.enabled = true;
+        m_RightLayoutInterfaceImage.enabled = false;
 
         interfaceLayout = InterfaceLayout.Left;
         Save();
     }
 
-    public void Right()
+    private void Right()
     {
         for (int i = 0; i < m_MainUIElements.Length; i++)
         {  
@@ -77,9 +74,23 @@ public class InterfacePositionSettings : MonoBehaviour
 
             m_SecondaryUIElements[i].anchoredPosition = new Vector2(Mathf.Abs(m_SecondaryUIElements[i].anchoredPosition.x), m_SecondaryUIElements[i].anchoredPosition.y);
         }
+        m_LeftLayoutInterfaceImage.enabled = false;
+        m_RightLayoutInterfaceImage.enabled = true;
 
         interfaceLayout = InterfaceLayout.Right;
         Save();
+    }
+
+    public void Swap()
+    {
+        if (interfaceLayout == InterfaceLayout.Right)
+        {
+            Left();
+        }
+        else if (interfaceLayout == InterfaceLayout.Left)
+        {
+            Right();
+        }
     }
 
 
