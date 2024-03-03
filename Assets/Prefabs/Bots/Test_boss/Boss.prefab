@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 9208712587081535182}
   - component: {fileID: 1698441920534248240}
   - component: {fileID: 3540501966107706515}
+  - component: {fileID: 6692388492492251700}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -215,12 +216,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fcb978cb8c386a4194fb2cdb66794c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 6692388492492251700}
   teleportEffect: {fileID: 7401727948457227951, guid: 093474ce8bd662345bb1b691aa1728b7, type: 3}
   teleportationPoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  timeBetweenTeleportation: 30
+  timeBetweenTeleportation: 5
   damageReceivedRequiredForTeleportation: 1
+--- !u!114 &6692388492492251700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6627107898045919346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 618d5780a774b484586530bb49c12916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackZone: {fileID: 0}
+  timeBetweenAttack: 3

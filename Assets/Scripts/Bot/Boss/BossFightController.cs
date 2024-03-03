@@ -7,7 +7,6 @@ public class BossFightController : MonoBehaviour
     [SerializeField] private UIState uiHealth;
 
     private Destructible bossDest;
-    private bool isFight;
 
     private void Start()
     {

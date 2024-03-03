@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Destructible))]
 public class EvilDoctor : Boss
 {
+    [SerializeField] private EvilDoctorWeapon weapon;
     [Header("Teleport")]
     [SerializeField] private GameObject teleportEffect;
     [SerializeField] private Transform[] teleportationPoints;
@@ -22,6 +23,9 @@ public class EvilDoctor : Boss
 
         currentHitPoints = destructible.MaxHitPoints;
         destructible.HitPointChangeEvent += CheckReceiveDamage;
+
+        Teleport(teleportationPoints[0].position);
+        lastTeleportPoint = teleportationPoints[0].position;
     }
 
     private void Update()
@@ -39,15 +43,16 @@ public class EvilDoctor : Boss
     {
         hitPointsAfterTeleportation = currentHitPoints;
         StartCoroutine(PreparationForTeleport(timeBetweenTeleportation));
+        weapon.StartAttackTimer();
     }
 
     private Vector3 ChoosePointForTeleportation()
     {
-        int randomPoint = Random.Range(0, teleportationPoints.Length - 1);
+        int randomPoint = Random.Range(0, teleportationPoints.Length);
 
         while (teleportationPoints[randomPoint].position == lastTeleportPoint)
         {
-            randomPoint = Random.Range(0, teleportationPoints.Length - 1);
+            randomPoint = Random.Range(0, teleportationPoints.Length);
         }
 
         lastTeleportPoint = teleportationPoints[randomPoint].position;
