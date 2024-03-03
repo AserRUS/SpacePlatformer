@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6589343737972916941}
   - component: {fileID: 769169240135805311}
   - component: {fileID: 658387233571840048}
+  - component: {fileID: 4885762506340706576}
+  - component: {fileID: 7403545248514033570}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -62,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9733b136bdc87b6408bf1b1d27b2a78e, type: 2}
+  - {fileID: 2100000, guid: f72ccb99b684a4c488519de0f2494425, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,6 +107,39 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &4885762506340706576
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875097597425898303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9df791e35f1a02645acc2efbedf87764, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7403545248514033570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875097597425898303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87da8b82f5e192b4cb54f9d7ca6edf6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6627107898045919346
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +152,7 @@ GameObject:
   - component: {fileID: 2998321908894498114}
   - component: {fileID: 9208712587081535182}
   - component: {fileID: 1698441920534248240}
+  - component: {fileID: 4429727030363016139}
   - component: {fileID: 3540501966107706515}
   - component: {fileID: 6692388492492251700}
   m_Layer: 0
@@ -204,6 +240,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MaxHitPoints: 1000
   m_DeathEffect: {fileID: 7401727948457227951, guid: 093474ce8bd662345bb1b691aa1728b7, type: 3}
+--- !u!114 &4429727030363016139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6627107898045919346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3328ecbb088698f469c5e7b637afaafc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageReceivedRequiredForTeleportation: 50
 --- !u!114 &3540501966107706515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fcb978cb8c386a4194fb2cdb66794c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 6692388492492251700}
   teleportEffect: {fileID: 7401727948457227951, guid: 093474ce8bd662345bb1b691aa1728b7, type: 3}
   teleportationPoints:
   - {fileID: 0}
@@ -224,7 +272,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timeBetweenTeleportation: 5
-  damageReceivedRequiredForTeleportation: 1
 --- !u!114 &6692388492492251700
 MonoBehaviour:
   m_ObjectHideFlags: 0

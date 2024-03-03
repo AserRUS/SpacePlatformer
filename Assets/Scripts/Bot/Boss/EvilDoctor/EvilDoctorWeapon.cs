@@ -6,27 +6,23 @@ public class EvilDoctorWeapon : MonoBehaviour
     [SerializeField] private EvilDoctorAttackZone attackZone;
     [SerializeField] private float timeBetweenAttack;
 
-    private bool attackAvailable;
+    private bool readyForAttack;
 
-    private void Update()
-    {
-        //temporary
-        Attack();
-    }
+    public bool ReadyForAttack => readyForAttack;
 
-    private void Attack()
+    public void Attack()
     {
-        if (!attackAvailable) return;
+        if (!readyForAttack) return;
 
         attackZone.Attack();
-        attackAvailable = false;
+        readyForAttack = false;
         StartAttackTimer();
     }
 
     private IEnumerator WaitTimeBetweenAttack(float time)
     {
         yield return new WaitForSeconds(timeBetweenAttack);
-        attackAvailable = true;
+        readyForAttack = true;
     }
 
     public void StartAttackTimer()

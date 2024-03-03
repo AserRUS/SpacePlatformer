@@ -925,17 +925,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b390d785195d5ef49b332773b1be4c2a, type: 3}
---- !u!114 &1141856556 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-  m_PrefabInstance: {fileID: 6465858800096020734}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fcb978cb8c386a4194fb2cdb66794c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1247967407
 GameObject:
   m_ObjectHideFlags: 0
@@ -3488,10 +3477,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: timeBetweenTeleportation
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: teleportationPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1902448207}
@@ -3507,10 +3492,6 @@ PrefabInstance:
       propertyPath: teleportationPoints.Array.data[3]
       value: 
       objectReference: {fileID: 524826901}
-    - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: damageReceivedRequiredForTeleportation
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 6627107898045919346, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -3564,6 +3545,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
+--- !u!114 &6465858800096020736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4429727030363016139, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
+  m_PrefabInstance: {fileID: 6465858800096020734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3328ecbb088698f469c5e7b637afaafc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6706251295217338017
 Transform:
   m_ObjectHideFlags: 0
@@ -3662,7 +3654,7 @@ PrefabInstance:
     - target: {fileID: 5973830485692354230, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
       propertyPath: boss
       value: 
-      objectReference: {fileID: 1141856556}
+      objectReference: {fileID: 6465858800096020736}
     - target: {fileID: 5973830485692354230, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
       propertyPath: uiHealth
       value: 
