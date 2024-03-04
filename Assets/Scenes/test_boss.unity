@@ -1849,7 +1849,10 @@ GameObject:
   - component: {fileID: 1923505891}
   - component: {fileID: 1923505894}
   - component: {fileID: 1923505895}
-  m_Layer: 0
+  - component: {fileID: 1923505897}
+  - component: {fileID: 1923505896}
+  - component: {fileID: 1923505898}
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2006,6 +2009,108 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicFieldOfView: 36.7
   bossFightFieldOfView: 55.7
+--- !u!114 &1923505896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923505890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: af87e04e08225a3478a2757e4e8b5343, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &1923505897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923505890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1923505893}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!114 &1923505898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923505890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b17eb52a2c0484e8f2abbbff77571a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doctorController: {fileID: 6465858800096020736}
+  player: {fileID: 0}
+  timeVignetteDuration: 1
+  profile_Default: {fileID: 11400000, guid: af87e04e08225a3478a2757e4e8b5343, type: 2}
+  profile_RightSide: {fileID: 11400000, guid: e5967790ae9db654da5eabd6fccdabb5, type: 2}
+  profile_BottomRightCorner: {fileID: 11400000, guid: 4dcc554fb8fd81844b3b5c21c7b1ac2b, type: 2}
+  profile_BottomSide: {fileID: 11400000, guid: 1b25704709afdbf4eb0595673340421d, type: 2}
+  profile_BottomLeftCorner: {fileID: 11400000, guid: b94be231e2e45fa44bdc69179dd578ee, type: 2}
+  profile_LeftSide: {fileID: 11400000, guid: 1834fd9efca5c36428c47ae0b5a2b443, type: 2}
+  profile_UpLeftCorner: {fileID: 11400000, guid: 6509a951d909be24ba1fdb9aeb0bd387, type: 2}
+  profile_UpSide: {fileID: 11400000, guid: 88246955c82c13a479cb3169cdf60dc2, type: 2}
+  profile_UpRightCorner: {fileID: 11400000, guid: 1b34afdd5a50f78469d5775e61de6c4f, type: 2}
+  BOOL: 0
 --- !u!224 &1942474486 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2290197161063471388, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
@@ -3492,6 +3597,14 @@ PrefabInstance:
       propertyPath: teleportationPoints.Array.data[3]
       value: 
       objectReference: {fileID: 524826901}
+    - target: {fileID: 4429727030363016139, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
+      propertyPath: playerSpawner
+      value: 
+      objectReference: {fileID: 577071488}
+    - target: {fileID: 4429727030363016139, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
+      propertyPath: vignetteController
+      value: 
+      objectReference: {fileID: 1923505898}
     - target: {fileID: 6627107898045919346, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: m_Name
       value: Boss

@@ -13,6 +13,7 @@ public class PlayerSpawner : EntitySpawner
 
     private Player player;
 
+    public Player Player => player;
 
     private void Awake()
     {
