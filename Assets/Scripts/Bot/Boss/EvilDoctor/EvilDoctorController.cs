@@ -24,6 +24,8 @@ public class EvilDoctorController : Boss
 
         currentHitPoints = destructible.MaxHitPoints;
         destructible.HitPointChangeEvent += CheckReceiveDamage;
+
+        StartFight();
     }
 
     private void Update()

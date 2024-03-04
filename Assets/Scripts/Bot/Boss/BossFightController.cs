@@ -39,7 +39,7 @@ public class BossFightController : MonoBehaviour
         viewController.SetBossFightFieldOfView();
         //Boss
         boss.gameObject.SetActive(true);
-        boss.StartFight();
+        //boss.StartFight();
         //UI slider
         uiHealth.SetMaxValue(bossDest.MaxHitPoints);
         uiHealth.ValueChange(bossDest.MaxHitPoints);
