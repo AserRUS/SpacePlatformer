@@ -3388,6 +3388,34 @@ PrefabInstance:
       propertyPath: inputControl
       value: 
       objectReference: {fileID: 1588184800}
+    - target: {fileID: 3272592390046756526, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272592390046756526, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272592390046756526, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1547965006558308145}
+    - target: {fileID: 3272592390046756526, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272592390046756526, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272592390046756526, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pauser, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272592390046756526, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: OnPointerDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5155785239227477432, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
       propertyPath: m_Pivot.x
       value: 0
