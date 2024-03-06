@@ -10,7 +10,7 @@ public class Parallax : MonoBehaviour
     private float m_LastCameraX;
     private float m_LastCameraY;
 
-    private void Start()
+    private void Awake()
     {
         m_LastCameraX = Camera.main.transform.position.x;
         m_LastCameraY = Camera.main.transform.position.y;

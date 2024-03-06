@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 public class Weapon : MonoBehaviour
 {
+    public event UnityAction ShotEvent;
      
     [SerializeField] private Projectile m_ProjectilePrefab;
     [SerializeField] private float m_RateOfFire;    
@@ -33,7 +35,10 @@ public class Weapon : MonoBehaviour
     public void Fire()
     {
         if (m_PlayerMovement.IsRotation == true) return;
-        if (m_RefireTimer > 0) return;     
+        if (m_RefireTimer > 0) return;
+
+        ShotEvent?.Invoke();
+
         Projectile projectile = Instantiate(m_ProjectilePrefab).GetComponent<Projectile>();
         projectile.transform.position = m_Gunpoint.position;
         projectile.transform.up = transform.right;

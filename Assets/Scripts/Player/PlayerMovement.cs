@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
     public event UnityAction OnRotationEvent;
 
     public bool IsRotation => isRotation;
+    public Vector3 Velocity => rb.velocity;
+    public float MaxSpeed => m_MaxSpeed;
+    public float DistanceToGround => m_DistanceToGround;
+    public bool IsGround => isGround;
 
     [Header("Movement")]
     [SerializeField] private float m_RotationSpeed;
@@ -24,7 +28,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int m_MaxJumpCount;
     [SerializeField] private float m_StunTime;
 
-
+    private float m_DistanceToGround;
+    
     private Rigidbody rb;
 
     private int direction = 1;
@@ -43,7 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        CheckGround();           
+        CheckGround();
+        Debug.Log(rb.velocity);
     }
 
     private void FixedUpdate()
@@ -55,7 +61,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckGround()
     {
-        bool isHit = Physics.Raycast(transform.position + m_RayOffset, -transform.up, m_RayDistance, m_LayerMask) || Physics.Raycast(transform.position - m_RayOffset, -transform.up, m_RayDistance, m_LayerMask);   
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100, m_LayerMask) == true)
+        {
+            m_DistanceToGround = Vector3.Distance(transform.position, hit.point);
+        }
+        else
+        {
+            m_DistanceToGround = 100;
+        }
+
+
+        bool isHit = Physics.Raycast(transform.position + m_RayOffset, -transform.up, m_RayDistance, m_LayerMask) || Physics.Raycast(transform.position - m_RayOffset, -transform.up, m_RayDistance, m_LayerMask);
 
         if (isGround == false && isHit != false)
         {
@@ -77,18 +94,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isStun == true) return;
         if (isMove == false) return;
-
-
         
         if (isGround == false)
-            rb.AddForce(direction * Vector3.right * m_AirSpeed );
+            rb.AddForce(direction * Vector3.right * m_AirSpeed);
         else 
-            rb.AddForce(direction * Vector3.right * m_GroundSpeed );
-        
-        /*
-        if (isGround == false) return;
-        rb.AddForce(direction * Vector3.right * m_GroundSpeed);
-        */
+            rb.AddForce(direction * Vector3.right * m_GroundSpeed);
     }
 
     private void Rotation()
@@ -122,17 +132,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Resistance()
     {
-        if (isStun == true) return;
-        if (isGround)
+        if (rb.velocity.x * direction >= m_MaxSpeed && isGround)
         {
-            rb.AddForce(-rb.velocity * (m_GroundSpeed / m_MaxSpeed) );
+            rb.velocity = new Vector3(direction * m_MaxSpeed, rb.velocity.y, rb.velocity.z);
         }
-            
-        else
+        if (isGround == false && isMove == true)
         {
-            rb.AddForce(new Vector2(1, 0) * -rb.velocity * (m_AirSpeed / m_MaxSpeed) );
+            rb.AddForce(new Vector2(-1, 0) * rb.velocity.x * (Mathf.Abs(rb.velocity.x) / m_MaxSpeed));
         }
-
     }
 
     public void RotateLeft()
