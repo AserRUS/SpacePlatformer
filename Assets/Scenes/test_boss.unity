@@ -1905,6 +1905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicFieldOfView: 36.7
   bossFightFieldOfView: 55.7
+  speed: 0.5
 --- !u!114 &1923505896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3474,6 +3475,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1698441920534248240, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
+      propertyPath: m_MaxHitPoints
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: teleportationPoints.Array.data[0]
       value: 

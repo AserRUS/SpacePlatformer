@@ -36,7 +36,7 @@ public class BossFightController : MonoBehaviour
     private void StartFight()
     {
         //Camera
-        viewController.SetBossFightFieldOfView();
+        viewController.SmoothlySetBossFightFieldOfVision();
         //Boss
         boss.gameObject.SetActive(true);
         //boss.StartFight();
@@ -50,7 +50,7 @@ public class BossFightController : MonoBehaviour
     private void FinishFight()
     {
         //Camera
-        viewController.SetBasicFieldOfView();
+        viewController.SmoothlySetBasicFieldOfVision();
         //UI slider
         bossDest.HitPointChangeEvent -= uiHealth.ValueChange;
         uiHealth.gameObject.SetActive(false);
