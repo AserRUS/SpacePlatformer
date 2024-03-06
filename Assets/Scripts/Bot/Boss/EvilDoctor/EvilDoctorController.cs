@@ -77,7 +77,7 @@ public class EvilDoctorController : Boss
 
     private void Attack()
     {
-        weapon.Attack();
+        weapon.Attack(playerSpawner.Player.gameObject);
         isAttack = false;
     }
 

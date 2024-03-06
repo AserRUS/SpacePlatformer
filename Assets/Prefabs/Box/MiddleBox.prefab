@@ -101,6 +101,8 @@ MonoBehaviour:
   damage: 10
   mass: 3
   lifeTime: 2
+  numberStepsToChangeTransparency: 25
+  timeBetweenStepsChangingTransparency: 0.1
 --- !u!1 &6679392821720691844
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +164,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aa257138fd27bbe40a98e3866eed9736, type: 2}
+  - {fileID: 2100000, guid: 144338126a903fb4fa63911d4f6b56ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

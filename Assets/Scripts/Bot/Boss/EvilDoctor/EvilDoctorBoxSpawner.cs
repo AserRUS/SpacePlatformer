@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [RequireComponent (typeof(BoxCollider))]
@@ -9,6 +8,7 @@ public class EvilDoctorBoxSpawner : EntitySpawner
     [SerializeField] private int maxBoxCount;
 
     private Bounds bounds;
+    private float timeWarningAttack;
 
     private void Start()
     {
@@ -76,15 +76,20 @@ public class EvilDoctorBoxSpawner : EntitySpawner
 
         GameObject boxPrefab = m_EntityPrefabs[Random.Range(0, m_EntityPrefabs.Length)];
 
-        foreach (var box in boxPositions)
+        foreach (var boxPosition in boxPositions)
         {
             GameObject entity = Instantiate(boxPrefab,
-            box, Quaternion.identity);
+            boxPosition, Quaternion.identity);
+
+            Box box = entity.GetComponent<Box>();
+            if (box)
+                box.StartTransitionToActive(timeWarningAttack);
         }
     }
 
-    public void Attack()
+    public void Attack(float timeWarningAttack)
     {
+        this.timeWarningAttack = timeWarningAttack;
         EntitySpawn();
     }
 }

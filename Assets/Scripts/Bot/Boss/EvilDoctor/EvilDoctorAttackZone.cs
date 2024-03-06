@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -12,7 +11,6 @@ public class EvilDoctorAttackZone : MonoBehaviour
     private EvilDoctorBoxSpawner boxSpawner;
     private BoxCollider attackZoneCollider;
     private Bounds bounds;
-    private bool readyToAttack;
 
     //bounds
     private float maxX;
@@ -20,40 +18,23 @@ public class EvilDoctorAttackZone : MonoBehaviour
     private float maxY;
     private float minY;
 
-    //temporarily
-    private MeshRenderer meshRenderer;
-
     private void Start()
     {
         boxSpawner = GetComponent<EvilDoctorBoxSpawner>();
         attackZoneCollider = GetComponent<BoxCollider>();
-        meshRenderer = GetComponent<MeshRenderer>();
-        meshRenderer.enabled = false;
 
         bounds = actionAttackZoneBoundary.bounds;
-        //temporarily
-        readyToAttack = true;
-
         CalculateBoundaries();
     }
 
-    public void Attack()
+    public void Attack(GameObject player)
     {
-        if (!readyToAttack) return;
-
-        meshRenderer.enabled = true;
-        readyToAttack = false;
-        ChangePosition();
-
-        StartCoroutine(WaitWarningAttackTime(timeWarningAttack));
+        ChangePosition(player);
+        boxSpawner.Attack(timeWarningAttack);
     }
 
-    private void ChangePosition()
+    private void ChangePosition(GameObject player)
     {
-        //TODO: заменить FindGameObjectWithTag 
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player");
-
         Vector3 pos = new Vector3(player.transform.position.x, player.transform.position.y + height,
             player.transform.position.z);
         
@@ -64,15 +45,6 @@ public class EvilDoctorAttackZone : MonoBehaviour
         if (pos.y > maxY) pos.y = maxY;
         
         gameObject.transform.position = pos;
-    }
-
-    private IEnumerator WaitWarningAttackTime(float time)
-    {
-        yield return new WaitForSeconds(time);
-
-        meshRenderer.enabled = false;
-        readyToAttack = true;
-        boxSpawner.Attack();
     }
 
     private void CalculateBoundaries()
