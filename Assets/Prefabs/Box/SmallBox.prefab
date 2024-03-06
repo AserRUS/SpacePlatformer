@@ -185,4 +185,4 @@ MonoBehaviour:
   mass: 2
   lifeTime: 2
   numberStepsToChangeTransparency: 25
-  timeBetweenStepsChangingTransparency: 0.1
+  isActive: 0

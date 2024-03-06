@@ -102,7 +102,7 @@ MonoBehaviour:
   mass: 3
   lifeTime: 2
   numberStepsToChangeTransparency: 25
-  timeBetweenStepsChangingTransparency: 0.1
+  isActive: 0
 --- !u!1 &6679392821720691844
 GameObject:
   m_ObjectHideFlags: 0

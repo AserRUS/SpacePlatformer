@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         CheckGround();
-        Debug.Log(rb.velocity);
     }
 
     private void FixedUpdate()

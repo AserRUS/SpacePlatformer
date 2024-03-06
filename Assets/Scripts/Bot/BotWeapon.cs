@@ -7,6 +7,7 @@ public class BotWeapon : MonoBehaviour
 
     [Header("Ranged attack")]
     [SerializeField] private Projectile projectilePrefab;
+    [SerializeField] private Transform FirePoint;
     [SerializeField] private int maxNumberCartridges;
     [SerializeField] private float timeBetweenShots;
     [SerializeField] private float timeRecharge;
@@ -54,7 +55,7 @@ public class BotWeapon : MonoBehaviour
     private void Shoot()
     {
         Projectile projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
-        projectile.transform.position = gameObject.transform.position;
+        projectile.transform.position = FirePoint.position;
 
         if (dirRight)
             projectile.transform.up = new Vector2(1, 0);
