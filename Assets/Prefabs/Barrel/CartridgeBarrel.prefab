@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3985029968598140572}
   - component: {fileID: 1799100410517915996}
   - component: {fileID: 7995665766023637866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CartridgeBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 601014806998915360}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.44, y: 5.22, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 2562773511158071181}
   - component: {fileID: 176288194383178739}
   - component: {fileID: 6998514830550697105}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 1965725661436258255}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.96}
+  m_LocalPosition: {x: 0, y: 0, z: 1.34}
   m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

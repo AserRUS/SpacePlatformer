@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4520380330128041144}
   - component: {fileID: 6051464609397665611}
   - component: {fileID: 8018816593033257537}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6727122253727865093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.96}
+  m_LocalPosition: {x: 0, y: 0, z: 1.106}
   m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7081186061046790872}
   - component: {fileID: 2916076231815107577}
   - component: {fileID: 7040019496872233026}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnergyBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 8078234267104677185}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 5.22, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
