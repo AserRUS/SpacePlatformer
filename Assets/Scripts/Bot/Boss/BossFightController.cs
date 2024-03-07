@@ -5,6 +5,7 @@ public class BossFightController : MonoBehaviour
     [SerializeField] private CameraFieldOfViewController viewController;
     [SerializeField] private Boss boss;
     [SerializeField] private UIState uiHealth;
+    [SerializeField] private Door[] doors;
 
     private Destructible bossDest;
 
@@ -45,6 +46,14 @@ public class BossFightController : MonoBehaviour
         uiHealth.ValueChange(bossDest.MaxHitPoints);
         bossDest.HitPointChangeEvent += uiHealth.ValueChange;
         uiHealth.gameObject.SetActive(true);
+        //Doors
+        if (doors != null)
+        {
+            foreach (Door door in doors)
+            {
+                door.CloseDoor();
+            }
+        }
     }
 
     private void FinishFight()
@@ -54,6 +63,14 @@ public class BossFightController : MonoBehaviour
         //UI slider
         bossDest.HitPointChangeEvent -= uiHealth.ValueChange;
         uiHealth.gameObject.SetActive(false);
+        //Doors
+        if (doors != null)
+        {
+            foreach (Door door in doors)
+            {
+                door.OpenDoor();
+            }
+        }
     }
 
     private void BossDeath()
