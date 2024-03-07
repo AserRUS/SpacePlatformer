@@ -100,6 +100,11 @@ public class InterfacePositionSettings : MonoBehaviour
     }
     private void Load()
     {
-        interfaceLayout = (InterfaceLayout) PlayerPrefs.GetInt("InterfaceLayout", 1);
+        int index = PlayerPrefs.GetInt("InterfaceLayout", -1);
+
+        if (index != -1)
+        {
+            interfaceLayout = (InterfaceLayout)index;
+        }
     }
 }
