@@ -14,9 +14,9 @@ TagManager:
   - Ground
   - Camera
   - BulletIgnoreCollision
-  - 
-  - 
-  - 
+  - Barrel
+  - Shield
+  - Enemy
   - 
   - 
   - 

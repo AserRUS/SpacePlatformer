@@ -26,6 +26,7 @@ public class Projectile : MonoBehaviour
                 if (dest != null)
                 {
                     dest.RemoveHitpoints(m_Damage, owner);
+                    
                 }
             }
             

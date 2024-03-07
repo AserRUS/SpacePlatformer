@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6565887939460027635}
   - component: {fileID: 4807826845022091945}
-  m_Layer: 7
-  m_Name: Projectile 2
+  m_Layer: 0
+  m_Name: EnemyProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,13 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552f7ddf516703848a61455737c12514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Damage: 50
+  m_Damage: 25
   m_Velosity: 30
   m_ImpactEffect: {fileID: 2964485268448324653, guid: c9f42e223042a774185307b0e0928542, type: 3}
   m_LifeTime: 3
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 1089
 --- !u!1 &9026927625449272260
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 4901304294538584530}
   - component: {fileID: 7578603073780665317}
   - component: {fileID: 5293011897128499595}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.3, z: 0.2}
+  m_LocalScale: {x: 0.5, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6565887939460027635}
@@ -113,7 +113,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32f83cb8a4ba4f74c87f8ee1cd3e3fbb, type: 2}
+  - {fileID: 2100000, guid: 9733b136bdc87b6408bf1b1d27b2a78e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

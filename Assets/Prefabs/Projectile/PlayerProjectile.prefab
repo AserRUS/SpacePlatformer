@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6565887939460027635}
   - component: {fileID: 4807826845022091945}
-  m_Layer: 7
-  m_Name: Projectile
+  m_Layer: 0
+  m_Name: PlayerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_LifeTime: 3
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 2625
 --- !u!1 &9026927625449272260
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 4901304294538584530}
   - component: {fileID: 7578603073780665317}
   - component: {fileID: 5293011897128499595}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
