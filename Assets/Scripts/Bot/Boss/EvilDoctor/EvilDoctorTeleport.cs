@@ -26,6 +26,11 @@ public class EvilDoctorTeleport : MonoBehaviour
         StartCoroutine(PreparationForTeleport(timeBetweenTeleportation));
     }
 
+    public void StopTeleportTimer()
+    {
+        StopCoroutine(PreparationForTeleport(timeBetweenTeleportation));
+    }
+
     public Vector3 ChoosePointForTeleportation()
     {
         int randomPoint = Random.Range(0, teleportationPoints.Length);
@@ -52,6 +57,11 @@ public class EvilDoctorTeleport : MonoBehaviour
     private IEnumerator PreparationForTeleport(float time)
     {
         yield return new WaitForSeconds(time);
+        readyForTeleport = true;
+    }
+
+    public void SetReadyForTeleport()
+    {
         readyForTeleport = true;
     }
 }

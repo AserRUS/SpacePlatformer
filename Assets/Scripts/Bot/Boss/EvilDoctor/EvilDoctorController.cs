@@ -97,7 +97,8 @@ public class EvilDoctorController : Boss
 
         if (damage >= damageReceivedRequiredForTeleportation)
         {
-            Teleport();
+            teleport.StopTeleportTimer();
+            teleport.SetReadyForTeleport();
         }
     }
 }
