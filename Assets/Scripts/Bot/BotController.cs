@@ -177,6 +177,9 @@ public class BotController : MonoBehaviour
 
     private void PlayerDeath()
     {
+        if (detectedPlayer == null)
+            return;
+
         Destructible dest = detectedPlayer.GetComponent<Destructible>();
 
         if (dest)
