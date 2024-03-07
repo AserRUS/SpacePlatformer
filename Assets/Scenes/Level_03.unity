@@ -354,18 +354,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1698441920534248240, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: m_MaxHitPoints
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: timeBetweenTeleportation
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: teleportationPoints.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: teleportationPoints.Array.data[0]
       value: 
@@ -398,10 +386,6 @@ PrefabInstance:
       propertyPath: attackZone
       value: 
       objectReference: {fileID: 6469352222792793163}
-    - target: {fileID: 6692388492492251700, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: timeBetweenAttack
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8380300666534522881, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46.7
@@ -518,10 +502,6 @@ PrefabInstance:
       propertyPath: viewController
       value: 
       objectReference: {fileID: 1923505896}
-    - target: {fileID: 5973830485692354230, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
-      propertyPath: doors.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5973830485692354230, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
       propertyPath: doors.Array.data[0]
       value: 

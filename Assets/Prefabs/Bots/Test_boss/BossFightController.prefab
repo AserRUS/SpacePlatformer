@@ -69,3 +69,6 @@ MonoBehaviour:
   viewController: {fileID: 0}
   boss: {fileID: 0}
   uiHealth: {fileID: 0}
+  doors:
+  - {fileID: 0}
+  - {fileID: 0}

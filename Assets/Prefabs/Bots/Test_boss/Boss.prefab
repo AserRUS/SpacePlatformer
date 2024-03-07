@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47595eda6dee6724d8af205fee54deb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHitPoints: 1
+  m_MaxHitPoints: 500
   m_DeathEffect: {fileID: 7401727948457227951, guid: 093474ce8bd662345bb1b691aa1728b7, type: 3}
 --- !u!114 &4429727030363016139
 MonoBehaviour:
@@ -273,7 +273,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  timeBetweenTeleportation: 5
+  timeBetweenTeleportation: 30
 --- !u!114 &6692388492492251700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,4 +287,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackZone: {fileID: 0}
-  timeBetweenAttack: 5
+  timeBetweenAttack: 4
