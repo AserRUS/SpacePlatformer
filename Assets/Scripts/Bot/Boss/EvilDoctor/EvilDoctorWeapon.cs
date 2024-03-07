@@ -10,6 +10,11 @@ public class EvilDoctorWeapon : MonoBehaviour
 
     public bool ReadyForAttack => readyForAttack;
 
+    private void Start()
+    {
+        StartAttackTimer();
+    }
+
     public void Attack(GameObject player)
     {
         if (!readyForAttack) return;
