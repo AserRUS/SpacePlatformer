@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float m_RotationSpeed;
     [SerializeField] private float m_GroundSpeed;
-    [SerializeField] private float m_AirSpeed;
     [SerializeField] private float m_MaxSpeed;
     [SerializeField] private float m_RayDistance;
     [SerializeField] private Vector3 m_RayOffset;
@@ -94,9 +93,7 @@ public class PlayerMovement : MonoBehaviour
         if (isStun == true) return;
         if (isMove == false) return;
         
-        if (isGround == false)
-            rb.AddForce(direction * Vector3.right * m_AirSpeed);
-        else 
+        if (isGround != false)
             rb.AddForce(direction * Vector3.right * m_GroundSpeed);
     }
 
@@ -134,11 +131,7 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.x * direction >= m_MaxSpeed && isGround)
         {
             rb.velocity = new Vector3(direction * m_MaxSpeed, rb.velocity.y, rb.velocity.z);
-        }
-        if (isGround == false && isMove == true)
-        {
-            rb.AddForce(new Vector2(-1, 0) * rb.velocity.x * (Mathf.Abs(rb.velocity.x) / m_MaxSpeed));
-        }
+        }  
     }
 
     public void RotateLeft()
