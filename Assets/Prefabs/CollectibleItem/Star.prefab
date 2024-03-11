@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4915105615572508253}
-  - component: {fileID: 8940868111165957941}
   - component: {fileID: 2264868998827705559}
+  - component: {fileID: 8940868111165957941}
+  - component: {fileID: 925373612390176285}
   m_Layer: 8
   m_Name: Star
   m_TagString: Untagged
@@ -34,22 +35,6 @@ Transform:
   - {fileID: 6470043549834224087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8940868111165957941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864065272902844173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee67886b24398b49b1998c6770346ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SelectionEffect: {fileID: 7318941505471387718, guid: 477fb6176ce8748488200ef03d80ea5e, type: 3}
-  m_Speed: 3
-  m_Amplitude: 0.5
-  m_RotateSpeed: 100
 --- !u!135 &2264868998827705559
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -71,6 +56,34 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8940868111165957941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864065272902844173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee67886b24398b49b1998c6770346ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SelectionEffect: {fileID: 7318941505471387718, guid: 477fb6176ce8748488200ef03d80ea5e, type: 3}
+--- !u!114 &925373612390176285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864065272902844173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1eea9fe1dba9264f98b2d6b9a43273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Speed: 3
+  m_Amplitude: 0.5
+  m_RotateSpeed: 100
 --- !u!1 &5638635181037437873
 GameObject:
   m_ObjectHideFlags: 0

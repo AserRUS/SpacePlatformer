@@ -10,7 +10,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: DistanceToGround
-    m_EventTreshold: 3
+    m_EventTreshold: 0.9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2610241621107423190}
   m_Solo: 0
@@ -129,7 +129,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: DistanceToGround
-    m_EventTreshold: 2
+    m_EventTreshold: 0.7
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3072727253567567769}
   m_Solo: 0

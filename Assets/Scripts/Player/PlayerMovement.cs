@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isRotation;
     private bool isStun;
     private Vector3 targetRotation;
-
+    private RaycastHit hit;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -58,28 +58,38 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void CheckGround()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100, m_LayerMask) == true)
+    {  
+        m_DistanceToGround = 100;
+        float dist;
+        if (Physics.Raycast(transform.position + new Vector3(m_RayOffset.x, m_RayOffset.y, m_RayOffset.z), -transform.up, out hit, 100, m_LayerMask) == true)
         {
-            m_DistanceToGround = Vector3.Distance(transform.position, hit.point);
+            dist = Vector3.Distance(transform.position + new Vector3(m_RayOffset.x, m_RayOffset.y, m_RayOffset.z), hit.point);
+            if (dist < m_DistanceToGround)
+                m_DistanceToGround = dist;
+        }
+        if (Physics.Raycast(transform.position + new Vector3(-m_RayOffset.x, m_RayOffset.y, m_RayOffset.z), -transform.up, out hit, 100, m_LayerMask) == true)
+        {
+            dist = Vector3.Distance(transform.position + new Vector3(-m_RayOffset.x, m_RayOffset.y, m_RayOffset.z), hit.point);
+            if (dist < m_DistanceToGround)
+                m_DistanceToGround = dist;
+        }
+
+        if (m_DistanceToGround <= m_RayDistance)
+        {
+            if (isGround == false)
+            {
+                jumpCount = m_MaxJumpCount;
+            }
+            isGround = true;
         }
         else
         {
-            m_DistanceToGround = 100;
+            isGround = false;
         }
 
 
-        bool isHit = Physics.Raycast(transform.position + m_RayOffset, -transform.up, m_RayDistance, m_LayerMask) || Physics.Raycast(transform.position - m_RayOffset, -transform.up, m_RayDistance, m_LayerMask);
-
-        if (isGround == false && isHit != false)
-        {
-            jumpCount = m_MaxJumpCount;
-        }
-        isGround = isHit;
-
-        Debug.DrawRay(transform.position + m_RayOffset, -Vector2.up * m_RayDistance, Color.yellow);
-        Debug.DrawRay(transform.position - m_RayOffset, -Vector2.up * m_RayDistance, Color.yellow);
+        Debug.DrawRay(transform.position + new Vector3(m_RayOffset.x, m_RayOffset.y, m_RayOffset.z), -Vector2.up * m_RayDistance, Color.yellow);
+        Debug.DrawRay(transform.position + new Vector3(-m_RayOffset.x, m_RayOffset.y, m_RayOffset.z), -Vector2.up * m_RayDistance, Color.yellow);
     }
 
     private bool CheckJumpOpportunity()
