@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee67886b24398b49b1998c6770346ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_CollectibleItemType: 0
   m_SelectionEffect: {fileID: 7318941505471387718, guid: 477fb6176ce8748488200ef03d80ea5e, type: 3}
 --- !u!114 &925373612390176285
 MonoBehaviour:

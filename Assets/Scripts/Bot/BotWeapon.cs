@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+[RequireComponent(typeof(AudioSource))]
 public class BotWeapon : MonoBehaviour
 {
     [SerializeField] private BotAnimatorController animController;
@@ -11,6 +11,7 @@ public class BotWeapon : MonoBehaviour
     [SerializeField] private int maxNumberCartridges;
     [SerializeField] private float timeBetweenShots;
     [SerializeField] private float timeRecharge;
+    [SerializeField] private AudioClip m_ShotSound;
 
     [Header("Melee attack")]
     [SerializeField] private int meleeDamage;
@@ -19,8 +20,11 @@ public class BotWeapon : MonoBehaviour
     private bool shootAvailable;
     private bool dirRight;
 
+    private AudioSource m_Audio;
     private void Start()
     {
+
+        m_Audio = GetComponent<AudioSource>();
         shootAvailable = true;
         numberCartridges = maxNumberCartridges;
 
@@ -54,6 +58,8 @@ public class BotWeapon : MonoBehaviour
 
     private void Shoot()
     {
+
+        m_Audio.PlayOneShot(m_ShotSound);
         Projectile projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
         projectile.transform.position = FirePoint.position;
 

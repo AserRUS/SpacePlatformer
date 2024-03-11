@@ -45,7 +45,7 @@ public class Weapon : MonoBehaviour
         projectile.SetOwner(transform.root.gameObject);
         
         //m_Flash.Play();
-        //m_Audio.PlayOneShot(m_ShotSound);
+        m_Audio.PlayOneShot(m_ShotSound);
         m_RefireTimer = m_RateOfFire;
     }    
 }
