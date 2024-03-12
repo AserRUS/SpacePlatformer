@@ -15,6 +15,7 @@ public class MarketManager : MonoBehaviour
     {
         public ProductInfo m_ProductInfo;
         public bool IsSold = false;
+        public bool IsSelected = false;
     }
     [SerializeField] private ProductState[] m_ProductStates;
 
@@ -49,6 +50,23 @@ public class MarketManager : MonoBehaviour
         
     }
 
+    public void Select(ProductInfo productInfo)
+    {
+        for (int i = 0; i < m_ProductStates.Length; i++)
+        {
+            if (productInfo == m_ProductStates[i].m_ProductInfo)
+            {
+                m_ProductStates[i].IsSelected = true;
+            }
+            else
+            {
+                m_ProductStates[i].IsSelected = false;
+            }
+        }
+        Saver<ProductState[]>.Save(MarketFilename, m_ProductStates);
+
+    }
+
     public void RemoveMoney(int value)
     {
         moneyCount -= value;
@@ -61,15 +79,15 @@ public class MarketManager : MonoBehaviour
         this.moneyCount += moneyCount;
         Saver<int>.Save(MoneyFilename, moneyCount);
     }
-    public bool GetProductState(ProductInfo productInfo)
+    public ProductState GetProductState(ProductInfo productInfo)
     {
         for (int i = 0; i < m_ProductStates.Length; i++)
         {
             if (productInfo == m_ProductStates[i].m_ProductInfo)
             {
-                return m_ProductStates[i].IsSold;
+                return m_ProductStates[i];
             }
         }
-        return false;
+        return null;
     }
 }

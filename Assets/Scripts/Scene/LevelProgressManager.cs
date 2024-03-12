@@ -125,6 +125,7 @@ public class LevelProgressManager : MonoBehaviour
     {
         FileHandler.Reset("Market");
         FileHandler.Reset("LevelProgress");
+        FileHandler.Reset("Money");
     }
 
     

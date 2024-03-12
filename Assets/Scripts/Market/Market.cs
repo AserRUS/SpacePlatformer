@@ -15,11 +15,20 @@ public class Market : MonoBehaviour
         foreach (var slot in m_Cells)
         {
             slot.Initialize();
-            slot.BuyButton.onClick.AddListener(UpdateMoney);
+            slot.BuyEvent += UpdateMoney;
+            slot.SelectEvent += UpdateCells;
         }
         UpdateMoney();
+        UpdateCells();
     }
-
+    private void OnDestroy()
+    {
+        foreach (var slot in m_Cells)
+        {
+            slot.BuyEvent -= UpdateMoney;
+            slot.SelectEvent -= UpdateMoney;
+        }
+    }
     public void UpdateMoney()
     {
         m_Money = MarketManager.Instance.MoneyCount;
@@ -30,7 +39,13 @@ public class Market : MonoBehaviour
         }
     }
 
-   
+    public void UpdateCells()
+    {
+        foreach (var slot in m_Cells)
+        {
+            slot.CheckSelected();
+        }
+    }
 }
 
 
