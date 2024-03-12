@@ -88,7 +88,7 @@ public class BotWeapon : MonoBehaviour
                 dest.RemoveHitpoints(meleeDamage, gameObject);
             }
 
-            Destroy(gameObject.transform.root.gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
         }
     }
 }
