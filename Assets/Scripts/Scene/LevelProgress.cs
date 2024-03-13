@@ -9,6 +9,7 @@ public class LevelProgress : MonoBehaviour
     [SerializeField] private UIFinish m_UIFinish;    
            
     private int starCount;
+    private int moneyCount;
 
     private void Awake()
     {
@@ -25,12 +26,17 @@ public class LevelProgress : MonoBehaviour
     public void LevelFinished()
     {        
         LevelProgressManager.Instance.LevelFinished(starCount);
-        m_UIFinish.Finish(starCount);
+        MarketManager.Instance.AddMoney(moneyCount);
+        m_UIFinish.Finish(starCount, moneyCount);
     }
        
 
     public void AddStar()
     {
         starCount++;
+    }
+    public void AddMoney()
+    {
+        moneyCount++;
     }
 }

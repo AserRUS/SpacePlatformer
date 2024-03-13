@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Barrel : Destructible
 {
     private enum BarretType
@@ -13,18 +14,23 @@ public class Barrel : Destructible
     [SerializeField] private float m_LifeTime;
     [SerializeField] private BarretType m_BarrelType;
     [SerializeField] private int m_AddedValue;
+    [SerializeField] private AudioClip m_FallingSound;
 
     private float timer;
-
+    private AudioSource m_Audio;
     protected override void Start()
     {        
         base.Start();
         enabled = false;
         timer = m_LifeTime;
+
+        m_Audio = GetComponent<AudioSource>();
     }
     private void OnCollisionEnter(Collision collision)
     {
         enabled = true;
+
+        m_Audio.PlayOneShot(m_FallingSound);
     }
 
     private void Update()

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LevelProgressManager : MonoBehaviour
 {
+    public const string filename = "LevelProgress";
+
     [Serializable]
     public class LevelState
     {
@@ -13,6 +15,10 @@ public class LevelProgressManager : MonoBehaviour
 
         public LevelState() {}
     }
+
+
+
+    
     public LevelInfo CurrentLevel => m_CurrentLevel;
 
     public static LevelProgressManager Instance;
@@ -25,6 +31,8 @@ public class LevelProgressManager : MonoBehaviour
 
     private LevelInfo m_CurrentLevel;
 
+    
+
     private void Awake()
     {
         if (Instance)
@@ -36,9 +44,11 @@ public class LevelProgressManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(gameObject);
-        Load();
-        
+        Saver<LevelState[]>.TryLoad(filename, ref m_LevelStates);
+
     }    
+
+    
 
     public void SetCurrentLevel(LevelInfo levelInfo)
     {
@@ -57,10 +67,11 @@ public class LevelProgressManager : MonoBehaviour
                 if (m_LevelStates[i].StarCount < starCount)
                     m_LevelStates[i].StarCount = starCount; 
 
-                Save();
+                
             }
-        }       
+        }
 
+        Saver<LevelState[]>.Save(filename, m_LevelStates);
     }
     
 
@@ -108,49 +119,14 @@ public class LevelProgressManager : MonoBehaviour
     }
 
 
-    [Serializable]
-    private class Saver
-    {
-        public LevelState[] LevelStates;
-    }
-    private void Save()
-    {
-        Saver saver = new Saver();
-        saver.LevelStates = m_LevelStates;
-        string dataString = JsonUtility.ToJson(saver);        
-        File.WriteAllText(Application.persistentDataPath + "/" + "LevelProgress", dataString);
-    }
-
-    private void Load()
-    {
-        Debug.Log(Application.persistentDataPath);
-
-        if (File.Exists(Application.persistentDataPath + "/" + "LevelProgress"))
-        {
-            string dataString = File.ReadAllText(Application.persistentDataPath + "/" + "LevelProgress");
-            Saver saver = new Saver();
-            saver = JsonUtility.FromJson<Saver>(dataString);
-            m_LevelStates = saver.LevelStates;
-        }
-    }
+    
 
     public void Remove()
     {
-        if (File.Exists(Application.persistentDataPath + "/" + "LevelProgress"))
-        {
-            File.Delete(Application.persistentDataPath + "/" + "LevelProgress");
-
-            for (int i = 0; i < m_LevelStates.Length; i++)
-            {
-                m_LevelStates[i].State = false;
-                m_LevelStates[i].StarCount = 0;
-
-            }
-        }
+        FileHandler.Reset("Market");
+        FileHandler.Reset("LevelProgress");
+        FileHandler.Reset("Money");
     }
 
-    public bool Progress()
-    {
-        return File.Exists(Application.persistentDataPath + "/" + "LevelProgress");
-    }
+    
 }
