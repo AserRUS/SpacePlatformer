@@ -18,7 +18,7 @@ public class Destructible : MonoBehaviour
         currentHitPoints = m_MaxHitPoints;
         HitPointChangeEvent?.Invoke(currentHitPoints);
     }
-    public void RemoveHitpoints(int value, GameObject owner)
+    public virtual void RemoveHitpoints(int value, GameObject owner)
     {
         currentHitPoints -= value;
 

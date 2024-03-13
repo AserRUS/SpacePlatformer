@@ -77,7 +77,7 @@ public class EvilDoctorController : Boss
 
     private void Attack()
     {
-        weapon.Attack(playerSpawner.Player.gameObject);
+        weapon.Attack(playerSpawner.GetPlayer().gameObject);
         isAttack = false;
     }
 
@@ -87,7 +87,7 @@ public class EvilDoctorController : Boss
         teleport.Teleport(teleport.ChoosePointForTeleportation());
         hitPointsAfterTeleportation = currentHitPoints;
         isTeleporting = false;
-        vignetteController.EnableVignette(transform.position, playerSpawner.Player.transform.position);
+        vignetteController.EnableVignette(transform.position, playerSpawner.GetPlayer().transform.position);
     }
 
     private void CheckReceiveDamage(int hitPoints)

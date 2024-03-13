@@ -5,14 +5,23 @@ public class InputControl : MonoBehaviour
     [SerializeField] private ButtonPressDuration buttonPressDuration;
     [SerializeField] private UIImageChangingTransparency shieldButton;
     [SerializeField] private UIImageChangingTransparency attackButton;
+    [SerializeField] private New_UIClampingButton shieldButton_New;
 
     private PlayerInputControl playerInputControl;
 
 
-    private float mouse0ButtonClamp = 0;
+    private float EButtonClamp = 0;
     private float mouse1ButtonClamp = 0;
 
     private bool isInputControlEnabled = true;
+    private bool isAttackEnabled = true;
+    private bool isShieldEnabled = true;
+
+    private void Start()
+    {
+        shieldButton_New.OnPointerDownEvent.AddListener(IncreaseShield);
+        shieldButton_New.OnPointerUpEvent.AddListener(StopShieldIncrease);
+    }
 
     private void Update()
     {
@@ -25,30 +34,30 @@ public class InputControl : MonoBehaviour
                 Jump();
             }
 
-            #region Mouse0
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            #region E
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                mouse0ButtonClamp += Time.deltaTime;
+                EButtonClamp += Time.deltaTime;
 
                 if (attackButton)
                     attackButton.SmoothRemoveTransparency();//RemoveTransparency();
             }
 
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.E))
             {
-                mouse0ButtonClamp += Time.deltaTime;
+                EButtonClamp += Time.deltaTime;
 
-                if (mouse0ButtonClamp > buttonPressDuration.TimeLimitForButtonClamp)
+                if (EButtonClamp > buttonPressDuration.TimeLimitForButtonClamp)
                 {
-                    UseAttack(mouse0ButtonClamp);
-                    mouse0ButtonClamp = 0;
+                    UseAttack(EButtonClamp);
+                    EButtonClamp = 0;
                 }
             }
 
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+            if (Input.GetKeyUp(KeyCode.E))
             {
-                UseAttack(mouse0ButtonClamp);
-                mouse0ButtonClamp = 0;
+                UseAttack(EButtonClamp);
+                EButtonClamp = 0;
 
                 if (attackButton)
                     attackButton.AddTransparency();
@@ -56,6 +65,20 @@ public class InputControl : MonoBehaviour
             #endregion
 
             #region Mouse1
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                shieldButton_New.ButtonDown();
+                IncreaseShield(shieldButton_New);
+            }
+            else if (Input.GetKeyUp(KeyCode.Mouse1))
+            {
+                shieldButton_New.ButtonUp();
+                StopShieldIncrease(shieldButton_New);
+            }
+            #endregion
+
+            #region Mouse1_Old
+            /*
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 mouse1ButtonClamp += Time.deltaTime;
@@ -83,6 +106,7 @@ public class InputControl : MonoBehaviour
                 if (shieldButton)
                     shieldButton.AddTransparency();
             }
+            */
             #endregion
         }
 
@@ -113,6 +137,12 @@ public class InputControl : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        shieldButton_New.OnPointerDownEvent.RemoveListener(IncreaseShield);
+        shieldButton_New.OnPointerUpEvent.RemoveListener(StopShieldIncrease);
+    }
+
     public void Jump()
     {
         if (isInputControlEnabled == false) return;
@@ -129,6 +159,20 @@ public class InputControl : MonoBehaviour
     {
         if (isInputControlEnabled == false) return;
         playerInputControl.UseShield(timeClamp);
+    }
+
+    private void IncreaseShield(UIButton button)
+    {
+        if (isInputControlEnabled == false) return;
+        if (isShieldEnabled == false) return;
+        playerInputControl.IncreaseShield();
+    }
+
+    private void StopShieldIncrease(UIButton button)
+    {
+        if (isInputControlEnabled == false) return;
+        if (isShieldEnabled == false) return;
+        playerInputControl.StopShieldIncrease();
     }
 
     public void RotateLeft()
@@ -156,5 +200,14 @@ public class InputControl : MonoBehaviour
     public void InputControlEnabled(bool value)
     {
         isInputControlEnabled = value;
+    }
+    public void AttackEnabled(bool value)
+    {
+        isAttackEnabled = value;
+    }
+
+    public void ShieldEnabled(bool value)
+    {
+        isShieldEnabled = value;
     }
 }

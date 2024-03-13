@@ -4,7 +4,6 @@ using UnityEngine;
 [RequireComponent (typeof(Rigidbody))]
 public class Box : MonoBehaviour
 {
-    [SerializeField] private LayerMask groundMask;
     [SerializeField] private int damage;
     [SerializeField] private int mass;
     [SerializeField] private float lifeTime;
@@ -41,21 +40,33 @@ public class Box : MonoBehaviour
     {
         if (!isActive) return;
 
-        Destructible destructible = collision.gameObject.GetComponent<Destructible>();
-        
-        if (destructible)
+        Player player = collision.gameObject.GetComponent<Player>();
+
+        if (player)
         {
             Vector3 direction = transform.position - collision.transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            if (angle < maxAngle && angle > minAngle && rb.velocity.y < 0)
+            if (angle < maxAngle && angle > minAngle)// && rb.velocity.y < 0)
             {
-                destructible.RemoveHitpoints(damage, destructible.gameObject);
+                New_ShieldController shieldController = collision.gameObject.GetComponent<New_ShieldController>();
+                if (shieldController)
+                {
+                    New_Shield shield = shieldController.GetShield();
+                    if (shield)
+                    {
+                        shield.RemoveHitpoints(damage, shield.gameObject);
+                    }
+                    else
+                    {
+                        player.RemoveHitpoints(damage, player.gameObject);
+                    }
+                }
+
                 Destroy(gameObject);
             }
         }
-
-        if ((groundMask & (1 << collision.gameObject.layer)) != 0)
+        else
         {
             StartCoroutine(LifeTimer(lifeTime));
         }
