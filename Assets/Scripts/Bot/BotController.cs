@@ -124,6 +124,8 @@ public class BotController : MonoBehaviour
         Vector3 scale = flipModel.transform.localScale;
         scale.z *= -1;
         flipModel.transform.localScale = scale;
+        scale = flipCollider.transform.localScale;
+        scale.z *= -1;
         flipCollider.transform.localScale = scale;
     }
 
