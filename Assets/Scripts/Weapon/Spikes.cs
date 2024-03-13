@@ -60,7 +60,18 @@ public class Spikes : MonoBehaviour
         if (rb != null)
         {
             rb.velocity = Vector3.zero;
-            rb.AddForce((Vector2)(collider.transform.position - transform.position).normalized * imactForce, ForceMode.Impulse);
+
+            Vector3 direction = collider.transform.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            
+            if (angle >= 90)
+            {
+                rb.AddForce(new Vector2(-1, 1) * imactForce, ForceMode.Impulse);
+            }
+            else
+            {
+                rb.AddForce(new Vector2(1, 1) * imactForce, ForceMode.Impulse);
+            }
         }
 
         PlayerMovement playerMovement = collider.transform.GetComponent<PlayerMovement>();

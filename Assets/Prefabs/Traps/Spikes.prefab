@@ -70,8 +70,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageInPeroidOfTime: 1
   timeStep: 0.1
-  damage: 20
-  imactForce: 20
+  damage: 10
+  imactForce: 30
 --- !u!1001 &791554272009002626
 PrefabInstance:
   m_ObjectHideFlags: 0
