@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class New_ShieldController : MonoBehaviour
 {
@@ -8,28 +9,28 @@ public class New_ShieldController : MonoBehaviour
 
     private Player player;
     private New_Shield shield;
-    private bool shieldActive;
+    private bool isShieldActive;
     private bool buttonClamp;
     private float time;
     private float timeStep = 0.1f;
 
+
     private void Start()
     {
         player = GetComponent<Player>();
-        shieldActive = false;
+        isShieldActive = false;
         player.DeathEvent += OnPlayerDeath;
         
     }
     private void Update()
     {
-        MoveShield();
         ButtonClamp();
     }
 
     private void ButtonClamp()
     {
         if (!buttonClamp) return;
-        if (!shieldActive) return;
+        if (!isShieldActive) return;
 
         if (time >= timeStep)
         {
@@ -41,27 +42,19 @@ public class New_ShieldController : MonoBehaviour
         time += Time.deltaTime;
     }
 
-    private void MoveShield()
-    {
-        if (shieldActive)
-        {
-            shield.transform.position = player.transform.position;
-        }
-    }
-
     public void IncreaseShield()
     {
-        if (!shieldActive)
+        if (!isShieldActive)
         {
             shield = Instantiate(shieldPrefab, player.transform.position,
-                Quaternion.identity).GetComponent<New_Shield>();
+                Quaternion.identity, player.transform).GetComponent<New_Shield>();
             shield.DeathEvent += OnShieldBroke;
             player.SetInvulnerable(true);
         }
 
         shield.ResetLifetime();
         buttonClamp = true;
-        shieldActive = true;
+        isShieldActive = true;
     }
 
     public void StopShieldIncrease()
@@ -74,7 +67,7 @@ public class New_ShieldController : MonoBehaviour
     {
         shield.DeathEvent -= OnShieldBroke;
         shield = null;
-        shieldActive = false;
+        isShieldActive = false;
         player.SetInvulnerable(false);
     }
 

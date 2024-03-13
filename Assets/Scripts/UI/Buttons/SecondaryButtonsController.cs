@@ -21,12 +21,12 @@ public class SecondaryButtonsController : MonoBehaviour
 
     private void Start()
     {
-        SetPlayer();
+        SetVariables();
     }
 
     private void CheckCartridgeStorage(int value) { }
 
-    private void SetPlayer()
+    private void SetVariables()
     {
         player = playerSpawner.GetPlayer();
         FindStorages(player);
@@ -38,7 +38,7 @@ public class SecondaryButtonsController : MonoBehaviour
         player.DeathEvent -= OnPlayerDeath;
         energyStorage.StorageChangeEvent -= CheckEnergyStorage;
         cartridgeStorage.StorageChangeEvent -= CheckEnergyStorage;
-        SetPlayer();
+        SetVariables();
     }
 
     private void FindStorages(Player player)
