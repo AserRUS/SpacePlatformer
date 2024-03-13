@@ -58,7 +58,6 @@ public class BotWeapon : MonoBehaviour
 
     private void Shoot()
     {
-
         m_Audio.PlayOneShot(m_ShotSound);
         Projectile projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
         projectile.transform.position = FirePoint.position;

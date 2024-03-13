@@ -5,6 +5,7 @@ public class BotController : MonoBehaviour
 {
     [SerializeField] private GameObject flipModel;
     [SerializeField] private GameObject flipCollider;
+    [SerializeField] private GameObject flipWeapon;
 
     [SerializeField] private float speed;
     [SerializeField] private float timeDelayAfterLossPlayer;
@@ -127,6 +128,9 @@ public class BotController : MonoBehaviour
         scale = flipCollider.transform.localScale;
         scale.z *= -1;
         flipCollider.transform.localScale = scale;
+        scale = flipWeapon.transform.localScale;
+        scale.z *= -1;
+        flipWeapon.transform.localScale = scale;
     }
 
     private void SetNextTargetPoint()
