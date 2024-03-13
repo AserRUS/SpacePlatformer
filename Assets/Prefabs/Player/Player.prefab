@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 8284577208021454113}
   - component: {fileID: 8649802978472745030}
   - component: {fileID: -8508785415571599666}
+  - component: {fileID: 6190112040215844588}
   - component: {fileID: 687520462565299123}
   m_Layer: 0
   m_Name: Player
@@ -486,6 +487,7 @@ MonoBehaviour:
   m_Weapon: {fileID: 8284577208021454113}
   m_Shield: {fileID: 7116685210739030965}
   m_Movement: {fileID: 6635528274249280128}
+  m_Shield_New: {fileID: 6190112040215844588}
 --- !u!114 &1222894124470886122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,6 +594,21 @@ MonoBehaviour:
   m_PlayerMovement: {fileID: 6635528274249280128}
   m_MovementAudioSource: {fileID: 687520462565299123}
   m_SoundAttenuationRate: 5
+--- !u!114 &6190112040215844588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6418860500129791720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53837ff1a3a62ed4dbe574301e012175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyStorage: {fileID: -8802150682411759611}
+  shieldPrefab: {fileID: 4045708935079799947, guid: ff6c133ceb749c34c8164dccccb9482a, type: 3}
+  shieldPropertes: {fileID: 11400000, guid: d2ce111460a026e42a01a42ce5e949f1, type: 2}
 --- !u!82 &687520462565299123
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.UI.GridLayoutGroup;
 
 public class PlayerSpawner : EntitySpawner
 {
@@ -12,6 +11,8 @@ public class PlayerSpawner : EntitySpawner
     [SerializeField] private UIState m_UICartridge;
 
     private Player player;
+
+    public Player Player => player;
 
     private void Awake()
     {

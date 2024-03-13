@@ -2311,7 +2311,7 @@ PrefabInstance:
     - target: {fileID: 2440755103770276023, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
       propertyPath: m_InputControl
       value: 
-      objectReference: {fileID: 1588184800}
+      objectReference: {fileID: 7197959289018829020}
     - target: {fileID: 2440755103770276023, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
       propertyPath: m_PlayerSpawner
       value: 
