@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6588346886147398224}
   - component: {fileID: 5625588466250481795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bo4ka_fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,6 +121,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9aa730135a113d946a084f2f6e22a316, type: 3}
       propertyPath: m_Name
       value: Bo4ka_fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9aa730135a113d946a084f2f6e22a316, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9aa730135a113d946a084f2f6e22a316, type: 3}
       propertyPath: m_IsActive

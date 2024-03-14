@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 455727848265461836}
   - component: {fileID: 7854955552862938694}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bo4ka_lab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,6 +121,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9aa730135a113d946a084f2f6e22a316, type: 3}
       propertyPath: m_Name
       value: Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9aa730135a113d946a084f2f6e22a316, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
