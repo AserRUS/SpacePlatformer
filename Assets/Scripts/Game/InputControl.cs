@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InputControl : MonoBehaviour
 {
+    public event UnityAction<bool> InputControlStateChanged;
+
     [SerializeField] private ButtonPressDuration buttonPressDuration;
     [SerializeField] private UIImageChangingTransparency shieldButton;
     [SerializeField] private UIImageChangingTransparency attackButton;
@@ -200,6 +203,7 @@ public class InputControl : MonoBehaviour
     public void InputControlEnabled(bool value)
     {
         isInputControlEnabled = value;
+        InputControlStateChanged?.Invoke(value);
     }
     public void AttackEnabled(bool value)
     {

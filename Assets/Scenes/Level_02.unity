@@ -2022,6 +2022,7 @@ MonoBehaviour:
   m_CameraFlightTarget: {fileID: 1085647272}
   m_CameraStartPosition: {fileID: 375920489}
   m_InputControl: {fileID: 1588184800}
+  m_InstructionPanel: {fileID: 0}
 --- !u!4 &1945485039
 Transform:
   m_ObjectHideFlags: 0
@@ -2623,6 +2624,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 313998341652498895, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: inputControl
+      value: 
+      objectReference: {fileID: 1588184800}
     - target: {fileID: 2681154482574058192, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
       propertyPath: inputControl
       value: 

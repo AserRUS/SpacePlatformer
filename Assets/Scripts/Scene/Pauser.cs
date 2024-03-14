@@ -22,8 +22,9 @@ public class Pauser : MonoBehaviour
 
     public void Pause()
     {
-        m_PlayerSpawner.Player.transform.GetComponent<AudioSource>().Pause();    
-        m_InputControl.enabled = false;
+        m_PlayerSpawner.Player.transform.GetComponent<AudioSource>().Pause();
+        //m_InputControl.enabled = false;
+        m_InputControl.InputControlEnabled(false);
         isPause = true;
         m_PausePanel.SetActive(true);
         Time.timeScale = 0.0f;
@@ -31,7 +32,8 @@ public class Pauser : MonoBehaviour
     public void UnPause()
     {
         m_PlayerSpawner.Player.transform.GetComponent<AudioSource>().UnPause();
-        m_InputControl.enabled = true;
+        //m_InputControl.enabled = true;
+        m_InputControl.InputControlEnabled(true);
         isPause = false;
         m_PausePanel.SetActive(false);
         for (int i = 0; i < m_ClosingPanels.Length; i++)
