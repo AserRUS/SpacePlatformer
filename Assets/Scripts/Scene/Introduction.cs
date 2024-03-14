@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Introduction : MonoBehaviour
@@ -9,6 +6,7 @@ public class Introduction : MonoBehaviour
     [SerializeField] private Transform m_CameraFlightTarget;
     [SerializeField] private Transform m_CameraStartPosition;
     [SerializeField] private InputControl m_InputControl;
+    [SerializeField] private UIInstructionPanel m_InstructionPanel;
 
     private void Start()
     {
@@ -26,6 +24,9 @@ public class Introduction : MonoBehaviour
     {
         m_Camera.SetFollowMode();
         m_InputControl.InputControlEnabled(true);
+
+        if (m_InstructionPanel != null)
+            m_InstructionPanel.OpenInstructionPanel();
     }
         
     
