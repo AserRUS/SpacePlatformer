@@ -2827,7 +2827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a040a0ce6da05047a07dbe7383e1aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openPanel: 1
+  openPanel: 0
   instructionPanel: {fileID: 7881166272861031579}
   pauser: {fileID: 2440755103770276023}
 --- !u!1 &4192077372031119772

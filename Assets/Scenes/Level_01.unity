@@ -12089,6 +12089,10 @@ PrefabInstance:
       propertyPath: m_PlayerSpawner
       value: 
       objectReference: {fileID: 577071488}
+    - target: {fileID: 3924593399729902060, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
+      propertyPath: openPanel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7629992531682865247, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
       propertyPath: m_MainUIElements.Array.data[0]
       value: 
