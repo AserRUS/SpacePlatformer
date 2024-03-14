@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour
 
     protected virtual void Start()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.1f, m_LayerMask);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.2f, m_LayerMask);
         if (colliders.Length != 0)
         {
             for (int i = 0; i < colliders.Length; i++)

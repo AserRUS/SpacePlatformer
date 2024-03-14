@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: 3985029968598140572}
   - component: {fileID: 1799100410517915996}
   - component: {fileID: 7995665766023637866}
+  - component: {fileID: 1120343928499877102}
+  - component: {fileID: -3198138221863655722}
   - component: {fileID: 7484541113740049544}
   m_Layer: 9
   m_Name: HealthBarrel
@@ -207,6 +209,38 @@ MonoBehaviour:
   m_BarrelType: 1
   m_AddedValue: 25
   m_FallingSound: {fileID: 8300000, guid: c079a450493bc2649ae8efbd477903a1, type: 3}
+  m_FlashingAnimation: {fileID: -3198138221863655722}
+--- !u!114 &1120343928499877102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601014806998915360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1eea9fe1dba9264f98b2d6b9a43273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VisualModel: {fileID: 8214345271619815181}
+  m_Speed: 3
+  m_Amplitude: 0.2
+  m_RotateSpeed: 100
+  m_RotateDirection: {x: 0, y: 1, z: 0}
+--- !u!114 &-3198138221863655722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601014806998915360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155028998f33e914181aebb1ddf2a1af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VisualModel: {fileID: 8841946146008948151}
+  m_FlashingSpeed: 8
 --- !u!82 &7484541113740049544
 AudioSource:
   m_ObjectHideFlags: 0
@@ -494,9 +528,9 @@ Transform:
   m_GameObject: {fileID: 8841946146008948151}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.95842224, z: 0, w: 0.2853539}
-  m_LocalPosition: {x: 0, y: -0.107, z: 1.43}
-  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3048720858210466519}
   - {fileID: 3167798044139598391}

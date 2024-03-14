@@ -82,9 +82,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1eea9fe1dba9264f98b2d6b9a43273a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_VisualModel: {fileID: 8309864422617189940}
   m_Speed: 3
   m_Amplitude: 0.5
   m_RotateSpeed: 100
+  m_RotateDirection: {x: 0, y: 1, z: 0}
 --- !u!1001 &8419524408585775583
 PrefabInstance:
   m_ObjectHideFlags: 0

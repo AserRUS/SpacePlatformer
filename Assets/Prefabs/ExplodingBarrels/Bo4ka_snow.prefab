@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7012040492532335896}
   - component: {fileID: 1362211552839036060}
+  - component: {fileID: -138123585463417152}
   m_Layer: 6
   m_Name: Bo4ka_snow
   m_TagString: Untagged
@@ -54,6 +55,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8186712, y: 2.7008004, z: 1.8758991}
   m_Center: {x: 0.0011506081, y: -0.013739824, z: 0.0488739}
+--- !u!114 &-138123585463417152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109334580703812403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdfca1c3288a994987bf13d151c8e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxHitPoints: 50
+  m_DeathEffect: {fileID: 7401727948457227951, guid: 53ca69abe4ff9be45967420a03113759, type: 3}
+  m_Radius: 6
+  m_Damage: 50
+  m_ImactForce: 30
 --- !u!1001 &7843065291754986873
 PrefabInstance:
   m_ObjectHideFlags: 0

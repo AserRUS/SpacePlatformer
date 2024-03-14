@@ -15,6 +15,7 @@ public class Barrel : Destructible
     [SerializeField] private BarretType m_BarrelType;
     [SerializeField] private int m_AddedValue;
     [SerializeField] private AudioClip m_FallingSound;
+    [SerializeField] private FlashingAnimation m_FlashingAnimation;
 
     private float timer;
     private AudioSource m_Audio;
@@ -29,8 +30,8 @@ public class Barrel : Destructible
     private void OnCollisionEnter(Collision collision)
     {
         enabled = true;
-
         m_Audio.PlayOneShot(m_FallingSound);
+        m_FlashingAnimation.StartAnimation(m_LifeTime);
     }
 
     private void Update()
@@ -41,7 +42,7 @@ public class Barrel : Destructible
         }
         else
         {
-            Death(null);
+            Destroy(gameObject);
         }
     }
 
