@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7081186061046790872}
   - component: {fileID: 2916076231815107577}
   - component: {fileID: 7040019496872233026}
+  - component: {fileID: 7292551953538463242}
+  - component: {fileID: -234407270207294252}
   - component: {fileID: 2679292367438995198}
   m_Layer: 9
   m_Name: EnergyBarrel
@@ -124,6 +126,38 @@ MonoBehaviour:
   m_BarrelType: 0
   m_AddedValue: 25
   m_FallingSound: {fileID: 8300000, guid: c079a450493bc2649ae8efbd477903a1, type: 3}
+  m_FlashingAnimation: {fileID: -234407270207294252}
+--- !u!114 &7292551953538463242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078234267104677185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1eea9fe1dba9264f98b2d6b9a43273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VisualModel: {fileID: 3282552369046134197}
+  m_Speed: 3
+  m_Amplitude: 0.3
+  m_RotateSpeed: 100
+  m_RotateDirection: {x: 0, y: 1, z: 0}
+--- !u!114 &-234407270207294252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078234267104677185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155028998f33e914181aebb1ddf2a1af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VisualModel: {fileID: 2793963845313152783}
+  m_FlashingSpeed: 8
 --- !u!82 &2679292367438995198
 AudioSource:
   m_ObjectHideFlags: 0
@@ -230,15 +264,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -246,11 +280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.43
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -280,6 +314,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1439730007547781893, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -305,6 +343,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
+--- !u!1 &2793963845313152783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 33c24892e924ad24495243a6a04b341f, type: 3}
+  m_PrefabInstance: {fileID: 3028475592923282014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3282552369046134197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 33c24892e924ad24495243a6a04b341f, type: 3}

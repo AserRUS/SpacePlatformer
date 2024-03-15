@@ -1,24 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectibleItemAnimation : MonoBehaviour
 {
+    [SerializeField] private Transform m_VisualModel;
 
     [SerializeField] private float m_Speed;
     [SerializeField] private float m_Amplitude;
     [SerializeField] private float m_RotateSpeed;
+    [SerializeField] private Vector3 m_RotateDirection;
 
-    private Vector3 startPosition;
-
-    private void Start()
-    {
-        startPosition = transform.position;
-    }
+    
+    
 
     private void Update()
     {
-        transform.position = new Vector3(startPosition.x, startPosition.y + Mathf.Sin(m_Speed * Time.time) * m_Amplitude, startPosition.z);
-        transform.Rotate(0, 1 * m_RotateSpeed * Time.deltaTime, 0);
+        m_VisualModel.position = new Vector3(m_VisualModel.position.x, transform.position.y + Mathf.Sin(m_Speed * Time.time) * m_Amplitude, m_VisualModel.position.z);
+        m_VisualModel.transform.Rotate(m_RotateDirection * m_RotateSpeed * Time.deltaTime);
     }
+
 }
