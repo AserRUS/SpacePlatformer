@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxHitPoints: 50
-  m_DeathEffect: {fileID: 7401727948457227951, guid: 53ca69abe4ff9be45967420a03113759, type: 3}
+  m_DeathEffect: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
   m_Radius: 6
   m_Damage: 50
   m_ImactForce: 30
