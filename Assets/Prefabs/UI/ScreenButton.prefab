@@ -95,7 +95,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InputControl, Assembly-CSharp
-        m_MethodName: Jump
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   startWithoutTransparency: 1
-  minTransparency: 30
-  maxTransparency: 100
+  minTransparency: 15
+  maxTransparency: 50
   timeBetweenTransparencyChange: 0.1
 --- !u!1 &1933236222458472009
 GameObject:
@@ -837,7 +837,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InputControl, Assembly-CSharp
-        m_MethodName: RotateRight
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -888,8 +888,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   startWithoutTransparency: 1
-  minTransparency: 30
-  maxTransparency: 100
+  minTransparency: 15
+  maxTransparency: 50
   timeBetweenTransparencyChange: 0.1
 --- !u!1 &4579926218422548759
 GameObject:
@@ -986,7 +986,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InputControl, Assembly-CSharp
-        m_MethodName: RotateLeft
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1037,8 +1037,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   startWithoutTransparency: 1
-  minTransparency: 30
-  maxTransparency: 100
+  minTransparency: 15
+  maxTransparency: 50
   timeBetweenTransparencyChange: 0.1
 --- !u!1 &5184106131842266757
 GameObject:
