@@ -10,6 +10,7 @@ public class CameraFieldOfViewController : MonoBehaviour
     [SerializeField] private float bossFightFieldOfView = 55.7f;
     [SerializeField] private float speed;
 
+
     private new Camera camera;
     private bool isIncreases;
     private bool isDecreases;
