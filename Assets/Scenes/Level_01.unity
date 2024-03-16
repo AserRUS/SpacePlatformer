@@ -12123,6 +12123,7 @@ MonoBehaviour:
   m_CameraFlightTarget: {fileID: 2029034814}
   m_CameraStartPosition: {fileID: 144959211}
   m_InputControl: {fileID: 1588184800}
+  m_InstructionPanel: {fileID: 0}
 --- !u!4 &1792522379
 Transform:
   m_ObjectHideFlags: 0
@@ -13720,7 +13721,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4283a36cac30c364eb744bc838071691, type: 2}
+  - {fileID: 2100000, guid: 26e3afd133a308048a00b5a76d26de19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
