@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] private Vector2 m_CameraBorderX;
     [SerializeField] private Vector2 m_CameraBorderY;
-    [SerializeField] private Parallax m_Parallax;
+    [SerializeField] private Parallax[] m_Parallax;
 
     [Header("Follow mode")]
     [SerializeField] private Vector2 m_SpeedFollow;
@@ -84,7 +84,13 @@ public class CameraController : MonoBehaviour
         Vector3 newCamPos = new Vector3(Mathf.Clamp(camPosX, m_CameraBorderX.x + width / 2, m_CameraBorderX.y - width / 2), Mathf.Clamp(camPosY, m_CameraBorderY.x + height / 2, m_CameraBorderY.y - height / 2), transform.position.z);
         transform.position = newCamPos;
         if (m_Parallax != null)
-            m_Parallax.ParallaxUpdate();
+        {
+            for (int i = 0; i < m_Parallax.Length; i++)
+            {
+                m_Parallax[i].ParallaxUpdate();
+            }
+        }
+            
     }    
     
 
