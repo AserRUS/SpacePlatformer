@@ -9,20 +9,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5303ffc52ea5506459b368b44b0d8429, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4453408
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5303ffc52ea5506459b368b44b0d8429, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4453408
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5303ffc52ea5506459b368b44b0d8429, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.3899999
+      value: -2.0999992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5303ffc52ea5506459b368b44b0d8429, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.46
+      value: 14.54
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5303ffc52ea5506459b368b44b0d8429, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10.110004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5303ffc52ea5506459b368b44b0d8429, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5303ffc52ea5506459b368b44b0d8429, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30,11 +38,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5303ffc52ea5506459b368b44b0d8429, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5303ffc52ea5506459b368b44b0d8429, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5303ffc52ea5506459b368b44b0d8429, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -92,5 +100,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6030327, y: 0.7120114, z: 3.6347668}
-  m_Center: {x: -0.052658625, y: 0.0021016148, z: 0.0032911305}
+  m_Size: {x: 4.1745453, y: 0.7120114, z: 3.6347668}
+  m_Center: {x: 1.2330978, y: 0.0021016297, z: 0.0032910502}
