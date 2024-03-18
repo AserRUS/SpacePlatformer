@@ -2904,6 +2904,10 @@ PrefabInstance:
       propertyPath: m_PlayerSpawner
       value: 
       objectReference: {fileID: 577071488}
+    - target: {fileID: 2997803139823174352, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.8820801
+      objectReference: {fileID: 0}
     - target: {fileID: 3886415537515027532, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
