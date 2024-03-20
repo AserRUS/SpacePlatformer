@@ -93,7 +93,7 @@ Material:
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
-    - _Brightness_Power: 0.55
+    - _Brightness_Power: 0.48
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -114,7 +114,7 @@ Material:
     - _Gradient_Height: 1
     - _Gradient_Softness: 2
     - _Invert_Direction: 0
-    - _Metallic: 0.193
+    - _Metallic: 0.247
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -122,7 +122,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Roughness: 1
-    - _Saturation_Power: 2.86
+    - _Saturation_Power: 2.96
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

@@ -106,7 +106,7 @@ Material:
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
-    - _Brightness_Power: 1.16
+    - _Brightness_Power: 0.51
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -134,8 +134,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Roughness: 1
-    - _Saturation_Power: 2.07
+    - _Roughness: 0
+    - _Saturation_Power: 4.97
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -155,5 +155,5 @@ Material:
     - _Offset_XY: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Tiling_X_Y: {r: 1, g: 1, b: 0, a: 0}
-    - _Tint_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Tint_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 0}
   m_BuildTextureStacks: []
