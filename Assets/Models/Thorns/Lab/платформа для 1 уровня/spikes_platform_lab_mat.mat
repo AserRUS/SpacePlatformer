@@ -122,10 +122,10 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Gradient: 0
+    - _Gradient: 1
     - _Gradient_Contrast: 0
-    - _Gradient_Height: 1
-    - _Gradient_Softness: 2
+    - _Gradient_Height: -0.81
+    - _Gradient_Softness: 1.43
     - _Invert_Direction: 0
     - _Metallic: 0
     - _Mode: 0
@@ -135,7 +135,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Roughness: 1
-    - _Saturation_Power: 2.07
+    - _Saturation_Power: 2.02
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -155,5 +155,5 @@ Material:
     - _Offset_XY: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Tiling_X_Y: {r: 1, g: 1, b: 0, a: 0}
-    - _Tint_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Tint_Color: {r: 0.14958392, g: 0.67035747, b: 0.759, a: 1}
   m_BuildTextureStacks: []

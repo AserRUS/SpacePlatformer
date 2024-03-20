@@ -85,7 +85,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: e632219c93d8e634486352b035b5b0db, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8cc4b3bd6edd5ce49b6d1c35c11ded61, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -106,7 +106,7 @@ Material:
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
-    - _Brightness_Power: 1.16
+    - _Brightness_Power: 2.93
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -122,20 +122,20 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Gradient: 0
+    - _Gradient: 1
     - _Gradient_Contrast: 0
-    - _Gradient_Height: 1
+    - _Gradient_Height: 0.27
     - _Gradient_Softness: 2
     - _Invert_Direction: 0
-    - _Metallic: 0
+    - _Metallic: 0.14
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Roughness: 1
-    - _Saturation_Power: 2.07
+    - _Roughness: 0.122
+    - _Saturation_Power: 0.92
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -150,10 +150,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emissive_Tint: {r: 0, g: 0, b: 0, a: 0}
+    - _Emissive_Tint: {r: 1, g: 1, b: 1, a: 0}
     - _Main_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Offset_XY: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Tiling_X_Y: {r: 1, g: 1, b: 0, a: 0}
-    - _Tint_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Tint_Color: {r: 0.35180598, g: 0.521194, b: 0.582, a: 1}
   m_BuildTextureStacks: []

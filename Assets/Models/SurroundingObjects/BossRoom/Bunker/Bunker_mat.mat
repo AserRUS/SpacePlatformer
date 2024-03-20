@@ -106,7 +106,7 @@ Material:
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
-    - _Brightness_Power: 1.16
+    - _Brightness_Power: 0.61
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -122,10 +122,10 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Gradient: 0
+    - _Gradient: 1
     - _Gradient_Contrast: 0
-    - _Gradient_Height: 1
-    - _Gradient_Softness: 2
+    - _Gradient_Height: 0.18
+    - _Gradient_Softness: 0.41
     - _Invert_Direction: 0
     - _Metallic: 0
     - _Mode: 0
@@ -134,8 +134,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Roughness: 1
-    - _Saturation_Power: 2.07
+    - _Roughness: 0
+    - _Saturation_Power: 1.33
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -150,10 +150,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emissive_Tint: {r: 0, g: 0, b: 0, a: 0}
+    - _Emissive_Tint: {r: 1, g: 1, b: 1, a: 0}
     - _Main_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Offset_XY: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Tiling_X_Y: {r: 1, g: 1, b: 0, a: 0}
-    - _Tint_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Tint_Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
