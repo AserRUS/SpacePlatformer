@@ -43,7 +43,8 @@ public class InputControl : MonoBehaviour
                 Jump();
             }
 
-            #region E
+            #region E_Old
+            /*
             if (Input.GetKeyDown(KeyCode.E))
             {
                 EButtonClamp += Time.deltaTime;
@@ -70,6 +71,17 @@ public class InputControl : MonoBehaviour
 
                 if (attackButton)
                     attackButton.AddTransparency();
+            }*/
+            #endregion
+
+            #region E
+            if (Input.GetKeyDown(KeyCode.E)) 
+            {
+                NEW_attackButton.ButtonDown();
+            } 
+            else if (Input.GetKeyUp(KeyCode.E))
+            {
+                NEW_attackButton.ButtonUp();
             }
             #endregion
 

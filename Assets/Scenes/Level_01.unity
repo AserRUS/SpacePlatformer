@@ -10919,7 +10919,8 @@ MonoBehaviour:
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   shieldButton: {fileID: 1416414985}
   attackButton: {fileID: 1394131831}
-  shieldButton_New: {fileID: 5903241319434690924}
+  NEW_shieldButton: {fileID: 5903241319434690924}
+  NEW_attackButton: {fileID: 5903241319434690926}
 --- !u!4 &1588184801
 Transform:
   m_ObjectHideFlags: 0
@@ -10950,9 +10951,7 @@ MonoBehaviour:
   playerSpawner: {fileID: 577071488}
   inputControl: {fileID: 1588184800}
   shieldButton: {fileID: 5903241319434690924}
-  attackButton: {fileID: 5903241319434690926}
   shieldButtonImage: {fileID: 5903241319434690927}
-  attackButtonImage: {fileID: 5903241319434690925}
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   shieldPropertes: {fileID: 11400000, guid: d2ce111460a026e42a01a42ce5e949f1, type: 2}
 --- !u!1001 &1592539320
@@ -14511,17 +14510,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b817153252b2a7468bf1584f6f637c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5903241319434690925 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6875259303905594301, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
-  m_PrefabInstance: {fileID: 5903241319434690923}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5903241319434690926 stripped
