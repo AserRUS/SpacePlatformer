@@ -2118,6 +2118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 615014061}
   - component: {fileID: 615014060}
+  - component: {fileID: 615014062}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2202,6 +2203,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &615014062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615014059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &620281643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3128,6 +3152,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1953648679}
     m_Modifications:
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_Market
+      value: 
+      objectReference: {fileID: 1042609778}
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_SkinInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: b2f5000ac633d6645b905e050958a2ac, type: 2}
     - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
       propertyPath: m_ProductInfo
       value: 
@@ -4712,6 +4744,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1953648679}
     m_Modifications:
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_Market
+      value: 
+      objectReference: {fileID: 1042609778}
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_SkinInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 32a66d17ed97cda45be57ea4d5bf1ba0, type: 2}
     - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
       propertyPath: m_ProductInfo
       value: 
@@ -6815,36 +6855,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2094846133}
-  - component: {fileID: 2094846132}
+  - component: {fileID: 2094846134}
   m_Layer: 0
-  m_Name: MarketManager
+  m_Name: SkinManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2094846132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094846131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcf4cf261a042104b8fe9df96b857d88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ProductStates:
-  - m_ProductInfo: {fileID: 11400000, guid: ec59f7e6f9dd44a4dbe90c40c4975c03, type: 2}
-    IsSold: 0
-    IsSelected: 0
-  - m_ProductInfo: {fileID: 11400000, guid: 80b93b8c3b97cbb40989a5a5d8113e8b, type: 2}
-    IsSold: 0
-    IsSelected: 0
-  - m_ProductInfo: {fileID: 11400000, guid: 4f44b90c9a102314b993f6d9ce6c4c41, type: 2}
-    IsSold: 0
-    IsSelected: 0
 --- !u!4 &2094846133
 Transform:
   m_ObjectHideFlags: 0
@@ -6860,6 +6878,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2094846134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094846131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77befb8438fdec4499615f28c91b6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SkinStates:
+  - m_SkinInfo: {fileID: 11400000, guid: a277f9bfaa4e3c340a3098f26035c800, type: 2}
+    IsOpened: 1
+    IsSelected: 1
+  - m_SkinInfo: {fileID: 11400000, guid: 32a66d17ed97cda45be57ea4d5bf1ba0, type: 2}
+    IsOpened: 0
+    IsSelected: 0
+  - m_SkinInfo: {fileID: 11400000, guid: b2f5000ac633d6645b905e050958a2ac, type: 2}
+    IsOpened: 0
+    IsSelected: 0
 --- !u!1 &2099107730
 GameObject:
   m_ObjectHideFlags: 0
@@ -6895,7 +6935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 569.32007, y: -105.430756}
+  m_AnchoredPosition: {x: 569.32007, y: -105.430664}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099107732
@@ -7304,6 +7344,14 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_Market
+      value: 
+      objectReference: {fileID: 1042609778}
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_SkinInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: a277f9bfaa4e3c340a3098f26035c800, type: 2}
     - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
       propertyPath: m_ProductInfo
       value: 

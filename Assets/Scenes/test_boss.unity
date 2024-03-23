@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402272, g: 0.4931662, b: 0.57223207, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402355, g: 0.4931653, b: 0.5722327, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -528,6 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c31353d927cc5b4daaa028fc42b272d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Market: {fileID: 1547965006558308145}
   m_UIFinish: {fileID: 1547965006558308146}
 --- !u!4 &1113165054
 Transform:
@@ -755,6 +756,7 @@ MonoBehaviour:
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   shieldButton: {fileID: 1416414985}
   attackButton: {fileID: 1394131831}
+  shieldButton_New: {fileID: 0}
 --- !u!4 &1588184801
 Transform:
   m_ObjectHideFlags: 0
@@ -891,6 +893,7 @@ MonoBehaviour:
   m_CameraFlightTarget: {fileID: 2029034814}
   m_CameraStartPosition: {fileID: 144959211}
   m_InputControl: {fileID: 1588184800}
+  m_InstructionPanel: {fileID: 0}
 --- !u!4 &1792522379
 Transform:
   m_ObjectHideFlags: 0
@@ -938,7 +941,8 @@ MonoBehaviour:
   m_CameraMode: 0
   m_CameraBorderX: {x: 0, y: 0}
   m_CameraBorderY: {x: 0, y: 0}
-  m_Parallax: {fileID: 0}
+  m_Parallax:
+  - {fileID: 0}
   m_SpeedFollow: {x: 0, y: 0}
   m_FlightSpeed: {x: 0, y: 0}
   m_SpeedCurve:
@@ -1160,6 +1164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2088607355}
   - component: {fileID: 2088607354}
+  - component: {fileID: 2088607356}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1244,6 +1249,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -29.426, z: 0}
+--- !u!114 &2088607356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088607353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!114 &2110776930 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1136194912443349491, guid: 3d0b03e80d0f14e49bfd8a1c94ff1708, type: 3}
@@ -1428,6 +1456,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
+--- !u!114 &1547965006558308145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8431181489678666887, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
+  m_PrefabInstance: {fileID: 1547965006558308144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ff0ae931fae74fa6d21197d5d1583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1547965006558308146 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7885953533269332182, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
@@ -1447,6 +1486,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 313998341652498895, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: inputControl
+      value: 
+      objectReference: {fileID: 1588184800}
     - target: {fileID: 2681154482574058192, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
       propertyPath: inputControl
       value: 

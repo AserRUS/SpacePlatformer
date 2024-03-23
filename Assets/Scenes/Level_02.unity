@@ -1630,6 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c31353d927cc5b4daaa028fc42b272d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Market: {fileID: 1547965006558308147}
   m_UIFinish: {fileID: 1547965006558308145}
 --- !u!4 &1456157770
 Transform:
@@ -3111,6 +3112,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb8e3f5efd9bdc4ab783f926500e836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1547965006558308147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8431181489678666887, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
+  m_PrefabInstance: {fileID: 1547965006558308144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ff0ae931fae74fa6d21197d5d1583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2464835558992781970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3323,6 +3335,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 313998341652498895, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
+      propertyPath: inputControl
+      value: 
+      objectReference: {fileID: 1588184800}
     - target: {fileID: 2681154482574058192, guid: 71fc2efa1a9b79541bff27ccb30809fa, type: 3}
       propertyPath: inputControl
       value: 

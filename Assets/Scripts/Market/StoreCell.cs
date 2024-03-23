@@ -1,78 +1,50 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 
 public class StoreCell : MonoBehaviour
 {
-    public event UnityAction BuyEvent;
-    public event UnityAction SelectEvent;
-    public ProductInfo ProductInfo => m_ProductInfo;
+    
+    public SkinInfo SkinInfo => m_SkinInfo;
 
-    [SerializeField] private ProductInfo m_ProductInfo;
-    [SerializeField] private Image m_ProductImage;
+    [SerializeField] private Market m_Market;
+    [SerializeField] private SkinInfo m_SkinInfo;
+    [SerializeField] private Image m_SkinImage;
     [SerializeField] private Text m_CostText;
-    [SerializeField] private Button m_BuyButton;
+    [SerializeField] private Button m_CellButton;
     [SerializeField] private Image m_ButtonImage;
     [SerializeField] private Sprite m_SelectedButtonImage;
     [SerializeField] private Sprite m_UnselectedButtonImage;
     [SerializeField] private GameObject m_Cost;
-
-    private bool isSold = false;
-    private bool isSelected = false;
     public void Initialize()
     {
-        if (m_ProductInfo.ProductImage != null)
-            m_ProductImage.sprite = m_ProductInfo.ProductImage;
-        m_CostText.text = m_ProductInfo.Cost.ToString();
-
-        isSold = MarketManager.Instance.GetProductState(m_ProductInfo).IsSold;
+        if (m_SkinInfo.ProductImage != null)
+            m_SkinImage.sprite = m_SkinInfo.ProductImage;
+        m_CostText.text = m_SkinInfo.Cost.ToString();
     }
 
-    private void Buy()
+    public void TryBuy()
     {
-        isSold = true;
-        MarketManager.Instance.Buy(m_ProductInfo);
-        CheckSelected();
-        BuyEvent.Invoke();
-    }
-    private void Select()
-    {
-        MarketManager.Instance.Select(m_ProductInfo);
-        SelectEvent.Invoke();
-    }
+        m_Market.TryBuy(m_SkinInfo);
+    }        
 
-    public void Action()
-    {
-        if (isSold == false)
-            Buy();
-        else
-            Select();
+    public void SetSelected(bool isSelected)
+    {         
+        m_Cost.SetActive(false);
 
-    }
-
-    public void CheckSelected()
-    {        
-        isSelected = MarketManager.Instance.GetProductState(m_ProductInfo).IsSelected;
-
-        if (isSold == true)
+        if (isSelected == true)
         {
-            m_Cost.SetActive(false);
-
-            if (isSelected == true)
-            {
-                m_ButtonImage.sprite = m_SelectedButtonImage;
-            }
-            else
-            {
-                m_ButtonImage.sprite = m_UnselectedButtonImage;
-            }
+            m_ButtonImage.sprite = m_SelectedButtonImage;
         }
+        else
+        {
+            m_ButtonImage.sprite = m_UnselectedButtonImage;
+        }
+        
     }
     public void CheckCost()
     {
-        if (isSold == false)
-            m_BuyButton.interactable = MarketManager.Instance.MoneyCount >= m_ProductInfo.Cost;
+        m_CellButton.interactable = m_Market.MoneyCount >= m_SkinInfo.Cost;
     }
 }
 
