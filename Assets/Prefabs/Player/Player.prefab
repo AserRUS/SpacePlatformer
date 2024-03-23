@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5748767126383507667}
   - component: {fileID: 5628291638847398857}
   - component: {fileID: 8040918730892245971}
+  - component: {fileID: 6762672193098262244}
   m_Layer: 0
   m_Name: LaserGun
   m_TagString: Untagged
@@ -146,7 +147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041242313168756770}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 087cdccf976dceb45ac0c16b46b0e20d, type: 3}
   m_Name: 
@@ -155,10 +156,37 @@ MonoBehaviour:
   particles: {fileID: 3647825697695703416}
   firePoint: {fileID: 6213929324984672559}
   maxLength: 15
-  timeLaserActivation: 3
+  timeLaserActivation: 5
   requiredCartridge: 25
   damageInPeroidOfTime: 1
   timeBetweenDamage: 0.2
+--- !u!114 &6762672193098262244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041242313168756770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd239f8531bccc84391eb9745271b59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 5628291638847398857}
+  particles: {fileID: 3647825697695703416}
+  firePoint: {fileID: 6213929324984672559}
+  minWidth: 0.1
+  maxWidth: 0.6
+  maxLength: 15
+  timeLaserActivation: 3
+  minRequiredCartridge: 1
+  maxRequiredCartridge: 5
+  timeBetweenIncreaseLaserProperties: 0.2
+  countStepForIncreaseLaser: 10
+  minDamageInPeroidOfTime: 1
+  maxDamageInPeroidOfTime: 10
+  timeBetweenDamage: 0.2
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
 --- !u!1 &1137301077271071824
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +390,7 @@ GameObject:
   - component: {fileID: -8508785415571599666}
   - component: {fileID: 6190112040215844588}
   - component: {fileID: 687520462565299123}
+  - component: {fileID: 5379509097632548969}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -488,6 +517,7 @@ MonoBehaviour:
   m_Shield: {fileID: 7116685210739030965}
   m_Movement: {fileID: 6635528274249280128}
   m_Shield_New: {fileID: 6190112040215844588}
+  m_Weapon_New: {fileID: 5379509097632548969}
 --- !u!114 &1222894124470886122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,6 +735,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5379509097632548969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6418860500129791720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f207a2246574154e97975e849bf006c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cartrigeStorage: {fileID: -5263358381543673254}
+  timeAfterRemoveCartrige: 0.2
+  weakWeapon: {fileID: 925826475868327211}
+  laserGun: {fileID: 6762672193098262244}
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
 --- !u!1 &7720829274527190032
 GameObject:
   m_ObjectHideFlags: 0

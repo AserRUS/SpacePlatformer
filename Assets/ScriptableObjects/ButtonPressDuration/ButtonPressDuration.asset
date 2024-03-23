@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7cb70ea4d87a34fa16843c43e195ef, type: 3}
   m_Name: ButtonPressDuration
   m_EditorClassIdentifier: 
-  timeLimitForAttackButtonClamp: 1
-  timeLimitForShieldButtonClamp: 1
+  timeLimitForButtonClamp: 1
+  minTimeButtonClamp: 0.2
+  maxTimeButtonClamp: 2

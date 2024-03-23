@@ -5,9 +5,9 @@ public class SecondaryButtonsController : MonoBehaviour
     [SerializeField] private PlayerSpawner playerSpawner;
     [SerializeField] private InputControl inputControl;
     [SerializeField] private New_UIClampingButton shieldButton;
-    [SerializeField] private New_UIClampingButton attackButton;
+    //[SerializeField] private New_UIClampingButton attackButton;
     [SerializeField] private UIImageChangingTransparency shieldButtonImage;
-    [SerializeField] private UIImageChangingTransparency attackButtonImage;
+    //[SerializeField] private UIImageChangingTransparency attackButtonSliderImage;
 
     [Header("ScriptableObjects")]
     [SerializeField] private ButtonPressDuration buttonPressDuration;
@@ -16,14 +16,13 @@ public class SecondaryButtonsController : MonoBehaviour
     private Player player;
     private Storage energyStorage;
     private Storage cartridgeStorage;
-    private bool isAttackEnabled = true;
+    //private bool isAttackEnabled = true;
     private bool isShieldEnabled = true;
 
     private void Start()
     {
         SetVariables();
     }
-
     private void CheckCartridgeStorage(int value) { }
 
     private void SetVariables()
