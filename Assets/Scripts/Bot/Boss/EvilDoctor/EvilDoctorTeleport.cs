@@ -10,6 +10,7 @@ public class EvilDoctorTeleport : MonoBehaviour
 
     private Vector3 lastTeleportPoint;
     private bool readyForTeleport;
+    private Coroutine preparationForTeleportCoroutine;
 
     public bool ReadyForTeleport => readyForTeleport;
 
@@ -23,12 +24,16 @@ public class EvilDoctorTeleport : MonoBehaviour
 
     public void StartTeleportTimer()
     {
-        StartCoroutine(PreparationForTeleport(timeBetweenTeleportation));
+        if (preparationForTeleportCoroutine != null)
+            StopCoroutine(preparationForTeleportCoroutine);
+
+        preparationForTeleportCoroutine = StartCoroutine(PreparationForTeleport(timeBetweenTeleportation));
     }
 
     public void StopTeleportTimer()
     {
-        StopCoroutine(PreparationForTeleport(timeBetweenTeleportation));
+        if (preparationForTeleportCoroutine != null)
+            StopCoroutine(preparationForTeleportCoroutine);
     }
 
     public Vector3 ChoosePointForTeleportation()

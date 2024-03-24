@@ -469,7 +469,7 @@ Transform:
   m_GameObject: {fileID: 198375942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.78, y: 17.94, z: 0}
+  m_LocalPosition: {x: 45.51, y: 17.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -483,18 +483,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1698441920534248240, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: m_MaxHitPoints
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: timeBetweenTeleportation
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: teleportationPoints.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: teleportationPoints.Array.data[0]
       value: 
@@ -527,10 +515,6 @@ PrefabInstance:
       propertyPath: attackZone
       value: 
       objectReference: {fileID: 6469352222792793163}
-    - target: {fileID: 6692388492492251700, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: timeBetweenAttack
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8380300666534522881, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 83.8
@@ -685,6 +669,10 @@ PrefabInstance:
       propertyPath: uiHealth
       value: 
       objectReference: {fileID: 891258776}
+    - target: {fileID: 5973830485692354230, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
+      propertyPath: playerSpawner
+      value: 
+      objectReference: {fileID: 577071488}
     - target: {fileID: 5973830485692354230, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
       propertyPath: viewController
       value: 
@@ -1764,7 +1752,7 @@ Transform:
   m_GameObject: {fileID: 1178099652}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.79, y: 4.14, z: 0}
+  m_LocalPosition: {x: 45.57, y: 8.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10801,9 +10789,9 @@ SceneRoots:
   - {fileID: 1588184801}
   - {fileID: 1082324569}
   - {fileID: 106861354}
-  - {fileID: 6260343566049014280}
-  - {fileID: 1527674802790541359}
   - {fileID: 1857605782}
+  - {fileID: 1527674802790541359}
+  - {fileID: 6260343566049014280}
   - {fileID: 234109701}
   - {fileID: 461036475}
   - {fileID: 1853604252}

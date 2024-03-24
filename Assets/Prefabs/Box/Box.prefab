@@ -95,9 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835dcc85d07015c47b8b19b556ec5d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
   damage: 10
   mass: 2
   lifeTime: 2
@@ -166,7 +163,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 204e5627aefeda04aa444a38f7b81519, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8b7fe934f321cb44da58d69ec912eef3, type: 2}
+      objectReference: {fileID: 2100000, guid: 998c5856806e49741956605102907829, type: 2}
     - target: {fileID: 919132149155446097, guid: 204e5627aefeda04aa444a38f7b81519, type: 3}
       propertyPath: m_Name
       value: View model

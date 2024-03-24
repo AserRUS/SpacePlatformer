@@ -11,4 +11,6 @@ public abstract class Boss : MonoBehaviour
     }
 
     public virtual void StartFight() { }
+
+    public virtual void OnPlayerDeath() { }
 }
