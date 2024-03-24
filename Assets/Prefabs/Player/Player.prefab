@@ -175,6 +175,9 @@ MonoBehaviour:
   lineRenderer: {fileID: 5628291638847398857}
   particles: {fileID: 3647825697695703416}
   firePoint: {fileID: 6213929324984672559}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 2624
   minWidth: 0.1
   maxWidth: 0.6
   maxLength: 15

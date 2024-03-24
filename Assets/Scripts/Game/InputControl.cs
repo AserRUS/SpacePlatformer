@@ -77,10 +77,14 @@ public class InputControl : MonoBehaviour
             #region E
             if (Input.GetKeyDown(KeyCode.E)) 
             {
+                if (isAttackEnabled == false) return;
+
                 NEW_attackButton.ButtonDown();
             } 
             else if (Input.GetKeyUp(KeyCode.E))
             {
+                if (isAttackEnabled == false) return;
+
                 NEW_attackButton.ButtonUp();
             }
             #endregion
@@ -88,11 +92,15 @@ public class InputControl : MonoBehaviour
             #region Mouse1
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
+                if (isShieldEnabled == false) return;
+
                 NEW_shieldButton.ButtonDown();
                 IncreaseShield(NEW_shieldButton);
             }
             else if (Input.GetKeyUp(KeyCode.Mouse1))
             {
+                if (isShieldEnabled == false) return;
+
                 NEW_shieldButton.ButtonUp();
                 StopShieldIncrease(NEW_shieldButton);
             }

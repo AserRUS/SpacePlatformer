@@ -6,6 +6,7 @@ public class New_LaserGun : MonoBehaviour
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private LayerMask layerMask;
 
     [Header("Laser properties")]
     [SerializeField] private float minWidth;
@@ -75,7 +76,7 @@ public class New_LaserGun : MonoBehaviour
         if (!LaserActive) return;
 
         Ray ray = new Ray(firePoint.position, firePoint.right);
-        bool cast = Physics.Raycast(ray, out RaycastHit hit, maxLength);
+        bool cast = Physics.Raycast(ray, out RaycastHit hit, maxLength, layerMask);
         Vector3 hitPosition = cast ? hit.point : firePoint.position + firePoint.right * maxLength;
 
         if (hit.transform != null)
