@@ -26,8 +26,6 @@ public class EvilDoctorController : Boss
 
         currentHitPoints = destructible.MaxHitPoints;
         destructible.HitPointChangeEvent += CheckReceiveDamage;
-
-        //StartFight();
     }
 
     private void Update()
@@ -57,6 +55,11 @@ public class EvilDoctorController : Boss
 
     public override void StartFight()
     {
+        if (weapon == null)
+            weapon = GetComponent<EvilDoctorWeapon>();
+        if (teleport == null)
+            teleport = GetComponent<EvilDoctorTeleport>();
+
         weapon.StartAttackTimer();
 
         hitPointsAfterTeleportation = currentHitPoints;
