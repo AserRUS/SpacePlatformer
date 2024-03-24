@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 182991217382113229}
+  - component: {fileID: 2811463326990109539}
   m_Layer: 0
   m_Name: Spikes_snow (3)
   m_TagString: Untagged
@@ -33,6 +34,27 @@ Transform:
   - {fileID: 5464526874287069215}
   m_Father: {fileID: 1419642098285506844}
   m_LocalEulerAnglesHint: {x: 0, y: 0.11, z: 0}
+--- !u!95 &2811463326990109539
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703068581946189175}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a1a76491dcccbc49af92f8d083f2eaa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1336737246436170820
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7498865908932578274}
+  - component: {fileID: 494750057949397992}
   m_Layer: 0
   m_Name: Spikes_snow (2)
   m_TagString: Untagged
@@ -232,6 +255,27 @@ Transform:
   - {fileID: 2400041914676145200}
   m_Father: {fileID: 1419642098285506844}
   m_LocalEulerAnglesHint: {x: 0, y: 0.11, z: 0}
+--- !u!95 &494750057949397992
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7159178030412648792}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a1a76491dcccbc49af92f8d083f2eaa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8005283260687080442
 GameObject:
   m_ObjectHideFlags: 0
