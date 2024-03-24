@@ -4,6 +4,7 @@ public class LevelProgress : MonoBehaviour
 {
     public static LevelProgress Instance;
 
+    [SerializeField] private Market m_Market;
     [SerializeField] private UIFinish m_UIFinish;    
            
     private int starCount;
@@ -24,7 +25,7 @@ public class LevelProgress : MonoBehaviour
     public void LevelFinished()
     {        
         LevelProgressManager.Instance.LevelFinished(starCount);
-        MarketManager.Instance.AddMoney(moneyCount);
+        m_Market.AddMoney(moneyCount);
         m_UIFinish.Finish(starCount, moneyCount);
     }
        

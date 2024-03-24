@@ -27,7 +27,7 @@ public class EvilDoctorController : Boss
         currentHitPoints = destructible.MaxHitPoints;
         destructible.HitPointChangeEvent += CheckReceiveDamage;
 
-        StartFight();
+        //StartFight();
     }
 
     private void Update()
@@ -100,5 +100,12 @@ public class EvilDoctorController : Boss
             teleport.StopTeleportTimer();
             teleport.SetReadyForTeleport();
         }
+    }
+
+    public override void OnPlayerDeath()
+    {
+        currentHitPoints = destructible.MaxHitPoints;
+        teleport.StopTeleportTimer();
+        weapon.StopAttackTimer();
     }
 }

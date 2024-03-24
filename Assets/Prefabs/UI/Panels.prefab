@@ -3492,7 +3492,6 @@ MonoBehaviour:
   m_SceneLoader: {fileID: 7132430498338222273}
   m_NextLevelButton: {fileID: 5442732584823276184}
   m_MoneyText: {fileID: 3650118401815383847}
-  m_Market: {fileID: 8431181489678666887}
 --- !u!1 &5136576616478324105
 GameObject:
   m_ObjectHideFlags: 0
@@ -7526,6 +7525,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 8194382381984676677}
     m_Modifications:
     - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_Market
+      value: 
+      objectReference: {fileID: 8431181489678666887}
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_SkinInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: b2f5000ac633d6645b905e050958a2ac, type: 2}
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
       propertyPath: m_ProductInfo
       value: 
       objectReference: {fileID: 11400000, guid: 4f44b90c9a102314b993f6d9ce6c4c41, type: 2}
@@ -7674,6 +7681,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8194382381984676677}
     m_Modifications:
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_Market
+      value: 
+      objectReference: {fileID: 8431181489678666887}
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_SkinInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 32a66d17ed97cda45be57ea4d5bf1ba0, type: 2}
     - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
       propertyPath: m_ProductInfo
       value: 
@@ -7851,6 +7866,14 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_Market
+      value: 
+      objectReference: {fileID: 8431181489678666887}
+    - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
+      propertyPath: m_SkinInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: a277f9bfaa4e3c340a3098f26035c800, type: 2}
     - target: {fileID: 1598569897075986106, guid: b9cf87c64f0760642aff87767bb62049, type: 3}
       propertyPath: m_ProductInfo
       value: 

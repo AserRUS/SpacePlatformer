@@ -117,7 +117,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _Emissive: 0
-    - _Emissive_Power: 0
+    - _Emissive_Power: 2.27
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0.5
@@ -150,7 +150,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emissive_Tint: {r: 0, g: 0, b: 0, a: 0}
+    - _Emissive_Tint: {r: 0, g: 1, b: 0.19910145, a: 0}
     - _Main_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Offset_XY: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

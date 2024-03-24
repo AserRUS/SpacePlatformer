@@ -30,9 +30,9 @@ public class FlashingAnimation : MonoBehaviour
 
         for (int i = 0; i < m_MeshRenderers.Length; i++)
         {
-            Color color = m_MeshRenderers[i].material.color;
-            color.a = value;
-            m_MeshRenderers[i].material.color = color;
+            //Color color = m_MeshRenderers[i].material.color;
+            //color.a = value;
+           // m_MeshRenderers[i].material.color = color;
         }
     }
 

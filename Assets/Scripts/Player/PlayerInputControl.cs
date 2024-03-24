@@ -5,7 +5,9 @@ public class PlayerInputControl : MonoBehaviour
     [SerializeField] private WeaponController m_Weapon;
     [SerializeField] private ShieldController m_Shield;
     [SerializeField] private PlayerMovement m_Movement;
+
     [SerializeField] private New_ShieldController m_Shield_New;
+    [SerializeField] private New_WeaponController m_Weapon_New;
 
     public void Jump()
     {
@@ -30,6 +32,21 @@ public class PlayerInputControl : MonoBehaviour
     public void StopShieldIncrease()
     {
         m_Shield_New.StopShieldIncrease();
+    }
+
+    public void StartAttack()
+    {
+        m_Weapon_New.StartAttack();
+    }
+
+    public void CheckButtonClamp(float time)
+    {
+        m_Weapon_New.CheckButtonClamp(time);
+    }
+
+    public void StopAttack()
+    {
+        m_Weapon_New.StopAttack();
     }
 
     public void RotateLeft()

@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 1093704445392477607}
   - component: {fileID: 371155526536544551}
   - component: {fileID: 4656490568283479889}
+  - component: {fileID: 2707621188498257329}
   m_Layer: 5
   m_Name: SliderButton
   m_TagString: Untagged
@@ -215,6 +216,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   clampingButton: {fileID: 4840222462111927060}
+--- !u!114 &2707621188498257329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933236222458472009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
+  startWithoutTransparency: 1
+  minTransparency: 0
+  maxTransparency: 100
+  timeBetweenTransparencyChange: 0.1
 --- !u!1 &2285251463597525425
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,8 +323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   startWithoutTransparency: 1
-  minTransparency: 30
-  maxTransparency: 100
+  minTransparency: 15
+  maxTransparency: 50
   timeBetweenTransparencyChange: 0.1
 --- !u!1 &2382688309783560361
 GameObject:
@@ -532,7 +550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1568145707875086325
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1448,8 +1466,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   startWithoutTransparency: 1
-  minTransparency: 30
-  maxTransparency: 100
+  minTransparency: 15
+  maxTransparency: 50
   timeBetweenTransparencyChange: 0.1
 --- !u!1 &8745789130091384868
 GameObject:
@@ -1468,7 +1486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4772675053772237661
 RectTransform:
   m_ObjectHideFlags: 0

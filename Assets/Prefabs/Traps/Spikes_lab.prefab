@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7902629533186219412}
   - component: {fileID: 2741694648886245174}
   - component: {fileID: 9102337174668440268}
+  - component: {fileID: 6256307193096159818}
   m_Layer: 0
   m_Name: Spikes_lab
   m_TagString: Untagged
@@ -155,6 +156,27 @@ MonoBehaviour:
   timeStep: 0.1
   damage: 10
   imactForce: 30
+--- !u!95 &6256307193096159818
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5410262663604520162}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25f64d9f82f57c649b91c9ab9e33c1c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7214239176915379837
 GameObject:
   m_ObjectHideFlags: 0

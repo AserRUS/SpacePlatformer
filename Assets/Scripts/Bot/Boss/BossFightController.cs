@@ -6,13 +6,18 @@ public class BossFightController : MonoBehaviour
     [SerializeField] private Boss boss;
     [SerializeField] private UIState uiHealth;
     [SerializeField] private Door[] doors;
+    [SerializeField] private PlayerSpawner playerSpawner;
 
     private Destructible bossDest;
+    private Player player;
+    private BoxCollider boxCollider;
+    private bool isFight;
 
     private void Start()
     {
         bossDest = boss.GetComponent<Destructible>();
         bossDest.DeathEvent += BossDeath;
+        boxCollider = GetComponent<BoxCollider>();
 
         boss.gameObject.SetActive(false);
         uiHealth.gameObject.SetActive(false);
@@ -27,19 +32,20 @@ public class BossFightController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            BoxCollider collider = GetComponent<BoxCollider>();
-            collider.enabled = false;
-
             StartFight();
+            SetPlayer();
         }
     }
 
     private void StartFight()
     {
+        isFight = true;
+        boxCollider.enabled = false;
         //Camera
         viewController.SmoothlySetBossFightFieldOfVision();
         //Boss
         boss.gameObject.SetActive(true);
+        boss.StartFight();
         //boss.StartFight();
         //UI slider
         uiHealth.SetMaxValue(bossDest.MaxHitPoints);
@@ -58,6 +64,7 @@ public class BossFightController : MonoBehaviour
 
     private void FinishFight()
     {
+        isFight = false;
         //Camera
         viewController.SmoothlySetBasicFieldOfVision();
         //UI slider
@@ -76,5 +83,25 @@ public class BossFightController : MonoBehaviour
     private void BossDeath()
     {
         FinishFight();
+    }
+
+    private void SetPlayer()
+    {
+        player = playerSpawner.GetPlayer();
+        player.DeathEvent += OnPlayerDeath;
+    }
+
+    private void OnPlayerDeath()
+    {
+        player.DeathEvent -= OnPlayerDeath;
+        SetPlayer();
+
+        if (isFight)
+        {
+            FinishFight();
+            boxCollider.enabled = true;
+            boss.OnPlayerDeath();
+            boss.gameObject.SetActive(false);
+        }
     }
 }
