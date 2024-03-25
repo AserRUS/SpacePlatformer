@@ -5,18 +5,21 @@ public class CheckPoint : MonoBehaviour
 {    
     [SerializeField] PlayerSpawner m_Spawner;
     [SerializeField] private Transform m_NewSpawnPosition;
-    [SerializeField] private MeshRenderer m_MeshRenderer;
-        
+    [SerializeField] private MeshRenderer[] m_MeshRenderers;
+    [SerializeField] private Material replacedMaterial;
 
     private void OnTriggerEnter(Collider collision)
     {
         Player player = collision.transform.root.GetComponent<Player>();
         if (player != null)
         {
-            m_MeshRenderer.material.color = Color.green;
+            foreach (MeshRenderer meshRenderer in m_MeshRenderers)
+            {
+                meshRenderer.material = replacedMaterial;
+            }
+
             m_Spawner.SetSpawnPosition(m_NewSpawnPosition);
             Destroy(this);            
         }
-        
     }
 }
