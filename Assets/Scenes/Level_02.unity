@@ -2061,8 +2061,8 @@ MonoBehaviour:
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
   shieldButton: {fileID: 1398543357}
   attackButton: {fileID: 1403720087}
-  NEW_shieldButton: {fileID: 0}
-  NEW_attackButton: {fileID: 0}
+  NEW_shieldButton: {fileID: 1750130648}
+  NEW_attackButton: {fileID: 844561677}
 --- !u!4 &1588184801
 Transform:
   m_ObjectHideFlags: 0
