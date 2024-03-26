@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6565887939460027635}
   - component: {fileID: 4807826845022091945}
   m_Layer: 0
-  m_Name: EnemyProjectile
+  m_Name: Robot2Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9733b136bdc87b6408bf1b1d27b2a78e, type: 2}
+  - {fileID: 2100000, guid: d1fb8e24dbf7a6d47a4682b664c19e41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

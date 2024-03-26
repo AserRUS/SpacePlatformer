@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6565887939460027635}
   - component: {fileID: 4807826845022091945}
   m_Layer: 0
-  m_Name: PlayerProjectile
+  m_Name: Robot1Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_LifeTime: 3
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 2625
+    m_Bits: 1089
 --- !u!1 &9026927625449272260
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cc403e664417df94793f3b5bd5328c13, type: 2}
+  - {fileID: 2100000, guid: 8ab795bfcd625314c9122efbf29b2af5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 5460602441519221732}
   - component: {fileID: 728475578218776933}
   m_Layer: 11
-  m_Name: Robot_Lab
+  m_Name: RobotStand_Lab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   flipWeapon: {fileID: 2301952677570338717}
   speed: 2
   timeDelayAfterLossPlayer: 0
-  botType: 1
+  botType: 0
   isFacingRight: 0
   patrolPoints:
   - {fileID: 0}
@@ -347,8 +347,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.6852932, z: 6.4758816}
-  m_Center: {x: 9.895469e-15, y: -1.9907656, z: 2.6963313}
+  m_Size: {x: 1, y: 0.6852932, z: 4.090065}
+  m_Center: {x: -7.0567806e-15, y: -1.9907656, z: 1.5034227}
 --- !u!1 &4718030455917858520
 GameObject:
   m_ObjectHideFlags: 0

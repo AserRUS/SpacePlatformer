@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8351329687045126343}
   - component: {fileID: 4884803932383953173}
   m_Layer: 11
-  m_Name: Robot_Snow
+  m_Name: RobotStand_Snow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   flipWeapon: {fileID: 5954245756978105634}
   speed: 2
   timeDelayAfterLossPlayer: 0
-  botType: 1
+  botType: 0
   isFacingRight: 0
   patrolPoints:
   - {fileID: 0}
