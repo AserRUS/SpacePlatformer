@@ -29,28 +29,37 @@ public class SecondaryButtonsController : MonoBehaviour
 
     private void Start()
     {
-        SetVariables();
+        playerSpawner.PlayerSpawned += SetVariables;
+
+        if (player == null)
+            SetVariables(playerSpawner.GetPlayer());
     }
+
+    private void OnDestroy()
+    {
+        playerSpawner.PlayerSpawned -= SetVariables;
+    }
+
     private void CheckCartridgeStorage(int value) { }
 
-    private void SetVariables()
+    private void SetVariables(Player player)
     {
-        player = playerSpawner.GetPlayer();
-        playerMovement = player.GetComponent<PlayerMovement>();
+        this.player = player;
+        playerMovement = this.player.GetComponent<PlayerMovement>();
         playerMovement.OnJumpEvent += DisableAttack;
         playerMovement.OnRotationEvent += DisableAttack;
-        FindStorages(player);
-        player.DeathEvent += OnPlayerDeath;
+        FindStorages(this.player);
+        this.player.DeathEvent += OnPlayerDeath;
     }
 
     private void OnPlayerDeath()
     {
+        Debug.Log("OnPlayerDeath");
         player.DeathEvent -= OnPlayerDeath;
         energyStorage.StorageChangeEvent -= CheckEnergyStorage;
         cartridgeStorage.StorageChangeEvent -= CheckEnergyStorage;
         playerMovement.OnJumpEvent -= DisableAttack;
         playerMovement.OnRotationEvent -= DisableAttack;
-        SetVariables();
     }
 
     private void FindStorages(Player player)
@@ -105,6 +114,7 @@ public class SecondaryButtonsController : MonoBehaviour
 
     private void DisableAttack()
     {
+        Debug.Log("Disable Attack");
         isAttackEnabled = false;
         attackButtonImage.AddTransparency();
         attackButton.SetUnInteractable();

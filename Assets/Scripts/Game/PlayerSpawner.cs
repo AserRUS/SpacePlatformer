@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerSpawner : EntitySpawner
 {
+    public event UnityAction<Player> PlayerSpawned;
+
     [SerializeField] InputControl m_InputControl;
     [SerializeField] private CameraController m_CameraController;
     [SerializeField] private float RespawnTime;
@@ -56,6 +59,7 @@ public class PlayerSpawner : EntitySpawner
             m_InputControl.SetPlayerInputControl(playerInputControl);
         }
 
+        PlayerSpawned?.Invoke(player);
     }
 
     private void Respawn()
