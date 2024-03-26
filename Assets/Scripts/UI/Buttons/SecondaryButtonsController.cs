@@ -54,7 +54,6 @@ public class SecondaryButtonsController : MonoBehaviour
 
     private void OnPlayerDeath()
     {
-        Debug.Log("OnPlayerDeath");
         player.DeathEvent -= OnPlayerDeath;
         energyStorage.StorageChangeEvent -= CheckEnergyStorage;
         cartridgeStorage.StorageChangeEvent -= CheckEnergyStorage;
@@ -114,7 +113,6 @@ public class SecondaryButtonsController : MonoBehaviour
 
     private void DisableAttack()
     {
-        Debug.Log("Disable Attack");
         isAttackEnabled = false;
         attackButtonImage.AddTransparency();
         attackButton.SetUnInteractable();
