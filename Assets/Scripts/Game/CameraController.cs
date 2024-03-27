@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum CameraMode
+{
+    FollowMode,
+    FlightMode,
+    StandMode
+}
+
 public class CameraController : MonoBehaviour
 {
-    private enum CameraMode
-    {
-        FollowMode,
-        FlightMode
-    }
-
     public event UnityAction FlightFinishEvent;
 
     [SerializeField] private CameraMode m_CameraMode;
@@ -33,10 +34,11 @@ public class CameraController : MonoBehaviour
         this.cameraFollowTarget = target;
     }
 
-    public void SetFollowMode()
+    public void SetMode(CameraMode mode)
     {
-        m_CameraMode = CameraMode.FollowMode;
+        m_CameraMode = mode;
     }
+
     public void SetFlightMode(Transform cameraStartPosition, Transform cameraFlightTarget)
     {        
         this.cameraStartPosition = cameraStartPosition;
@@ -50,6 +52,7 @@ public class CameraController : MonoBehaviour
     private void LateUpdate()
     {        
         if (cameraFollowTarget == null) return;
+        if (m_CameraMode == CameraMode.StandMode) return;
 
         float height = Camera.main.orthographicSize * 2;
         float width = height * Screen.width / Screen.height;

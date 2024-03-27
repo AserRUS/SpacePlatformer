@@ -22,7 +22,7 @@ public class Introduction : MonoBehaviour
     }
     private void IntroductionEnd()
     {
-        m_Camera.SetFollowMode();
+        m_Camera.SetMode(CameraMode.FollowMode);
         m_InputControl.InputControlEnabled(true);
 
         if (m_InstructionPanel != null)
