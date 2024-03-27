@@ -178,12 +178,12 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 2624
-  minWidth: 0.1
-  maxWidth: 0.6
+  minWidth: 0.05
+  maxWidth: 0.3
   maxLength: 15
   timeLaserActivation: 3
   minRequiredCartridge: 1
-  maxRequiredCartridge: 5
+  maxRequiredCartridge: 10
   timeBetweenIncreaseLaserProperties: 0.2
   countStepForIncreaseLaser: 10
   minDamageInPeroidOfTime: 1
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StorageType: 0
-  m_InitialValue: 25
+  m_InitialValue: 100
   m_MaxValue: 100
 --- !u!114 &-5263358381543673254
 MonoBehaviour:
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StorageType: 1
-  m_InitialValue: 75
+  m_InitialValue: 100
   m_MaxValue: 100
 --- !u!114 &7116685210739030965
 MonoBehaviour:

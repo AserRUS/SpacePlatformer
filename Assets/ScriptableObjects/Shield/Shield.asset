@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82c4bf2bd5245e4f8d24bdb904318ef, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  requiredEnergyInPeroidOfTime: 1
+  requiredEnergyInPeroidOfTime: 3
   hitPointsInPeroidOfTime: 2
