@@ -96,7 +96,7 @@ public class EvilDoctorController : Boss
     private void CheckReceiveDamage(int hitPoints)
     {
         currentHitPoints = hitPoints;
-        int damage = hitPointsAfterTeleportation - currentHitPoints;
+        int damage = Mathf.Abs(hitPointsAfterTeleportation - currentHitPoints);
 
         if (damage >= damageReceivedRequiredForTeleportation)
         {

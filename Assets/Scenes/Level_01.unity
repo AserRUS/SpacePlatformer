@@ -15480,7 +15480,7 @@ MonoBehaviour:
   m_CameraFlightTarget: {fileID: 2029034814}
   m_CameraStartPosition: {fileID: 144959211}
   m_InputControl: {fileID: 1588184800}
-  m_InstructionPanel: {fileID: 0}
+  m_InstructionPanel: {fileID: 1547965006558308148}
 --- !u!4 &1792522379
 Transform:
   m_ObjectHideFlags: 0
@@ -18332,6 +18332,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3924593399729902060, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
+      propertyPath: openPanel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6039921455666459569, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18504,6 +18508,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 775ff0ae931fae74fa6d21197d5d1583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1547965006558308148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3924593399729902060, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
+  m_PrefabInstance: {fileID: 1547965006558308144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a040a0ce6da05047a07dbe7383e1aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1589791226643136865

@@ -14,14 +14,14 @@ public class EvilDoctorTeleport : MonoBehaviour
 
     public bool ReadyForTeleport => readyForTeleport;
 
+    
     private void Start()
     {
-        readyForTeleport = false;
-
+        readyForTeleport = true;
         Teleport(teleportationPoints[0].position);
         lastTeleportPoint = teleportationPoints[0].position;
     }
-
+    
     public void StartTeleportTimer()
     {
         if (preparationForTeleportCoroutine != null)

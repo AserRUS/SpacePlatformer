@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Damage: 25
   m_Velosity: 30
   m_ImpactEffect: {fileID: 2964485268448324653, guid: c9f42e223042a774185307b0e0928542, type: 3}
-  m_LifeTime: 3
+  m_LifeTime: 0.7
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 1089
