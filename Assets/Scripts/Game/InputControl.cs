@@ -80,12 +80,14 @@ public class InputControl : MonoBehaviour
                 if (isAttackEnabled == false) return;
 
                 NEW_attackButton.ButtonDown();
+                StartAttack(NEW_attackButton);
             } 
             else if (Input.GetKeyUp(KeyCode.E))
             {
                 if (isAttackEnabled == false) return;
 
                 NEW_attackButton.ButtonUp();
+                StartAttack(NEW_attackButton);
             }
             #endregion
 

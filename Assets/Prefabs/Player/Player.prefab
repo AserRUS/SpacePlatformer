@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StorageType: 0
-  m_InitialValue: 100
+  m_InitialValue: 50
   m_MaxValue: 100
 --- !u!114 &-5263358381543673254
 MonoBehaviour:
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StorageType: 1
-  m_InitialValue: 100
+  m_InitialValue: 50
   m_MaxValue: 100
 --- !u!114 &7116685210739030965
 MonoBehaviour:
