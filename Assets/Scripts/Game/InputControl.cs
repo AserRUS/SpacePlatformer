@@ -6,17 +6,10 @@ public class InputControl : MonoBehaviour
     public event UnityAction<bool> InputControlStateChanged;
 
     [SerializeField] private ButtonPressDuration buttonPressDuration;
-    [SerializeField] private UIImageChangingTransparency shieldButton;
-    [SerializeField] private UIImageChangingTransparency attackButton;
-
-    [SerializeField] private New_UIClampingButton NEW_shieldButton;
-    [SerializeField] private New_UIClampingButton NEW_attackButton;
+    [SerializeField] private UIClampingButton shieldButton;
+    [SerializeField] private UIClampingButton attackButton;
 
     private PlayerInputControl playerInputControl;
-
-
-    private float EButtonClamp = 0;
-    private float mouse1ButtonClamp = 0;
 
     private bool isInputControlEnabled = true;
     private bool isAttackEnabled = true;
@@ -24,12 +17,12 @@ public class InputControl : MonoBehaviour
 
     private void Start()
     {
-        NEW_shieldButton.OnPointerDownEvent.AddListener(IncreaseShield);
-        NEW_shieldButton.OnPointerUpEvent.AddListener(StopShieldIncrease);
+        shieldButton.OnPointerDownEvent.AddListener(IncreaseShield);
+        shieldButton.OnPointerUpEvent.AddListener(StopShieldIncrease);
 
-        NEW_attackButton.ClampTimeChangeEvent += CheckButtonClamp;
-        NEW_attackButton.OnPointerDownEvent.AddListener(StartAttack);
-        NEW_attackButton.OnPointerUpEvent.AddListener(StopAttack);
+        attackButton.ClampTimeChangeEvent += CheckAttackButtonClamp;
+        attackButton.OnPointerDownEvent.AddListener(StartAttack);
+        attackButton.OnPointerUpEvent.AddListener(StopAttack);
     }
 
     private void Update()
@@ -43,49 +36,20 @@ public class InputControl : MonoBehaviour
                 Jump();
             }
 
-            #region E_Old
-            /*
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                EButtonClamp += Time.deltaTime;
-
-                if (attackButton)
-                    attackButton.SmoothRemoveTransparency();//RemoveTransparency();
-            }
-
-            if (Input.GetKey(KeyCode.E))
-            {
-                EButtonClamp += Time.deltaTime;
-
-                if (EButtonClamp > buttonPressDuration.TimeLimitForButtonClamp)
-                {
-                    UseAttack(EButtonClamp);
-                    EButtonClamp = 0;
-                }
-            }
-
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                UseAttack(EButtonClamp);
-                EButtonClamp = 0;
-
-                if (attackButton)
-                    attackButton.AddTransparency();
-            }*/
-            #endregion
-
             #region E
             if (Input.GetKeyDown(KeyCode.E)) 
             {
                 if (isAttackEnabled == false) return;
 
-                NEW_attackButton.ButtonDown();
+                attackButton.ButtonDown();
+                StartAttack(attackButton);
             } 
             else if (Input.GetKeyUp(KeyCode.E))
             {
                 if (isAttackEnabled == false) return;
 
-                NEW_attackButton.ButtonUp();
+                attackButton.ButtonUp();
+                StopAttack(attackButton);
             }
             #endregion
 
@@ -94,48 +58,16 @@ public class InputControl : MonoBehaviour
             {
                 if (isShieldEnabled == false) return;
 
-                NEW_shieldButton.ButtonDown();
-                IncreaseShield(NEW_shieldButton);
+                shieldButton.ButtonDown();
+                IncreaseShield(shieldButton);
             }
             else if (Input.GetKeyUp(KeyCode.Mouse1))
             {
                 if (isShieldEnabled == false) return;
 
-                NEW_shieldButton.ButtonUp();
-                StopShieldIncrease(NEW_shieldButton);
+                shieldButton.ButtonUp();
+                StopShieldIncrease(shieldButton);
             }
-            #endregion
-
-            #region Mouse1_Old
-            /*
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                mouse1ButtonClamp += Time.deltaTime;
-
-                if (shieldButton)
-                    shieldButton.SmoothRemoveTransparency(); //RemoveTransparency();
-            }
-
-            if (Input.GetKey(KeyCode.Mouse1))
-            {
-                mouse1ButtonClamp += Time.deltaTime;
-
-                if (mouse1ButtonClamp > buttonPressDuration.TimeLimitForButtonClamp)
-                {
-                    UseShield(mouse1ButtonClamp);
-                    mouse1ButtonClamp = 0;
-                }
-            }
-
-            if (Input.GetKeyUp(KeyCode.Mouse1))
-            {
-                UseShield(mouse1ButtonClamp);
-                mouse1ButtonClamp = 0;
-
-                if (shieldButton)
-                    shieldButton.AddTransparency();
-            }
-            */
             #endregion
         }
 
@@ -168,30 +100,18 @@ public class InputControl : MonoBehaviour
 
     private void OnDestroy()
     {
-        NEW_shieldButton.OnPointerDownEvent.RemoveListener(IncreaseShield);
-        NEW_shieldButton.OnPointerUpEvent.RemoveListener(StopShieldIncrease);
+        shieldButton.OnPointerDownEvent.RemoveListener(IncreaseShield);
+        shieldButton.OnPointerUpEvent.RemoveListener(StopShieldIncrease);
 
-        NEW_attackButton.ClampTimeChangeEvent -= CheckButtonClamp;
-        NEW_attackButton.OnPointerDownEvent.RemoveListener(StartAttack);
-        NEW_attackButton.OnPointerUpEvent.RemoveListener(StopAttack);
+        attackButton.ClampTimeChangeEvent -= CheckAttackButtonClamp;
+        attackButton.OnPointerDownEvent.RemoveListener(StartAttack);
+        attackButton.OnPointerUpEvent.RemoveListener(StopAttack);
     }
 
     public void Jump()
     {
         if (isInputControlEnabled == false) return;
         playerInputControl?.Jump();
-    }
-
-    public void UseAttack(float timeClamp)
-    {
-        if (isInputControlEnabled == false) return;
-        playerInputControl?.UseAttack(timeClamp);
-    }
-
-    public void UseShield(float timeClamp)
-    {
-        if (isInputControlEnabled == false) return;
-        playerInputControl.UseShield(timeClamp);
     }
 
     private void IncreaseShield(UIButton button)
@@ -216,12 +136,12 @@ public class InputControl : MonoBehaviour
         playerInputControl.StartAttack();
     }
 
-    private void CheckButtonClamp(float time)
+    private void CheckAttackButtonClamp(float time)
     {
         if (isInputControlEnabled == false) return;
         if (isAttackEnabled == false) return;
 
-        playerInputControl.CheckButtonClamp(time);
+        playerInputControl.CheckAttackButtonClamp(time);
     }
 
     private void StopAttack(UIButton button)

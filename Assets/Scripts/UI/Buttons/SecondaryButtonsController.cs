@@ -7,11 +7,11 @@ public class SecondaryButtonsController : MonoBehaviour
     [SerializeField] private InputControl inputControl;
 
     [Header("Shield button")]
-    [SerializeField] private New_UIClampingButton shieldButton;
+    [SerializeField] private UIClampingButton shieldButton;
     [SerializeField] private UIImageChangingTransparency shieldButtonImage;
 
     [Header("Attack button")]
-    [SerializeField] private New_UIClampingButton attackButton;
+    [SerializeField] private UIClampingButton attackButton;
     [SerializeField] private UIImageChangingTransparency attackButtonImage;
     [SerializeField] private float timeButtonEnabledAfterJump = 0.1f;
 
@@ -29,18 +29,27 @@ public class SecondaryButtonsController : MonoBehaviour
 
     private void Start()
     {
-        SetVariables();
+        playerSpawner.PlayerSpawned += SetVariables;
+
+        if (player == null)
+            SetVariables(playerSpawner.GetPlayer());
     }
+
+    private void OnDestroy()
+    {
+        playerSpawner.PlayerSpawned -= SetVariables;
+    }
+
     private void CheckCartridgeStorage(int value) { }
 
-    private void SetVariables()
+    private void SetVariables(Player player)
     {
-        player = playerSpawner.GetPlayer();
-        playerMovement = player.GetComponent<PlayerMovement>();
+        this.player = player;
+        playerMovement = this.player.GetComponent<PlayerMovement>();
         playerMovement.OnJumpEvent += DisableAttack;
         playerMovement.OnRotationEvent += DisableAttack;
-        FindStorages(player);
-        player.DeathEvent += OnPlayerDeath;
+        FindStorages(this.player);
+        this.player.DeathEvent += OnPlayerDeath;
     }
 
     private void OnPlayerDeath()
@@ -50,7 +59,6 @@ public class SecondaryButtonsController : MonoBehaviour
         cartridgeStorage.StorageChangeEvent -= CheckEnergyStorage;
         playerMovement.OnJumpEvent -= DisableAttack;
         playerMovement.OnRotationEvent -= DisableAttack;
-        SetVariables();
     }
 
     private void FindStorages(Player player)

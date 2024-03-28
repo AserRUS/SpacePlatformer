@@ -18,6 +18,7 @@ public class CheckPoint : MonoBehaviour
                 meshRenderer.material = replacedMaterial;
             }
 
+            m_NewSpawnPosition.position = new Vector3(m_NewSpawnPosition.position.x, m_NewSpawnPosition.position.y, 0);
             m_Spawner.SetSpawnPosition(m_NewSpawnPosition);
             Destroy(this);            
         }

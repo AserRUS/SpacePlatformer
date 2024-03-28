@@ -2,68 +2,72 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
-    [SerializeField] private ButtonPressDuration buttonPressDuration;
-    [SerializeField] private Shield weakShieldPrefab;
-    [SerializeField] private Shield strongShieldPrefab;
     [SerializeField] private Storage energyStorage;
+    [SerializeField] private Shield shieldPrefab;
+    [SerializeField] private ShieldPropertes shieldPropertes;
 
-    private Player player;    
-    private Destructible shield;
-    private bool shieldActive;
+    private Player player;
+    private Shield shield;
+    private bool isShieldActive;
+    private bool buttonClamp;
+    private float time;
+    private float timeStep = 0.1f;
+
 
     private void Start()
     {
         player = GetComponent<Player>();
-        shieldActive = false;
+        isShieldActive = false;
         player.DeathEvent += OnPlayerDeath;
+        
     }
-
     private void Update()
     {
-        MoveShield();
+        ButtonClamp();
     }
 
-    private void MoveShield()
+    private void ButtonClamp()
     {
-        if (shieldActive)
+        if (!buttonClamp) return;
+        if (!isShieldActive) return;
+
+        if (time >= timeStep)
         {
-            shield.transform.position = player.transform.position;
+            time = 0;
+            shield.AddHitpoints(shieldPropertes.HitPointsInPeroidOfTime);
+            energyStorage.RemoveValue(shieldPropertes.RequiredEnergyInPeroidOfTime);
         }
+
+        time += Time.deltaTime;
     }
 
-    public void UseShield(float timeClamp)
+    public void IncreaseShield()
     {
-        if (shieldActive) return;
-
-        if (timeClamp > buttonPressDuration.TimeLimitForButtonClamp)
+        if (!isShieldActive)
         {
-            if (energyStorage.CurrentValue < strongShieldPrefab.RequiredEnergy)
-                return;
-
-            energyStorage.RemoveValue(strongShieldPrefab.RequiredEnergy);
-
-            shield = Instantiate(strongShieldPrefab, player.transform.position, 
-                Quaternion.identity).GetComponent<Destructible>();
-        }
-        else
-        {
-            if (energyStorage.CurrentValue < weakShieldPrefab.RequiredEnergy)
-                return;
-
-            energyStorage.RemoveValue(weakShieldPrefab.RequiredEnergy);
-
-            shield = Instantiate(weakShieldPrefab, player.transform.position, 
-                Quaternion.identity).GetComponent<Destructible>();
+            shield = Instantiate(shieldPrefab, player.transform.position,
+                Quaternion.identity, player.transform).GetComponent<Shield>();
+            shield.DeathEvent += OnShieldBroke;
+            player.SetInvulnerable(true);
         }
 
-        shieldActive = true;
-        shield.DeathEvent += OnShieldBroke;
+        shield.ResetLifetime();
+        buttonClamp = true;
+        isShieldActive = true;
+    }
+
+    public void StopShieldIncrease()
+    {
+        buttonClamp = false;
+        shield.ResetLifetime();
     }
 
     private void OnShieldBroke()
     {
         shield.DeathEvent -= OnShieldBroke;
-        shieldActive = false;
+        shield = null;
+        isShieldActive = false;
+        player.SetInvulnerable(false);
     }
 
     private void OnPlayerDeath()
@@ -71,5 +75,10 @@ public class ShieldController : MonoBehaviour
         player.DeathEvent -= OnPlayerDeath;
         if (shield)
             shield.RemoveHitpoints(shield.MaxHitPoints, shield.gameObject);
+    }
+
+    public Shield GetShield()
+    {
+        return shield;
     }
 }

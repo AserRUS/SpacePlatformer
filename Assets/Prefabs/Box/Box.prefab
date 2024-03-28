@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835dcc85d07015c47b8b19b556ec5d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 50
   mass: 2
   lifeTime: 2
   numberStepsToChangeTransparency: 25
@@ -167,6 +167,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 204e5627aefeda04aa444a38f7b81519, type: 3}
       propertyPath: m_Name
       value: View model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 204e5627aefeda04aa444a38f7b81519, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

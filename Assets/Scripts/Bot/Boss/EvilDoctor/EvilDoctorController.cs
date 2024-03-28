@@ -96,7 +96,7 @@ public class EvilDoctorController : Boss
     private void CheckReceiveDamage(int hitPoints)
     {
         currentHitPoints = hitPoints;
-        int damage = hitPointsAfterTeleportation - currentHitPoints;
+        int damage = Mathf.Abs(hitPointsAfterTeleportation - currentHitPoints);
 
         if (damage >= damageReceivedRequiredForTeleportation)
         {
@@ -107,8 +107,11 @@ public class EvilDoctorController : Boss
 
     public override void OnPlayerDeath()
     {
+        destructible.AddHitpoints(destructible.MaxHitPoints);
         currentHitPoints = destructible.MaxHitPoints;
         teleport.StopTeleportTimer();
         weapon.StopAttackTimer();
+        isTeleporting = false;
+        isAttack = false;
     }
 }

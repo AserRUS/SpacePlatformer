@@ -49,10 +49,10 @@ public class Box : MonoBehaviour
 
             if (angle < maxAngle && angle > minAngle)// && rb.velocity.y < 0)
             {
-                New_ShieldController shieldController = collision.gameObject.GetComponent<New_ShieldController>();
+                ShieldController shieldController = collision.gameObject.GetComponent<ShieldController>();
                 if (shieldController)
                 {
-                    New_Shield shield = shieldController.GetShield();
+                    Shield shield = shieldController.GetShield();
                     if (shield)
                     {
                         shield.RemoveHitpoints(damage, shield.gameObject);

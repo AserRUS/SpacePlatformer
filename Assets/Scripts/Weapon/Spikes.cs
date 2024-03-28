@@ -8,16 +8,16 @@ public class Spikes : MonoBehaviour
 
     [Header("Without Shield")]
     [SerializeField] private int damage;
-    [SerializeField] private float imactForce;
+    [SerializeField] private float impactForce;
 
     private float time;
     private Player player;
-    private New_ShieldController shieldController;
+    private ShieldController shieldController;
 
     private void OnTriggerEnter(Collider other)
     {
         player = other.transform.GetComponent<Player>();
-        shieldController = other.GetComponent<New_ShieldController>();
+        shieldController = other.GetComponent<ShieldController>();
 
         time = timeStep;
     }
@@ -26,7 +26,7 @@ public class Spikes : MonoBehaviour
     {
         if (player)
         {
-            New_Shield shield = shieldController.GetShield();
+            Shield shield = shieldController.GetShield();
             time += Time.deltaTime;
 
             if (time >= timeStep)
@@ -66,11 +66,11 @@ public class Spikes : MonoBehaviour
             
             if (angle >= 90)
             {
-                rb.AddForce(new Vector2(-1, 1) * imactForce, ForceMode.Impulse);
+                rb.AddForce(new Vector2(-1, 1) * impactForce, ForceMode.Impulse);
             }
             else
             {
-                rb.AddForce(new Vector2(1, 1) * imactForce, ForceMode.Impulse);
+                rb.AddForce(new Vector2(1, 1) * impactForce, ForceMode.Impulse);
             }
         }
 

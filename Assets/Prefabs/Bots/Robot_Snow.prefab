@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47595eda6dee6724d8af205fee54deb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHitPoints: 50
-  m_DeathEffect: {fileID: 1869637274572158909, guid: c20db4957f0d41a4e8f6e1f199378def, type: 3}
+  m_MaxHitPoints: 35
+  m_DeathEffect: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
 --- !u!114 &4884803932383953173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,13 +307,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animController: {fileID: 7729745366814788195}
-  projectilePrefab: {fileID: 4807826845022091945, guid: 631fcfd56c632564b88c29c4612ca20d, type: 3}
+  projectilePrefab: {fileID: 4807826845022091945, guid: 5de1df031587fdc48af0b516d717d086, type: 3}
   FirePoint: {fileID: 2599015651312546411}
-  maxNumberCartridges: 2
-  timeBetweenShots: 2
-  timeRecharge: 2
+  maxNumberCartridges: 5
+  timeBetweenShots: 0.2
+  timeRecharge: 0.5
   m_ShotSound: {fileID: 8300000, guid: 44e943a67e159da499fb363f6541f29f, type: 3}
   meleeDamage: 25
+  impactForce: 20
 --- !u!82 &4709132700875956558
 AudioSource:
   m_ObjectHideFlags: 0

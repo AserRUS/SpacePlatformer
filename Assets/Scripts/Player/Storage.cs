@@ -22,8 +22,7 @@ public class Storage : MonoBehaviour
 
     private void Start()
     {
-        m_CurrentValue = m_InitialValue;
-        StorageChangeEvent?.Invoke(m_CurrentValue);
+        AddValue(m_InitialValue);
     }
     public void RemoveValue(int value)
     {
@@ -44,6 +43,7 @@ public class Storage : MonoBehaviour
         {
             m_CurrentValue = m_MaxValue;
         }
+
         StorageChangeEvent?.Invoke(m_CurrentValue);
     }
 }

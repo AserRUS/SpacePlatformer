@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
-  clampingButton: {fileID: 4840222462111927060}
+  clampingButton: {fileID: 8102098171556830151}
 --- !u!114 &2707621188498257329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,145 +326,6 @@ MonoBehaviour:
   minTransparency: 15
   maxTransparency: 50
   timeBetweenTransparencyChange: 0.1
---- !u!1 &2382688309783560361
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1721943995579546153}
-  - component: {fileID: 8829729398717936299}
-  - component: {fileID: 769715749116380395}
-  - component: {fileID: 1184206782850616}
-  - component: {fileID: 2681154482574058192}
-  m_Layer: 5
-  m_Name: ButtonShield
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1721943995579546153
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2382688309783560361}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2290197161063471388}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.298, y: 0.47657463}
-  m_AnchorMax: {x: 0.70416653, y: 0.7794043}
-  m_AnchoredPosition: {x: -0.5, y: -0.49993896}
-  m_SizeDelta: {x: 1.1489868, y: -0.8510132}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8829729398717936299
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2382688309783560361}
-  m_CullTransparentMesh: 1
---- !u!114 &769715749116380395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2382688309783560361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9669811, b: 0.9669811, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 19bbb1dba0133f4478023eb83053a162, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &1184206782850616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2382688309783560361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
-  startWithoutTransparency: 0
-  minTransparency: 30
-  maxTransparency: 100
-  timeBetweenTransparencyChange: 0.1
---- !u!114 &2681154482574058192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2382688309783560361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8789210e52a082742933866fed2ae515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Interactable: 1
-  OnPointerDownEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1184206782850616}
-        m_TargetAssemblyTypeName: UIImageChangingTransparency, Assembly-CSharp
-        m_MethodName: SmoothRemoveTransparency
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnPointerUpEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1184206782850616}
-        m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
-        m_MethodName: AddTransparency
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  inputControl: {fileID: 0}
-  type: 0
 --- !u!1 &2930069008969302852
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,9 +336,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6735515880901924187}
   - component: {fileID: 140785565005508064}
-  - component: {fileID: 2353471935469599874}
+  - component: {fileID: 8943588503266337441}
   m_Layer: 5
-  m_Name: ButtonShield (1)
+  m_Name: 'ButtonShield '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -512,7 +373,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2930069008969302852}
   m_CullTransparentMesh: 1
---- !u!114 &2353471935469599874
+--- !u!114 &8943588503266337441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -521,7 +382,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2930069008969302852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b817153252b2a7468bf1584f6f637c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b0a2ee77e5a97e4bb8c3360a5ac1e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interactable: 1
@@ -531,145 +392,6 @@ MonoBehaviour:
   OnPointerUpEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &3038205966609823667
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1568145707875086325}
-  - component: {fileID: 7223676777498016090}
-  - component: {fileID: 3111937934278155399}
-  - component: {fileID: 998653651821065156}
-  - component: {fileID: 5628407665811815128}
-  m_Layer: 5
-  m_Name: 'ButtonAttack '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1568145707875086325
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038205966609823667}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2290197161063471388}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.298, y: 0.47657463}
-  m_AnchorMax: {x: 0.70416653, y: 0.7794043}
-  m_AnchoredPosition: {x: -0.5, y: -255.42596}
-  m_SizeDelta: {x: 1.1489868, y: -0.8510132}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7223676777498016090
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038205966609823667}
-  m_CullTransparentMesh: 1
---- !u!114 &3111937934278155399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038205966609823667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 31ce36cfa8f2d8c4788e14b863c15517, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &998653651821065156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038205966609823667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d1930941f7eee44befac571dea8f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
-  startWithoutTransparency: 0
-  minTransparency: 30
-  maxTransparency: 100
-  timeBetweenTransparencyChange: 0.1
---- !u!114 &5628407665811815128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038205966609823667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8789210e52a082742933866fed2ae515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Interactable: 1
-  OnPointerDownEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 998653651821065156}
-        m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
-        m_MethodName: SmoothRemoveTransparency
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnPointerUpEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 998653651821065156}
-        m_TargetAssemblyTypeName: ImageChangingTransparency, Assembly-CSharp
-        m_MethodName: AddTransparency
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  inputControl: {fileID: 0}
-  type: 1
 --- !u!1 &3354450584316757972
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
-  clampingButton: {fileID: 2353471935469599874}
+  clampingButton: {fileID: 8943588503266337441}
 --- !u!1 &3359580095283685473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,8 +929,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1721943995579546153}
-  - {fileID: 1568145707875086325}
   - {fileID: 6735515880901924187}
   - {fileID: 4772675053772237661}
   m_Father: {fileID: 5155785239227477432}
@@ -1479,9 +1199,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4772675053772237661}
   - component: {fileID: 4318157077992754002}
-  - component: {fileID: 4840222462111927060}
+  - component: {fileID: 8102098171556830151}
   m_Layer: 5
-  m_Name: ButtonAttack  (1)
+  m_Name: ButtonAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1516,7 +1236,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8745789130091384868}
   m_CullTransparentMesh: 1
---- !u!114 &4840222462111927060
+--- !u!114 &8102098171556830151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1525,7 +1245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8745789130091384868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b817153252b2a7468bf1584f6f637c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b0a2ee77e5a97e4bb8c3360a5ac1e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interactable: 1

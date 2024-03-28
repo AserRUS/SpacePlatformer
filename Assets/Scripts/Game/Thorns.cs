@@ -10,10 +10,10 @@ public class Thorns : MonoBehaviour
         Player player = collision.transform.GetComponent<Player>();
         if (player != null)
         {
-            New_ShieldController shieldController = collision.gameObject.GetComponent<New_ShieldController>();
+            ShieldController shieldController = collision.gameObject.GetComponent<ShieldController>();
             if (shieldController)
             {
-                New_Shield shield = shieldController.GetShield();
+                Shield shield = shieldController.GetShield();
                 if (shield)
                 {
                     shield.RemoveHitpoints(m_Damage, shield.gameObject);
