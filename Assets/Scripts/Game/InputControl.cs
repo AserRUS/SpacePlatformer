@@ -6,8 +6,8 @@ public class InputControl : MonoBehaviour
     public event UnityAction<bool> InputControlStateChanged;
 
     [SerializeField] private ButtonPressDuration buttonPressDuration;
-    [SerializeField] private UIClampingButton NEW_shieldButton;
-    [SerializeField] private UIClampingButton NEW_attackButton;
+    [SerializeField] private UIClampingButton shieldButton;
+    [SerializeField] private UIClampingButton attackButton;
 
     private PlayerInputControl playerInputControl;
 
@@ -17,12 +17,12 @@ public class InputControl : MonoBehaviour
 
     private void Start()
     {
-        NEW_shieldButton.OnPointerDownEvent.AddListener(IncreaseShield);
-        NEW_shieldButton.OnPointerUpEvent.AddListener(StopShieldIncrease);
+        shieldButton.OnPointerDownEvent.AddListener(IncreaseShield);
+        shieldButton.OnPointerUpEvent.AddListener(StopShieldIncrease);
 
-        NEW_attackButton.ClampTimeChangeEvent += CheckButtonClamp;
-        NEW_attackButton.OnPointerDownEvent.AddListener(StartAttack);
-        NEW_attackButton.OnPointerUpEvent.AddListener(StopAttack);
+        attackButton.ClampTimeChangeEvent += CheckAttackButtonClamp;
+        attackButton.OnPointerDownEvent.AddListener(StartAttack);
+        attackButton.OnPointerUpEvent.AddListener(StopAttack);
     }
 
     private void Update()
@@ -41,15 +41,21 @@ public class InputControl : MonoBehaviour
             {
                 if (isAttackEnabled == false) return;
 
-                NEW_attackButton.ButtonDown();
-                StartAttack(NEW_attackButton);
+                attackButton.ButtonDown();
+                StartAttack(attackButton);
             } 
+            else if (Input.GetKey(KeyCode.E))
+            {
+                if (isAttackEnabled == false) return;
+
+
+            }
             else if (Input.GetKeyUp(KeyCode.E))
             {
                 if (isAttackEnabled == false) return;
 
-                NEW_attackButton.ButtonUp();
-                StartAttack(NEW_attackButton);
+                attackButton.ButtonUp();
+                StartAttack(attackButton);
             }
             #endregion
 
@@ -58,15 +64,15 @@ public class InputControl : MonoBehaviour
             {
                 if (isShieldEnabled == false) return;
 
-                NEW_shieldButton.ButtonDown();
-                IncreaseShield(NEW_shieldButton);
+                shieldButton.ButtonDown();
+                IncreaseShield(shieldButton);
             }
             else if (Input.GetKeyUp(KeyCode.Mouse1))
             {
                 if (isShieldEnabled == false) return;
 
-                NEW_shieldButton.ButtonUp();
-                StopShieldIncrease(NEW_shieldButton);
+                shieldButton.ButtonUp();
+                StopShieldIncrease(shieldButton);
             }
             #endregion
         }
@@ -100,12 +106,12 @@ public class InputControl : MonoBehaviour
 
     private void OnDestroy()
     {
-        NEW_shieldButton.OnPointerDownEvent.RemoveListener(IncreaseShield);
-        NEW_shieldButton.OnPointerUpEvent.RemoveListener(StopShieldIncrease);
+        shieldButton.OnPointerDownEvent.RemoveListener(IncreaseShield);
+        shieldButton.OnPointerUpEvent.RemoveListener(StopShieldIncrease);
 
-        NEW_attackButton.ClampTimeChangeEvent -= CheckButtonClamp;
-        NEW_attackButton.OnPointerDownEvent.RemoveListener(StartAttack);
-        NEW_attackButton.OnPointerUpEvent.RemoveListener(StopAttack);
+        attackButton.ClampTimeChangeEvent -= CheckAttackButtonClamp;
+        attackButton.OnPointerDownEvent.RemoveListener(StartAttack);
+        attackButton.OnPointerUpEvent.RemoveListener(StopAttack);
     }
 
     public void Jump()
@@ -136,12 +142,12 @@ public class InputControl : MonoBehaviour
         playerInputControl.StartAttack();
     }
 
-    private void CheckButtonClamp(float time)
+    private void CheckAttackButtonClamp(float time)
     {
         if (isInputControlEnabled == false) return;
         if (isAttackEnabled == false) return;
 
-        playerInputControl.CheckButtonClamp(time);
+        playerInputControl.CheckAttackButtonClamp(time);
     }
 
     private void StopAttack(UIButton button)
