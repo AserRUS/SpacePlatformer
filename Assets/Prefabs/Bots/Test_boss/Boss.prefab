@@ -1560,7 +1560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47595eda6dee6724d8af205fee54deb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHitPoints: 1000
+  m_MaxHitPoints: 2000
   m_DeathEffect: {fileID: 7401727948457227951, guid: 093474ce8bd662345bb1b691aa1728b7, type: 3}
 --- !u!114 &4429727030363016139
 MonoBehaviour:
@@ -1574,7 +1574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3328ecbb088698f469c5e7b637afaafc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageReceivedRequiredForTeleportation: 25
+  damageReceivedRequiredForTeleportation: 20
   vignetteController: {fileID: 0}
   playerSpawner: {fileID: 0}
 --- !u!114 &3540501966107706515
@@ -1595,7 +1595,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  timeBetweenTeleportation: 20
+  timeBetweenTeleportation: 15
 --- !u!114 &6692388492492251700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1609,7 +1609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackZone: {fileID: 0}
-  timeBetweenAttack: 2
+  timeBetweenAttack: 0.1
 --- !u!1 &6873495585686427167
 GameObject:
   m_ObjectHideFlags: 0

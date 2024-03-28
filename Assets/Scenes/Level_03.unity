@@ -835,14 +835,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1698441920534248240, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: m_MaxHitPoints
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: timeBetweenTeleportation
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: teleportationPoints.Array.data[0]
       value: 
@@ -867,10 +859,6 @@ PrefabInstance:
       propertyPath: vignetteController
       value: 
       objectReference: {fileID: 1923505895}
-    - target: {fileID: 4429727030363016139, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: damageReceivedRequiredForTeleportation
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 6627107898045919346, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -879,10 +867,6 @@ PrefabInstance:
       propertyPath: attackZone
       value: 
       objectReference: {fileID: 6469352222792793163}
-    - target: {fileID: 6692388492492251700, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: timeBetweenAttack
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 8380300666534522881, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 83.8
@@ -1484,6 +1468,14 @@ PrefabInstance:
     - target: {fileID: 2067119308558539054, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544061701865041039, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5827489
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544061701865041039, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
+      propertyPath: m_Center.y
+      value: -0.75009656
       objectReference: {fileID: 0}
     - target: {fileID: 5973830485692354230, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
       propertyPath: boss

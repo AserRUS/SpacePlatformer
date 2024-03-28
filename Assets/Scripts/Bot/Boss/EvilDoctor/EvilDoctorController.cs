@@ -107,8 +107,11 @@ public class EvilDoctorController : Boss
 
     public override void OnPlayerDeath()
     {
+        destructible.AddHitpoints(destructible.MaxHitPoints);
         currentHitPoints = destructible.MaxHitPoints;
         teleport.StopTeleportTimer();
         weapon.StopAttackTimer();
+        isTeleporting = false;
+        isAttack = false;
     }
 }
