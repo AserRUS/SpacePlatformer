@@ -7,6 +7,7 @@ public class Introduction : MonoBehaviour
     [SerializeField] private Transform m_CameraStartPosition;
     [SerializeField] private InputControl m_InputControl;
     [SerializeField] private UIInstructionPanel m_InstructionPanel;
+    [SerializeField] private GameObject m_SkipButton;
 
     private void Start()
     {
@@ -20,8 +21,9 @@ public class Introduction : MonoBehaviour
     {
         m_Camera.FlightFinishEvent -= IntroductionEnd;
     }
-    private void IntroductionEnd()
+    public void IntroductionEnd()
     {
+        m_SkipButton.SetActive(false);
         m_Camera.SetFollowMode();
         m_InputControl.InputControlEnabled(true);
 

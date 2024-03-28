@@ -5,14 +5,18 @@ public class PlayerAnimationState : MonoBehaviour
     [SerializeField] private PlayerMovement m_PlayerMovement;
     [SerializeField] private Weapon m_Weapon;
     [SerializeField] private Animator m_PlayerAnimator;
-
+    [SerializeField] private LaserGun m_LaserGun;
     private void Start()
     {
         m_Weapon.ShotEvent += ShotAnimation;
+        m_LaserGun.LaserActivateEvent += LaserAnimation;
+        m_LaserGun.LaserDeactivateEvent += LaserAnimationStop;
     }
     private void OnDestroy()
     {
         m_Weapon.ShotEvent -= ShotAnimation;
+        m_LaserGun.LaserActivateEvent -= LaserAnimation;
+        m_LaserGun.LaserDeactivateEvent -= LaserAnimationStop;
     }
 
     private void Update()
@@ -25,5 +29,13 @@ public class PlayerAnimationState : MonoBehaviour
     private void ShotAnimation()
     {
         m_PlayerAnimator.SetTrigger("isShoot");
+    }
+    private void LaserAnimation()
+    {
+        m_PlayerAnimator.SetTrigger("isLaserStart");
+    }
+    private void LaserAnimationStop()
+    {
+        m_PlayerAnimator.SetTrigger("isLaserStop");
     }
 }
