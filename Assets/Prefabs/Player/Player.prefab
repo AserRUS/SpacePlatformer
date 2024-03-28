@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5748767126383507667}
   - component: {fileID: 5628291638847398857}
-  - component: {fileID: 8040918730892245971}
   - component: {fileID: 6762672193098262244}
   m_Layer: 0
   m_Name: LaserGun
@@ -140,26 +139,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &8040918730892245971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041242313168756770}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 087cdccf976dceb45ac0c16b46b0e20d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 5628291638847398857}
-  particles: {fileID: 3647825697695703416}
-  firePoint: {fileID: 6213929324984672559}
-  maxLength: 15
-  timeLaserActivation: 5
-  requiredCartridge: 25
-  damageInPeroidOfTime: 1
-  timeBetweenDamage: 0.2
 --- !u!114 &6762672193098262244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,8 +366,6 @@ GameObject:
   - component: {fileID: 1222894124470886122}
   - component: {fileID: -8802150682411759611}
   - component: {fileID: -5263358381543673254}
-  - component: {fileID: 7116685210739030965}
-  - component: {fileID: 8284577208021454113}
   - component: {fileID: 8649802978472745030}
   - component: {fileID: -8508785415571599666}
   - component: {fileID: 6190112040215844588}
@@ -517,8 +494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4e0d976a0dcf949ad66b2b373ad8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weapon: {fileID: 8284577208021454113}
-  m_Shield: {fileID: 7116685210739030965}
   m_Movement: {fileID: 6635528274249280128}
   m_Shield_New: {fileID: 6190112040215844588}
   m_Weapon_New: {fileID: 5379509097632548969}
@@ -566,38 +541,6 @@ MonoBehaviour:
   m_StorageType: 1
   m_InitialValue: 50
   m_MaxValue: 100
---- !u!114 &7116685210739030965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6418860500129791720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97cb2f9232f04441911f7aab0dd87cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
-  weakShieldPrefab: {fileID: 651195320888216347, guid: 5108bd61454037b47a9a3391f7f6dd19, type: 3}
-  strongShieldPrefab: {fileID: 8204943117908484730, guid: b431540d55fbf5c478e4a2b94084c0c7, type: 3}
-  energyStorage: {fileID: -8802150682411759611}
---- !u!114 &8284577208021454113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6418860500129791720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f69924439a9e54291f0f4646560301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
-  weakWeapon: {fileID: 925826475868327211}
-  laserGun: {fileID: 8040918730892245971}
-  cartridgeStorage: {fileID: -5263358381543673254}
 --- !u!114 &8649802978472745030
 MonoBehaviour:
   m_ObjectHideFlags: 0

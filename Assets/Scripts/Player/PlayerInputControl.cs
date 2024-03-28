@@ -2,26 +2,14 @@ using UnityEngine;
 
 public class PlayerInputControl : MonoBehaviour
 {
-    [SerializeField] private WeaponController m_Weapon;
-    [SerializeField] private ShieldController m_Shield;
     [SerializeField] private PlayerMovement m_Movement;
 
-    [SerializeField] private New_ShieldController m_Shield_New;
-    [SerializeField] private New_WeaponController m_Weapon_New;
+    [SerializeField] private ShieldController m_Shield_New;
+    [SerializeField] private WeaponController m_Weapon_New;
 
     public void Jump()
     {
         m_Movement?.Jump();
-    }
-
-    public void UseAttack(float timeClamp)
-    {
-        m_Weapon?.UseAttack(timeClamp);
-    }
-
-    public void UseShield(float timeClamp)
-    {
-        m_Shield?.UseShield(timeClamp);
     }
 
     public void IncreaseShield()

@@ -12,12 +12,12 @@ public class Spikes : MonoBehaviour
 
     private float time;
     private Player player;
-    private New_ShieldController shieldController;
+    private ShieldController shieldController;
 
     private void OnTriggerEnter(Collider other)
     {
         player = other.transform.GetComponent<Player>();
-        shieldController = other.GetComponent<New_ShieldController>();
+        shieldController = other.GetComponent<ShieldController>();
 
         time = timeStep;
     }
@@ -26,7 +26,7 @@ public class Spikes : MonoBehaviour
     {
         if (player)
         {
-            New_Shield shield = shieldController.GetShield();
+            Shield shield = shieldController.GetShield();
             time += Time.deltaTime;
 
             if (time >= timeStep)

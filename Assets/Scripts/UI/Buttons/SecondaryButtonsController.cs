@@ -7,11 +7,11 @@ public class SecondaryButtonsController : MonoBehaviour
     [SerializeField] private InputControl inputControl;
 
     [Header("Shield button")]
-    [SerializeField] private New_UIClampingButton shieldButton;
+    [SerializeField] private UIClampingButton shieldButton;
     [SerializeField] private UIImageChangingTransparency shieldButtonImage;
 
     [Header("Attack button")]
-    [SerializeField] private New_UIClampingButton attackButton;
+    [SerializeField] private UIClampingButton attackButton;
     [SerializeField] private UIImageChangingTransparency attackButtonImage;
     [SerializeField] private float timeButtonEnabledAfterJump = 0.1f;
 

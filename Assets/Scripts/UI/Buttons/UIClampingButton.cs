@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class New_UIClampingButton : UIButton
+public class UIClampingButton : UIButton
 {
     public event UnityAction<float> ClampTimeChangeEvent;
 

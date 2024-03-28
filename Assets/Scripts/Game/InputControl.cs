@@ -6,17 +6,10 @@ public class InputControl : MonoBehaviour
     public event UnityAction<bool> InputControlStateChanged;
 
     [SerializeField] private ButtonPressDuration buttonPressDuration;
-    [SerializeField] private UIImageChangingTransparency shieldButton;
-    [SerializeField] private UIImageChangingTransparency attackButton;
-
-    [SerializeField] private New_UIClampingButton NEW_shieldButton;
-    [SerializeField] private New_UIClampingButton NEW_attackButton;
+    [SerializeField] private UIClampingButton NEW_shieldButton;
+    [SerializeField] private UIClampingButton NEW_attackButton;
 
     private PlayerInputControl playerInputControl;
-
-
-    private float EButtonClamp = 0;
-    private float mouse1ButtonClamp = 0;
 
     private bool isInputControlEnabled = true;
     private bool isAttackEnabled = true;
@@ -42,37 +35,6 @@ public class InputControl : MonoBehaviour
             {
                 Jump();
             }
-
-            #region E_Old
-            /*
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                EButtonClamp += Time.deltaTime;
-
-                if (attackButton)
-                    attackButton.SmoothRemoveTransparency();//RemoveTransparency();
-            }
-
-            if (Input.GetKey(KeyCode.E))
-            {
-                EButtonClamp += Time.deltaTime;
-
-                if (EButtonClamp > buttonPressDuration.TimeLimitForButtonClamp)
-                {
-                    UseAttack(EButtonClamp);
-                    EButtonClamp = 0;
-                }
-            }
-
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                UseAttack(EButtonClamp);
-                EButtonClamp = 0;
-
-                if (attackButton)
-                    attackButton.AddTransparency();
-            }*/
-            #endregion
 
             #region E
             if (Input.GetKeyDown(KeyCode.E)) 
@@ -106,38 +68,6 @@ public class InputControl : MonoBehaviour
                 NEW_shieldButton.ButtonUp();
                 StopShieldIncrease(NEW_shieldButton);
             }
-            #endregion
-
-            #region Mouse1_Old
-            /*
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                mouse1ButtonClamp += Time.deltaTime;
-
-                if (shieldButton)
-                    shieldButton.SmoothRemoveTransparency(); //RemoveTransparency();
-            }
-
-            if (Input.GetKey(KeyCode.Mouse1))
-            {
-                mouse1ButtonClamp += Time.deltaTime;
-
-                if (mouse1ButtonClamp > buttonPressDuration.TimeLimitForButtonClamp)
-                {
-                    UseShield(mouse1ButtonClamp);
-                    mouse1ButtonClamp = 0;
-                }
-            }
-
-            if (Input.GetKeyUp(KeyCode.Mouse1))
-            {
-                UseShield(mouse1ButtonClamp);
-                mouse1ButtonClamp = 0;
-
-                if (shieldButton)
-                    shieldButton.AddTransparency();
-            }
-            */
             #endregion
         }
 
@@ -182,18 +112,6 @@ public class InputControl : MonoBehaviour
     {
         if (isInputControlEnabled == false) return;
         playerInputControl?.Jump();
-    }
-
-    public void UseAttack(float timeClamp)
-    {
-        if (isInputControlEnabled == false) return;
-        playerInputControl?.UseAttack(timeClamp);
-    }
-
-    public void UseShield(float timeClamp)
-    {
-        if (isInputControlEnabled == false) return;
-        playerInputControl.UseShield(timeClamp);
     }
 
     private void IncreaseShield(UIButton button)

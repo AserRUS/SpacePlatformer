@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class UISliderButton : MonoBehaviour
 {
     [SerializeField] private ButtonPressDuration buttonPressDuration;
-    [SerializeField] private New_UIClampingButton clampingButton;
+    [SerializeField] private UIClampingButton clampingButton;
     
     private Image imageSlider;
 
