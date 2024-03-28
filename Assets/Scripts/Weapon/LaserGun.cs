@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LaserGun : MonoBehaviour
 {
@@ -70,20 +71,18 @@ public class LaserGun : MonoBehaviour
         damageAvailable = false;
         StartCoroutine(ReloadDamage(timeBetweenDamage));
     }
-
+    
     public void Activate()
-    {
+    {        
         lineRenderer.enabled = true;
-
         damageAvailable = true;
         particles.Play();
         StartCoroutine(DeactivateLaser(timeLaserActivation));
     }
-
+    
     public void Deactivate()
     {
         lineRenderer.enabled = false;
-
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, firePoint.position);
         particles.Stop();

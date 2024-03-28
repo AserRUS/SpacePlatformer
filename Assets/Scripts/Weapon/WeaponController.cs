@@ -17,7 +17,6 @@ public class WeaponController : MonoBehaviour
                 return;
 
             cartridgeStorage.RemoveValue(laserGun.RequiredCartridge);
-
             laserGun.Activate();
         }
         else
