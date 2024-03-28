@@ -16,7 +16,9 @@ public class BotWeapon : MonoBehaviour
 
     [Header("Melee attack")]
     [SerializeField] private int meleeDamage;
+    [SerializeField] private float impactForce;
 
+    private Destructible destructible;
     private int numberCartridges;
     private bool shootAvailable;
     private bool dirRight;
@@ -24,7 +26,7 @@ public class BotWeapon : MonoBehaviour
     private AudioSource m_Audio;
     private void Start()
     {
-
+        destructible = GetComponentInParent<Destructible>();
         m_Audio = GetComponent<AudioSource>();
         shootAvailable = true;
         numberCartridges = maxNumberCartridges;
@@ -82,13 +84,31 @@ public class BotWeapon : MonoBehaviour
         if (other.tag == "Player")
         {
             Destructible dest = other.GetComponent<Destructible>();
-
             if (dest)
             {
                 dest.RemoveHitpoints(meleeDamage, gameObject);
             }
 
-            Destroy(gameObject.transform.parent.gameObject);
+            Rigidbody rigidbody = other.GetComponent<Rigidbody>();
+            if (rigidbody)
+            {
+                rigidbody.velocity = Vector3.zero;
+
+                Vector3 direction = other.transform.position - transform.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+                if (angle >= 90)
+                {
+                    rigidbody.AddForce(new Vector2(-1, 1) * impactForce, ForceMode.Impulse);
+                }
+                else
+                {
+                    rigidbody.AddForce(new Vector2(1, 1) * impactForce, ForceMode.Impulse);
+                }
+            }
+
+            destructible.RemoveHitpoints(destructible.MaxHitPoints, destructible.gameObject);
+            //Destroy(gameObject.transform.parent.gameObject);
         }
     }
 }

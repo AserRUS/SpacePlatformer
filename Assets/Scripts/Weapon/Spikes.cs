@@ -8,7 +8,7 @@ public class Spikes : MonoBehaviour
 
     [Header("Without Shield")]
     [SerializeField] private int damage;
-    [SerializeField] private float imactForce;
+    [SerializeField] private float impactForce;
 
     private float time;
     private Player player;
@@ -66,11 +66,11 @@ public class Spikes : MonoBehaviour
             
             if (angle >= 90)
             {
-                rb.AddForce(new Vector2(-1, 1) * imactForce, ForceMode.Impulse);
+                rb.AddForce(new Vector2(-1, 1) * impactForce, ForceMode.Impulse);
             }
             else
             {
-                rb.AddForce(new Vector2(1, 1) * imactForce, ForceMode.Impulse);
+                rb.AddForce(new Vector2(1, 1) * impactForce, ForceMode.Impulse);
             }
         }
 

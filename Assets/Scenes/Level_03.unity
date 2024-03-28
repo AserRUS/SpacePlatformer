@@ -2880,7 +2880,7 @@ MonoBehaviour:
   - {fileID: 601014806998915360, guid: 213d95a8487ac8e4d9e7a3c3dcdf92f0, type: 3}
   m_SpawnPosition: {fileID: 1460906373}
   m_SpawnTime: 3
-  m_SpawnHeight: 20
+  m_SpawnHeight: 15
   m_SpawnRadius: 20
   m_PlayerSpawner: {fileID: 577071488}
 --- !u!1001 &908911518
@@ -12349,14 +12349,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckPoint
       objectReference: {fileID: 0}
-    - target: {fileID: 6287792284624867706, guid: a739d9ec4d3cb05409cb5edc42e51094, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 11fdc45484fe80f47987f34a4714d3ed, type: 2}
-    - target: {fileID: 6730932831769316491, guid: a739d9ec4d3cb05409cb5edc42e51094, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12379,8 +12371,8 @@ Transform:
   m_GameObject: {fileID: 8025894635112338207}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 65.7614, y: 24.27, z: -4.3682}
-  m_LocalScale: {x: 19.130749, y: 0.4615709, z: 46.67132}
+  m_LocalPosition: {x: 65.7614, y: 24.9113, z: -4.3682}
+  m_LocalScale: {x: 19.130749, y: 1.7440294, z: 46.67132}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7621022547994907472}
@@ -12485,7 +12477,7 @@ Transform:
   m_GameObject: {fileID: 6883344488237200526}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.34, y: 0.8, z: 0}
+  m_LocalPosition: {x: 31.33, y: 7.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

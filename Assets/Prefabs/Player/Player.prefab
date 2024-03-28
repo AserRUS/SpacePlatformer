@@ -186,8 +186,8 @@ MonoBehaviour:
   maxRequiredCartridge: 10
   timeBetweenIncreaseLaserProperties: 0.2
   countStepForIncreaseLaser: 10
-  minDamageInPeroidOfTime: 1
-  maxDamageInPeroidOfTime: 10
+  minDamageInPeroidOfTime: 5
+  maxDamageInPeroidOfTime: 25
   timeBetweenDamage: 0.2
   buttonPressDuration: {fileID: 11400000, guid: d54146a232087134fb3b0ecc4997c8fe, type: 2}
 --- !u!1 &1137301077271071824
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ProjectilePrefab: {fileID: 4807826845022091945, guid: 26e27eee04c58514aa8335e42f3c0f41, type: 3}
-  m_RateOfFire: 0.2
+  m_RateOfFire: 0.5
   m_Gunpoint: {fileID: 4769054308681607451}
   m_Flash: {fileID: 0}
   m_ShotSound: {fileID: 8300000, guid: 44e943a67e159da499fb363f6541f29f, type: 3}

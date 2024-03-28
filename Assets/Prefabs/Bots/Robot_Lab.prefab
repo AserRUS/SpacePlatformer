@@ -76,6 +76,7 @@ MonoBehaviour:
   timeRecharge: 2
   m_ShotSound: {fileID: 8300000, guid: 44e943a67e159da499fb363f6541f29f, type: 3}
   meleeDamage: 25
+  impactForce: 20
 --- !u!82 &641876607003731683
 AudioSource:
   m_ObjectHideFlags: 0
@@ -270,8 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47595eda6dee6724d8af205fee54deb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHitPoints: 50
-  m_DeathEffect: {fileID: 1869637274572158909, guid: c20db4957f0d41a4e8f6e1f199378def, type: 3}
+  m_MaxHitPoints: 25
+  m_DeathEffect: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
 --- !u!114 &728475578218776933
 MonoBehaviour:
   m_ObjectHideFlags: 0
