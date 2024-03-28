@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6751cef7c8f9d04985f727ff892a14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHitPoints: 50
+  m_MaxHitPoints: 20
   m_DeathEffect: {fileID: 7401727948457227951, guid: 093474ce8bd662345bb1b691aa1728b7, type: 3}
   m_LifeTime: 2
   m_BarrelType: 1
