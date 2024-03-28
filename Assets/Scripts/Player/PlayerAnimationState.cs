@@ -9,10 +9,14 @@ public class PlayerAnimationState : MonoBehaviour
     private void Start()
     {
         m_Weapon.ShotEvent += ShotAnimation;
+        m_LaserGun.LaserActivateEvent += LaserAnimation;
+        m_LaserGun.LaserDeactivateEvent += LaserAnimationStop;
     }
     private void OnDestroy()
     {
         m_Weapon.ShotEvent -= ShotAnimation;
+        m_LaserGun.LaserActivateEvent -= LaserAnimation;
+        m_LaserGun.LaserDeactivateEvent -= LaserAnimationStop;
     }
 
     private void Update()

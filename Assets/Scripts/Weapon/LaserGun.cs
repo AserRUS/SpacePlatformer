@@ -1,8 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LaserGun : MonoBehaviour
 {
+    public event UnityAction LaserActivateEvent;
+    public event UnityAction LaserDeactivateEvent;
+
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private Transform firePoint;
@@ -48,7 +52,7 @@ public class LaserGun : MonoBehaviour
 
     private void Start()
     {
-        Deactivate();
+        //Deactivate();
 
         playerMovement = GetComponentInParent<PlayerMovement>();
         playerMovement.OnJumpEvent += Deactivate;
@@ -105,7 +109,7 @@ public class LaserGun : MonoBehaviour
     public void Activate()
     {
         lineRenderer.enabled = true;
-
+        LaserActivateEvent?.Invoke();
         damageAvailable = true; 
         particles.Play();
         increaseAvailable = false;
@@ -121,8 +125,9 @@ public class LaserGun : MonoBehaviour
 
     public void Deactivate()
     {
+        if (!LaserActive) return;
         lineRenderer.enabled = false;
-
+        LaserDeactivateEvent?.Invoke();
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, firePoint.position);
         particles.Stop();
