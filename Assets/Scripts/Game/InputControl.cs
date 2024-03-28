@@ -44,18 +44,12 @@ public class InputControl : MonoBehaviour
                 attackButton.ButtonDown();
                 StartAttack(attackButton);
             } 
-            else if (Input.GetKey(KeyCode.E))
-            {
-                if (isAttackEnabled == false) return;
-
-
-            }
             else if (Input.GetKeyUp(KeyCode.E))
             {
                 if (isAttackEnabled == false) return;
 
                 attackButton.ButtonUp();
-                StartAttack(attackButton);
+                StopAttack(attackButton);
             }
             #endregion
 
