@@ -430,7 +430,7 @@ MonoBehaviour:
   damageInPeroidOfTime: 2
   timeStep: 0.1
   damage: 10
-  imactForce: 30
+  impactForce: 20
 --- !u!1 &9134736353505455865
 GameObject:
   m_ObjectHideFlags: 0
