@@ -3,8 +3,8 @@ using UnityEngine;
 public class EvilDoctorController : Boss
 {
     [SerializeField] private int damageReceivedRequiredForTeleportation;
-    [SerializeField] private VignetteController vignetteController;
     [SerializeField] private PlayerSpawner playerSpawner;
+    [SerializeField] private UIWarning uiWarning;
 
     private EvilDoctorWeapon weapon;
     private EvilDoctorTeleport teleport;
@@ -90,7 +90,7 @@ public class EvilDoctorController : Boss
         teleport.Teleport(teleport.ChoosePointForTeleportation());
         hitPointsAfterTeleportation = currentHitPoints;
         isTeleporting = false;
-        vignetteController.EnableVignette(transform.position, playerSpawner.GetPlayer().transform.position);
+        uiWarning.EnableWarning(transform.position, playerSpawner.GetPlayer().transform.position);
     }
 
     private void CheckReceiveDamage(int hitPoints)
