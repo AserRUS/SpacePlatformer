@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelProgress : MonoBehaviour
 {
     public static LevelProgress Instance;
+    public static event UnityAction OnLevelFinished;
 
     [SerializeField] private Market m_Market;
     [SerializeField] private UIFinish m_UIFinish;    
@@ -27,6 +29,7 @@ public class LevelProgress : MonoBehaviour
         LevelProgressManager.Instance.LevelFinished(starCount);
         m_Market.AddMoney(moneyCount);
         m_UIFinish.Finish(starCount, moneyCount);
+        OnLevelFinished?.Invoke();
     }
        
 

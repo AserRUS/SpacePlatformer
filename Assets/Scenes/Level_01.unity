@@ -1975,7 +1975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dfc2e8d85f0b341827c802881f48a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ParallaxPower: 0.4
+  m_ParallaxPower_x: 0.4
+  m_ParallaxPower_y: 0.4
 --- !u!1 &254195941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3117,7 +3118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dfc2e8d85f0b341827c802881f48a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ParallaxPower: 0.25
+  m_ParallaxPower_x: 0.25
+  m_ParallaxPower_y: 0.25
 --- !u!1 &353389356
 GameObject:
   m_ObjectHideFlags: 0
@@ -15575,7 +15577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dfc2e8d85f0b341827c802881f48a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ParallaxPower: 0.3
+  m_ParallaxPower_x: 0.3
+  m_ParallaxPower_y: 0.3
 --- !u!1 &1212092958
 GameObject:
   m_ObjectHideFlags: 0
@@ -16339,7 +16342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dfc2e8d85f0b341827c802881f48a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ParallaxPower: 0.2
+  m_ParallaxPower_x: 0.2
+  m_ParallaxPower_y: 0.2
 --- !u!212 &1336174509
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20683,7 +20687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dfc2e8d85f0b341827c802881f48a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ParallaxPower: 0.35
+  m_ParallaxPower_x: 0.35
+  m_ParallaxPower_y: 0.35
 --- !u!1001 &1840581805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23506,7 +23511,7 @@ Transform:
   m_GameObject: {fileID: 7264256112182020625}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.6, y: 5.7, z: 0}
+  m_LocalPosition: {x: 192.16, y: 8.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -11,10 +11,21 @@ public class FORTEST_playerTeleporter : MonoBehaviour
     {
         if (teleport)
         {
-            Player player = playerSpawner.GetPlayer();
-            Vector3 pos = new Vector3(transform.position.x, transform.position.y, 0);
-            player.transform.position = pos;
-            teleport = false;
+            Teleport();
         }
+
+        if (Input.GetKeyUp(KeyCode.T))
+        {
+            Teleport();
+        }
+    }
+
+
+    private void Teleport()
+    {
+        Player player = playerSpawner.GetPlayer();
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y, 0);
+        player.transform.position = pos;
+        teleport = false;
     }
 }
