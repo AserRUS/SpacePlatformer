@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageInPeroidOfTime: 2
-  timeStep: 0.1
+  timeStep: 0.15
   damage: 10
   impactForce: 20
 --- !u!1 &8199997446113991107
