@@ -20,8 +20,7 @@ public class FORTEST_playerTeleporter : MonoBehaviour
         }
     }
 
-
-    private void Teleport()
+    public void Teleport()
     {
         Player player = playerSpawner.GetPlayer();
         Vector3 pos = new Vector3(transform.position.x, transform.position.y, 0);
