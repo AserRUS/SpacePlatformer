@@ -66,7 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7baebbd4b7bfb604291e8d4953f668c7, type: 2}
     - target: {fileID: 919132149155446097, guid: e3000a1c5edb3e348a256be6e5527f4a, type: 3}
       propertyPath: m_Name
-      value: VulkanBigNeu_low
+      value: VulkanBig
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3000a1c5edb3e348a256be6e5527f4a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
