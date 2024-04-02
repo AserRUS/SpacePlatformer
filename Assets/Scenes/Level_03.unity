@@ -16349,6 +16349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3267728317298278398}
   - component: {fileID: 7092888679869260745}
+  - component: {fileID: 7092888679869260746}
   m_Layer: 0
   m_Name: FORTEST_PlayerTeleporter
   m_TagString: Untagged
@@ -16456,6 +16457,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpawner: {fileID: 577071488}
   teleport: 0
+--- !u!114 &7092888679869260746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6883344488237200526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19ed8e3492400e48a26564e48a21442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &7160572337363916329
 MeshRenderer:
   m_ObjectHideFlags: 0
