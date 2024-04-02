@@ -4194,7 +4194,8 @@ MonoBehaviour:
   - {fileID: 601014806998915360, guid: 213d95a8487ac8e4d9e7a3c3dcdf92f0, type: 3}
   m_SpawnPosition: {fileID: 1460906373}
   m_SpawnTime: 3
-  m_SpawnHeight: 15
+  m_MinSpawnHeight: 3
+  m_MaxSpawnHeight: 20
   m_SpawnRadius: 20
   m_PlayerSpawner: {fileID: 577071488}
 --- !u!1001 &908911518
