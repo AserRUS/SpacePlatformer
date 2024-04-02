@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EndGameComic : MonoBehaviour
 {
+    [SerializeField] private AudioClip music;
+
     private UIComicController comicController;
 
     private void Start()
@@ -13,5 +15,6 @@ public class EndGameComic : MonoBehaviour
     private void OpenEndGameComic()
     {
         comicController.OpenComic();
+        MusicPlayer.Instance.SetLevelMusic(music);
     }
 }

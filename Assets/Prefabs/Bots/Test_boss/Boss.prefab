@@ -1575,8 +1575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageReceivedRequiredForTeleportation: 20
-  vignetteController: {fileID: 0}
   playerSpawner: {fileID: 0}
+  uiWarning: {fileID: 0}
 --- !u!114 &3540501966107706515
 MonoBehaviour:
   m_ObjectHideFlags: 0

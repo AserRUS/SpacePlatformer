@@ -8,6 +8,10 @@ public class BossFightController : MonoBehaviour
     [SerializeField] private Door[] doors;
     [SerializeField] private PlayerSpawner playerSpawner;
 
+    [Header("Misic")]
+    [SerializeField] private AudioClip musicDuringBossFight;
+    [SerializeField] private AudioClip musicAfterBossFight;
+
     private Destructible bossDest;
     private Player player;
     private BoxCollider boxCollider;
@@ -59,6 +63,9 @@ public class BossFightController : MonoBehaviour
                 door.CloseDoor();
             }
         }
+        //Music
+        if (musicDuringBossFight)
+            MusicPlayer.Instance.SetLevelMusic(musicDuringBossFight);
     }
 
     private void FinishFight()
@@ -77,6 +84,9 @@ public class BossFightController : MonoBehaviour
                 door.OpenDoor();
             }
         }
+        //Music
+        if (musicAfterBossFight)
+            MusicPlayer.Instance.SetLevelMusic(musicAfterBossFight);
     }
 
     private void BossDeath()

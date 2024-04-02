@@ -1039,6 +1039,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1698441920534248240, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
+      propertyPath: m_MaxHitPoints
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 3540501966107706515, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: teleportationPoints.Array.data[0]
       value: 
@@ -1063,10 +1067,6 @@ PrefabInstance:
       propertyPath: playerSpawner
       value: 
       objectReference: {fileID: 577071488}
-    - target: {fileID: 4429727030363016139, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
-      propertyPath: vignetteController
-      value: 
-      objectReference: {fileID: 1923505895}
     - target: {fileID: 6627107898045919346, guid: d48e086f41699974f9ee38954c2602a4, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -2171,6 +2171,14 @@ PrefabInstance:
       propertyPath: doors.Array.data[1]
       value: 
       objectReference: {fileID: 756771633249880339}
+    - target: {fileID: 5973830485692354230, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
+      propertyPath: musicAfterBossFight
+      value: 
+      objectReference: {fileID: 8300000, guid: 7595625060bcb5649badf14a0ea572e6, type: 3}
+    - target: {fileID: 5973830485692354230, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
+      propertyPath: musicDuringBossFight
+      value: 
+      objectReference: {fileID: 8300000, guid: 5cb47d1f80d02a94786e305326997dcb, type: 3}
     - target: {fileID: 7185942144537376666, guid: 37831e7e1936ab8479545441ea36cf21, type: 3}
       propertyPath: m_Name
       value: BossFightController
@@ -5618,6 +5626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e6c81e6da57b84d861a2f88095c3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 24dce80f47ed7ab4ca33dc6cb88213fb, type: 3}
 --- !u!1001 &1280377078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14807,7 +14816,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 175253100714780017, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10
+      value: -9.9999695
       objectReference: {fileID: 0}
     - target: {fileID: 2440755103770276023, guid: 09fde66b73233b44c919ea46c6c44664, type: 3}
       propertyPath: m_InputControl
