@@ -5,21 +5,20 @@ using UnityEngine;
 public class EvilDoctorTeleport : MonoBehaviour
 {
     [SerializeField] private GameObject teleportEffect;
-    [SerializeField] private Transform[] teleportationPoints;
+    [SerializeField] private Bunker[] bunkers;
     [SerializeField] private float timeBetweenTeleportation;
 
-    private Vector3 lastTeleportPoint;
-    private bool readyForTeleport;
+    private Bunker lastTeleportBunker;
+    private bool readyForTeleport = false;
     private Coroutine preparationForTeleportCoroutine;
 
     public bool ReadyForTeleport => readyForTeleport;
 
-    
     private void Start()
     {
-        readyForTeleport = true;
-        Teleport(teleportationPoints[0].position);
-        lastTeleportPoint = teleportationPoints[0].position;
+        lastTeleportBunker = bunkers[0];
+        Teleport(lastTeleportBunker.TeleportPoint.position);
+        bunkers[0].SetShieldActive(true);
     }
     
     public void StartTeleportTimer()
@@ -38,15 +37,17 @@ public class EvilDoctorTeleport : MonoBehaviour
 
     public Vector3 ChoosePointForTeleportation()
     {
-        int randomPoint = Random.Range(0, teleportationPoints.Length);
+        lastTeleportBunker.SetShieldActive(false);
+        int randomPoint = Random.Range(0, bunkers.Length);
 
-        while (teleportationPoints[randomPoint].position == lastTeleportPoint)
+        while (bunkers[randomPoint].TeleportPoint.position == lastTeleportBunker.TeleportPoint.position)
         {
-            randomPoint = Random.Range(0, teleportationPoints.Length);
+            randomPoint = Random.Range(0, bunkers.Length);
         }
 
-        lastTeleportPoint = teleportationPoints[randomPoint].position;
-        return lastTeleportPoint;
+        lastTeleportBunker = bunkers[randomPoint];
+        lastTeleportBunker.SetShieldActive(true);
+        return lastTeleportBunker.TeleportPoint.position;
     }
 
     public void Teleport(Vector3 position)
@@ -61,6 +62,7 @@ public class EvilDoctorTeleport : MonoBehaviour
 
     private IEnumerator PreparationForTeleport(float time)
     {
+        float starttime = Time.realtimeSinceStartup;
         yield return new WaitForSeconds(time);
         readyForTeleport = true;
     }

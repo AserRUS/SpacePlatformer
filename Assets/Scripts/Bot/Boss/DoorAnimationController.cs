@@ -1,13 +1,17 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DoorAnimationController : MonoBehaviour
 {
-    private Animator animator;
+    public event UnityAction OnClossingEnd;
+    public event UnityAction OnOpenningEnd;
+    public event UnityAction OnMiddlePath;
 
+    private Animator animator;
     private string openningParameter = "Openning";
     private string clossingPatameter = "Clossing";
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
     }
@@ -20,5 +24,18 @@ public class DoorAnimationController : MonoBehaviour
     public void CloseDoor()
     {
         animator.SetTrigger(clossingPatameter);
+    }
+
+    public void OnClossingEndEvent()
+    {
+        OnClossingEnd?.Invoke();
+    }
+    public void OnOpenningEndEvent()
+    {
+        OnOpenningEnd?.Invoke();
+    }
+    public void OnMiddlePathEvent()
+    {
+        OnMiddlePath?.Invoke();
     }
 }

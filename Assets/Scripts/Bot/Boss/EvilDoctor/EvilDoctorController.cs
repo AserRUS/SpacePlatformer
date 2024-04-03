@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EvilDoctorController : Boss
 {
+    public event UnityAction OnDamageReceivedForShield;
+
     [SerializeField] private int damageReceivedRequiredForTeleportation;
+    [SerializeField] private int damageReceivedRequiredForShield;
     [SerializeField] private PlayerSpawner playerSpawner;
     [SerializeField] private UIWarning uiWarning;
 
@@ -14,6 +18,7 @@ public class EvilDoctorController : Boss
     private int currentHitPoints;
     private bool isTeleporting;
     private bool isAttack;
+    private bool isActive;
 
     protected override void Start()
     {
@@ -23,8 +28,6 @@ public class EvilDoctorController : Boss
         animationController = GetComponentInChildren<EvilDoctorAnimationController>();
         animationController.OnEndAttackAnim += Attack;
         animationController.OnEndTeleportAnim += Teleport;
-
-        currentHitPoints = destructible.MaxHitPoints;
         destructible.HitPointChangeEvent += CheckReceiveDamage;
     }
 
@@ -46,11 +49,13 @@ public class EvilDoctorController : Boss
         if (isAttack) return;
         if (isTeleporting) return;
 
+        if (teleport.ReadyForTeleport)
+        {
+            TurnOnTeleportAnim();
+        }
+
         if (weapon.ReadyForAttack)
             TurnOnAttackAnim();
-
-        if (teleport.ReadyForTeleport)
-            TurnOnTeleportAnim();
     }
 
     public override void StartFight()
@@ -62,8 +67,13 @@ public class EvilDoctorController : Boss
 
         weapon.StartAttackTimer();
 
+        if (destructible == null)
+            destructible = GetComponent<Destructible>();
+
+        currentHitPoints = destructible.MaxHitPoints;
         hitPointsAfterTeleportation = currentHitPoints;
         teleport.StartTeleportTimer();
+        isActive = true;
     }
     
     private void TurnOnAttackAnim()
@@ -86,7 +96,6 @@ public class EvilDoctorController : Boss
 
     private void Teleport()
     {
-        teleport.StartTeleportTimer();
         teleport.Teleport(teleport.ChoosePointForTeleportation());
         hitPointsAfterTeleportation = currentHitPoints;
         isTeleporting = false;
@@ -95,6 +104,8 @@ public class EvilDoctorController : Boss
 
     private void CheckReceiveDamage(int hitPoints)
     {
+        if (!isActive) return;
+
         currentHitPoints = hitPoints;
         int damage = Mathf.Abs(hitPointsAfterTeleportation - currentHitPoints);
 
@@ -102,6 +113,10 @@ public class EvilDoctorController : Boss
         {
             teleport.StopTeleportTimer();
             teleport.SetReadyForTeleport();
+        }
+        else if (damage >= damageReceivedRequiredForShield)
+        {
+            OnDamageReceivedForShield?.Invoke();
         }
     }
 
@@ -113,5 +128,6 @@ public class EvilDoctorController : Boss
         weapon.StopAttackTimer();
         isTeleporting = false;
         isAttack = false;
+        isActive = false;
     }
 }

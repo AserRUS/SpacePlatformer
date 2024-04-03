@@ -156,7 +156,7 @@ MonoBehaviour:
   firePoint: {fileID: 6213929324984672559}
   layerMask:
     serializedVersion: 2
-    m_Bits: 2624
+    m_Bits: 2625
   minWidth: 0.05
   maxWidth: 0.3
   maxLength: 15
