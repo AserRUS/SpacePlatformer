@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Skin3
   m_EditorClassIdentifier: 
   ProductImage: {fileID: 21300000, guid: 4a1320dcaecf6ed40a304bab76b644fb, type: 3}
-  Cost: 10
+  Cost: 80
   m_SkinMaterial: {fileID: 2100000, guid: 92e0b4585d02dcd498b3c15869abcb00, type: 2}
