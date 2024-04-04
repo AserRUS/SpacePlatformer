@@ -64,7 +64,7 @@ public class BossFightController : MonoBehaviour
             }
         }
         //Music
-        if (musicDuringBossFight)
+        if (musicDuringBossFight && MusicPlayer.Instance != null)
             MusicPlayer.Instance.SetLevelMusic(musicDuringBossFight);
     }
 
@@ -85,7 +85,7 @@ public class BossFightController : MonoBehaviour
             }
         }
         //Music
-        if (musicAfterBossFight)
+        if (musicAfterBossFight && MusicPlayer.Instance != null)
             MusicPlayer.Instance.SetLevelMusic(musicAfterBossFight);
     }
 
