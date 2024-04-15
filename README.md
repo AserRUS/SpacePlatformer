@@ -23,7 +23,7 @@ Game designer:
   [Mariia Komarova](https://www.behance.net/icin)
   
 3D artists:  
-  Elena Swoboda  
+  [Elena Swoboda](https://www.behance.net/elenaswoboda1)  
   [Dilyara Atlasova](https://www.behance.net/dilyaraatlasova)  
   
 Programmers:  
@@ -58,7 +58,7 @@ Programmers:
   [Комарова Мария](https://www.behance.net/icin)
   
 3д художницы:  
-  Елена Свобода  
+  [Елена Свобода](https://www.behance.net/elenaswoboda1)  
   [Диляра Атласова](https://www.behance.net/dilyaraatlasova)  
   
 Программисты:  
